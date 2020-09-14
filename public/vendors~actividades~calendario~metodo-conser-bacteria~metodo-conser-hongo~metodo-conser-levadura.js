@@ -18899,25 +18899,14 @@ function isValidDate$1(date) {
 function isValidRangeDate(date) {
   return Array.isArray(date) && date.length === 2 && date.every(isValidDate$1) && date[0] <= date[1];
 }
-function isValidDates(dates) {
-  return Array.isArray(dates) && dates.every(isValidDate$1);
-}
 function getValidDate(value) {
   var date = new Date(value);
-
-  if (isValidDate$1(date)) {
-    return date;
-  }
 
   for (var _len = arguments.length, backup = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     backup[_key - 1] = arguments[_key];
   }
 
-  if (backup.length) {
-    return getValidDate.apply(void 0, backup);
-  }
-
-  return new Date();
+  return isValidDate$1(date) ? date : getValidDate.apply(void 0, backup);
 }
 function assignTime(target, source) {
   var date = new Date(target);
@@ -20088,8 +20077,7 @@ var script$3 = {
       var calendarDate = this.calendar;
 
       if (!isValidDate$1(calendarDate)) {
-        var length = this.innerValue.length;
-        calendarDate = getValidDate(length > 0 ? this.innerValue[length - 1] : this.defaultValue);
+        calendarDate = getValidDate(this.innerValue[0], this.defaultValue);
       }
 
       this.innerCalendar = calendarDate;
@@ -20099,35 +20087,35 @@ var script$3 = {
     },
     emitDate: function emitDate(date, type) {
       if (!this.isDisabled(date)) {
-        this.$emit('select', date, type, this.innerValue); // someone need get the first selected date to set range value. (#429)
+        this.$emit('select', date, type); // someone need get the first selected date to set range value. (#429)
 
         this.dispatch('DatePicker', 'pick', date, type);
       }
     },
-    updateCalendar: function updateCalendar(date, type) {
+    updateCalendar: function updateCalendar(date) {
       var oldValue = new Date(this.innerCalendar);
       this.innerCalendar = date;
       this.$emit('update:calendar', date);
-      this.dispatch('DatePicker', 'calendar-change', date, oldValue, type);
+      this.dispatch('DatePicker', 'calendar-change', date, oldValue);
     },
     handelPanelChange: function handelPanelChange(panel) {
       this.panel = panel;
     },
     handleIconLeftClick: function handleIconLeftClick() {
       var nextCalendar = Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["subMonths"])(this.innerCalendar, 1);
-      this.updateCalendar(nextCalendar, 'last-month');
+      this.updateCalendar(nextCalendar);
     },
     handleIconRightClick: function handleIconRightClick() {
       var nextCalendar = Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["addMonths"])(this.innerCalendar, 1);
-      this.updateCalendar(nextCalendar, 'next-month');
+      this.updateCalendar(nextCalendar);
     },
     handleIconDoubleLeftClick: function handleIconDoubleLeftClick() {
       var nextCalendar = Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["subYears"])(this.innerCalendar, this.panel === 'year' ? 10 : 1);
-      this.updateCalendar(nextCalendar, this.panel === 'year' ? 'last-decade' : 'last-year');
+      this.updateCalendar(nextCalendar);
     },
     handleIconDoubleRightClick: function handleIconDoubleRightClick() {
       var nextCalendar = Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["addYears"])(this.innerCalendar, this.panel === 'year' ? 10 : 1);
-      this.updateCalendar(nextCalendar, this.panel === 'year' ? 'next-decade' : 'next-year');
+      this.updateCalendar(nextCalendar);
     },
     handleSelectYear: function handleSelectYear(year) {
       if (this.type === 'year') {
@@ -20135,10 +20123,10 @@ var script$3 = {
         this.emitDate(date, 'year');
       } else {
         var nextCalendar = Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["setYear"])(this.innerCalendar, year);
-        this.updateCalendar(nextCalendar, 'year');
+        this.updateCalendar(nextCalendar);
         this.handelPanelChange('month');
 
-        if (this.partialUpdate && this.innerValue.length === 1) {
+        if (this.partialUpdate && this.innerValue[0]) {
           var _date = Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["setYear"])(this.innerValue[0], year);
 
           this.emitDate(_date, 'year');
@@ -20151,10 +20139,10 @@ var script$3 = {
         this.emitDate(date, 'month');
       } else {
         var nextCalendar = Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["setMonth"])(this.innerCalendar, month);
-        this.updateCalendar(nextCalendar, 'month');
+        this.updateCalendar(nextCalendar);
         this.handelPanelChange('date');
 
-        if (this.partialUpdate && this.innerValue.length === 1) {
+        if (this.partialUpdate && this.innerValue[0]) {
           var _date2 = Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["setMonth"])(Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["setYear"])(this.innerValue[0], this.calendarYear), month);
 
           this.emitDate(_date2, 'month');
@@ -20787,10 +20775,6 @@ var script$5 = {
   },
   props: {
     date: Date,
-    scrollDuration: {
-      type: Number,
-      default: 100
-    },
     getClasses: {
       type: Function,
       default: function _default() {
@@ -20859,7 +20843,7 @@ var script$5 = {
         var _this = this;
 
         this.$nextTick(function () {
-          _this.scrollToSelected(_this.scrollDuration);
+          _this.scrollToSelected(100);
         });
       }
     }
@@ -21257,10 +21241,6 @@ var script$7 = {
     use12h: {
       type: Boolean,
       default: undefined
-    },
-    scrollDuration: {
-      type: Number,
-      default: 100
     }
   },
   computed: {
@@ -21371,8 +21351,7 @@ var __vue_render__$9 = function __vue_render__() {
       "second-options": _vm.secondOptions,
       "hour-step": _vm.hourStep,
       "minute-step": _vm.minuteStep,
-      "second-step": _vm.secondStep,
-      "scroll-duration": _vm.scrollDuration
+      "second-step": _vm.secondStep
     },
     on: {
       "select": _vm.handleSelect
@@ -21439,7 +21418,7 @@ var TimeRange = {
   methods: {
     emitChange: function emitChange(type, index) {
       var date = [this.startValue, this.endValue];
-      this.$emit('select', date, type === 'time' ? 'time-range' : type, index);
+      this.$emit('select', date, type, index);
     },
     handleSelectStart: function handleSelectStart(date, type) {
       this.startValue = date; // check the NaN
@@ -21781,15 +21760,9 @@ var script$8 = {
       type: Boolean,
       default: false
     },
-    multiple: {
-      type: Boolean,
-      default: false
-    },
     rangeSeparator: {
       type: String,
-      default: function _default() {
-        return this.multiple ? ',' : ' ~ ';
-      }
+      default: ' ~ '
     },
     lang: {
       type: [String, Object]
@@ -21852,9 +21825,6 @@ var script$8 = {
       type: String,
       default: 'OK'
     },
-    renderInputText: {
-      type: Function
-    },
     shortcuts: {
       type: Array,
       validator: function validator(value) {
@@ -21893,11 +21863,6 @@ var script$8 = {
     innerValue: function innerValue() {
       var value = this.value;
 
-      if (this.validMultipleType) {
-        value = Array.isArray(value) ? value : [];
-        return value.map(this.value2date);
-      }
-
       if (this.range) {
         value = Array.isArray(value) ? value.slice(0, 2) : [null, null];
         return value.map(this.value2date);
@@ -21910,10 +21875,6 @@ var script$8 = {
 
       if (this.userInput !== null) {
         return this.userInput;
-      }
-
-      if (typeof this.renderInputText === 'function') {
-        return this.renderInputText(this.innerValue);
       }
 
       if (!this.isValidValue(this.innerValue)) {
@@ -21939,10 +21900,6 @@ var script$8 = {
       }
 
       return getLocale(this.lang);
-    },
-    validMultipleType: function validMultipleType() {
-      var types = ['date', 'month', 'year'];
-      return this.multiple && !this.range && types.indexOf(this.type) !== -1;
     }
   },
   watch: {
@@ -22038,58 +21995,14 @@ var script$8 = {
       }
     },
     isValidValue: function isValidValue(value) {
-      if (this.validMultipleType) {
-        return isValidDates(value);
-      }
-
-      if (this.range) {
-        return isValidRangeDate(value);
-      }
-
-      return isValidDate$1(value);
+      var validate = this.range ? isValidRangeDate : isValidDate$1;
+      return validate(value);
     },
-    isValidValueAndNotDisabled: function isValidValueAndNotDisabled(value) {
-      if (!this.isValidValue(value)) {
-        return false;
-      }
-
-      var disabledDate = typeof this.disabledDate === 'function' ? this.disabledDate : function () {
-        return false;
-      };
-      var disabledTime = typeof this.disabledTime === 'function' ? this.disabledTime : function () {
-        return false;
-      };
-
-      if (!Array.isArray(value)) {
-        value = [value];
-      }
-
-      return value.every(function (v) {
-        return !disabledDate(v) && !disabledTime(v);
-      });
-    },
-    handleMultipleDates: function handleMultipleDates(date, dates) {
-      if (this.validMultipleType && dates) {
-        var nextDates = dates.filter(function (v) {
-          return v.getTime() !== date.getTime();
-        });
-
-        if (nextDates.length === dates.length) {
-          nextDates.push(date);
-        }
-
-        return nextDates;
-      }
-
-      return date;
-    },
-    handleSelectDate: function handleSelectDate(val, type, dates) {
-      val = this.handleMultipleDates(val, dates);
-
+    handleSelectDate: function handleSelectDate(val, type) {
       if (this.confirm) {
         this.currentValue = val;
       } else {
-        this.emitValue(val, this.validMultipleType ? "multiple-".concat(type) : type);
+        this.emitValue(val, type);
       }
     },
     handleClear: function handleClear() {
@@ -22109,10 +22022,10 @@ var script$8 = {
         }
       }
     },
-    openPopup: function openPopup(evt) {
+    openPopup: function openPopup() {
       if (this.popupVisible) return;
       this.defaultOpen = true;
-      this.$emit('open', evt);
+      this.$emit('open');
       this.$emit('update:open', true);
     },
     closePopup: function closePopup() {
@@ -22122,15 +22035,10 @@ var script$8 = {
       this.$emit('update:open', false);
     },
     blur: function blur() {
-      // when use slot input
-      if (this.$refs.input) {
-        this.$refs.input.blur();
-      }
+      this.$refs.input.blur();
     },
     focus: function focus() {
-      if (this.$refs.input) {
-        this.$refs.input.focus();
-      }
+      this.$refs.input.focus();
     },
     handleInputChange: function handleInputChange() {
       var _this2 = this;
@@ -22146,16 +22054,10 @@ var script$8 = {
 
       var date;
 
-      if (this.validMultipleType) {
-        date = text.split(this.rangeSeparator).map(function (v) {
-          return _this2.parseDate(v.trim(), _this2.format);
-        });
-      } else if (this.range) {
+      if (this.range) {
         var arr = text.split(this.rangeSeparator);
 
         if (arr.length !== 2) {
-          // Maybe the separator during the day is the same as the separator for the date
-          // eg: 2019-10-09-2020-01-02
           arr = text.split(this.rangeSeparator.trim());
         }
 
@@ -22166,7 +22068,7 @@ var script$8 = {
         date = this.parseDate(text, this.format);
       }
 
-      if (this.isValidValueAndNotDisabled(date)) {
+      if (this.isValidValue(date)) {
         this.emitValue(date);
         this.blur();
       } else {
@@ -22190,7 +22092,7 @@ var script$8 = {
       this.$emit('blur', evt);
     },
     handleInputFocus: function handleInputFocus(evt) {
-      this.openPopup(evt);
+      this.openPopup();
       this.$emit('focus', evt);
     },
     hasSlot: function hasSlot(name) {
@@ -22219,44 +22121,30 @@ var __vue_render__$a = function __vue_render__() {
   }, [!_vm.inline ? _c('div', {
     class: _vm.prefixClass + "-input-wrapper",
     on: {
-      "mousedown": _vm.openPopup
+      "mousedown": _vm.openPopup,
+      "touchstart": _vm.openPopup
     }
-  }, [_vm._t("input", [_c('input', _vm._g(_vm._b({
-    ref: "input"
+  }, [_vm._t("input", [_c('input', _vm._b({
+    ref: "input",
+    class: _vm.inputClass,
+    attrs: {
+      "disabled": _vm.disabled,
+      "readonly": !_vm.editable,
+      "placeholder": _vm.placeholder
+    },
+    on: {
+      "keydown": _vm.handleInputKeydown,
+      "focus": _vm.handleInputFocus,
+      "blur": _vm.handleInputBlur,
+      "input": _vm.handleInputInput,
+      "change": _vm.handleInputChange
+    }
   }, 'input', _extends({}, {
     name: 'date',
     type: 'text',
     autocomplete: 'off',
-    value: _vm.text,
-    class: _vm.inputClass,
-    readonly: !_vm.editable,
-    disabled: _vm.disabled,
-    placeholder: _vm.placeholder
-  }, _vm.inputAttr), false), {
-    keydown: _vm.handleInputKeydown,
-    focus: _vm.handleInputFocus,
-    blur: _vm.handleInputBlur,
-    input: _vm.handleInputInput,
-    change: _vm.handleInputChange
-  }))], {
-    "props": _extends({}, {
-      name: 'date',
-      type: 'text',
-      autocomplete: 'off',
-      value: _vm.text,
-      class: _vm.inputClass,
-      readonly: !_vm.editable,
-      disabled: _vm.disabled,
-      placeholder: _vm.placeholder
-    }, _vm.inputAttr),
-    "events": {
-      keydown: _vm.handleInputKeydown,
-      focus: _vm.handleInputFocus,
-      blur: _vm.handleInputBlur,
-      input: _vm.handleInputInput,
-      change: _vm.handleInputChange
-    }
-  }), _vm._v(" "), _vm.showClearIcon ? _c('i', {
+    value: _vm.text
+  }, _vm.inputAttr), false))]), _vm._v(" "), _vm.showClearIcon ? _c('i', {
     class: _vm.prefixClass + "-icon-clear",
     on: {
       "mousedown": function mousedown($event) {
