@@ -83,6 +83,7 @@
                       <div class="no-gutters row">
                         <div class="col-sm-4">
                           <button
+                            dusk="cambiar-nombre"
                             class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
                             @click="showModal('nombre')"
                           >
@@ -91,6 +92,7 @@
                         </div>
                         <div class="col-sm-4">
                           <button
+                            dusk="cambiar-imagen"
                             class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
                             @click="showModal('imagen')"
                           >
@@ -99,6 +101,7 @@
                         </div>
                         <div class="col-sm-4">
                           <button
+                            dusk="cambiar-password"
                             class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
                             @click="showModal('contraseña')"
                           >
@@ -155,6 +158,7 @@
                     <div class="position-relative form-group">
                       <label for="imagen" class>Imagen</label>
                       <input
+                        dusk="imagen"
                         name="imagen"
                         @change="obtenerImagen"
                         id="imagen"
@@ -205,6 +209,7 @@
               @click="$modal.hide('cambiarImagen')"
             >Cancelar</button>
             <button
+              dusk="button"
               type="button"
               class="btn btn-success"
               @click="eventBtn"
@@ -235,6 +240,7 @@
               <div class="position-relative form-group">
                 <label for="nombre" class>Nombre</label>
                 <input
+                  dusk="nombre"
                   name="nombre"
                   id="nombre"
                   placeholder="..."
@@ -256,6 +262,7 @@
               <label for="pass" class>Contraseña</label>
               <div class="input-group mb-3">
                 <input
+                  dusk="password"
                   name="pass"
                   id="pass"
                   placeholder="..."
@@ -285,6 +292,7 @@
               <label for="pass1" class>Confirmar Contraseña</label>
               <div class="input-group mb-3">
                 <input
+                  dusk="password-reply"
                   name="pass1"
                   id="pass1"
                   placeholder="..."
@@ -316,6 +324,7 @@
               @click="$modal.hide('cambiarInfo')"
             >Cancelar</button>
             <button
+              dusk="button"
               type="button"
               class="btn btn-success"
               @click="eventBtn"

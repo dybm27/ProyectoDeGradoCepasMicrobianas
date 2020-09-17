@@ -66,6 +66,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -106,6 +107,14 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1430,7 +1439,10 @@ var render = function() {
                       {
                         staticClass:
                           "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-                        attrs: { disabled: _vm.tipos == "" },
+                        attrs: {
+                          dusk: "btn-agregar-cepa",
+                          disabled: _vm.tipos == ""
+                        },
                         on: {
                           click: function($event) {
                             return _vm.abrirFormulario(0)
@@ -1578,6 +1590,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "codigo-cepa",
                               name: "codigo",
                               id: "codigo",
                               placeholder: "...",
@@ -2569,6 +2582,7 @@ var render = function() {
                                     : ""
                                 ],
                                 attrs: {
+                                  dusk: "estado-cepa",
                                   name: "estado",
                                   id: "estado",
                                   placeholder: "...",
@@ -2705,6 +2719,7 @@ var render = function() {
                             ],
                             staticClass: "form-control",
                             attrs: {
+                              dusk: "otras-caract-cepa",
                               name: "text",
                               id: "otras_caracteristicas"
                             },
@@ -2783,7 +2798,7 @@ var render = function() {
                             "label",
                             {
                               staticClass: "custom-control-label",
-                              attrs: { for: "publicar" }
+                              attrs: { dusk: "check-cepa", for: "publicar" }
                             },
                             [_vm._v("Desea publicar la cepa?")]
                           )
@@ -2795,7 +2810,10 @@ var render = function() {
                         {
                           staticClass: "mt-2 btn btn-block",
                           class: _vm.classBtn,
-                          attrs: { disabled: _vm.bloquearBtn }
+                          attrs: {
+                            dusk: "btn-form-cepa",
+                            disabled: _vm.bloquearBtn
+                          }
                         },
                         [_vm._v(_vm._s(_vm.nombreBtn))]
                       )

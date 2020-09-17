@@ -49,6 +49,7 @@
       </div>
       <div class="header-btn-lg">
         <button
+          dusk="cerrar-sesion"
           class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-danger"
           @click.prevent="logout"
         >

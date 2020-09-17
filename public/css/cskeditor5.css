@@ -4,7 +4,7 @@
  * For more information, check out https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/content-styles.html
  */
 
- :root {
+:root {
     --ck-highlight-marker-blue: hsl(201, 97%, 72%);
     --ck-highlight-marker-green: hsl(120, 93%, 68%);
     --ck-highlight-marker-pink: hsl(345, 96%, 73%);

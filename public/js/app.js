@@ -2104,6 +2104,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -7969,6 +7973,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -59325,6 +59330,7 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { dusk: "btn-caract-cepa-" + _vm.rowData.id },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -59349,6 +59355,7 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { dusk: "btn-ver-cepa-" + _vm.rowData.id },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -59378,6 +59385,7 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { dusk: "btn-editar-cepa-" + _vm.rowData.id },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -59402,6 +59410,7 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { dusk: "btn-eliminar-cepa-" + _vm.rowData.id },
                       on: {
                         click: function($event) {
                           return _vm.eliminar(_vm.rowData)
@@ -67222,6 +67231,7 @@ var render = function() {
           {
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-danger",
+            attrs: { dusk: "cerrar-sesion" },
             on: {
               click: function($event) {
                 $event.preventDefault()

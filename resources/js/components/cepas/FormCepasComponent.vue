@@ -15,6 +15,7 @@
                 <div class="position-relative form-group">
                   <label for="codigo" class>Código</label>
                   <input
+                    dusk="codigo-cepa"
                     name="codigo"
                     id="codigo"
                     placeholder="..."
@@ -307,6 +308,7 @@
                     <div class="position-relative form-group">
                       <label for="estado" class>Estado</label>
                       <input
+                        dusk="estado-cepa"
                         name="estado"
                         id="estado"
                         placeholder="..."
@@ -340,6 +342,7 @@
                 <div class="position-relative form-group">
                   <label for="otras_caracteristicas">Otras Caracteristicas</label>
                   <textarea
+                    dusk="otras-caract-cepa"
                     name="text"
                     id="otras_caracteristicas"
                     class="form-control"
@@ -353,9 +356,14 @@
                     class="custom-control-input"
                     v-model="parametros.publicar"
                   />
-                  <label class="custom-control-label" for="publicar">Desea publicar la cepa?</label>
+                  <label
+                    dusk="check-cepa"
+                    class="custom-control-label"
+                    for="publicar"
+                  >Desea publicar la cepa?</label>
                 </div>
                 <button
+                  dusk="btn-form-cepa"
                   class="mt-2 btn btn-block"
                   :disabled="bloquearBtn"
                   :class="classBtn"

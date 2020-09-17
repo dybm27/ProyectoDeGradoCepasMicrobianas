@@ -21,11 +21,11 @@ class LoginTest extends DuskTestCase
             $browser->waitForText('Bienvenido!!.. Por favor, inicia sesión con tu cuenta.')
                 ->type('email', 'email_erroneo@gmail.com')
                 ->type('password', '12345678')
-                ->screenshot('ingresando_datos_erroneos_login')
+                ->screenshot('iniciar_sesion_error_1')
                 ->press('Iniciar Sesión')
                 ->assertPathIs('/')
                 ->assertSee('Estas credenciales no coinciden con nuestros registros.')
-                ->screenshot('ingresando_datos_erroneos_login_error');
+                ->screenshot('iniciar_sesion_error_2');
         });
     }
 
@@ -39,11 +39,12 @@ class LoginTest extends DuskTestCase
             $browser->waitForText('Bienvenido!!.. Por favor, inicia sesión con tu cuenta.')
                 ->type('email', 'majumba.ufps@gmail.com')
                 ->type('password', '12345678')
-                ->screenshot('ingresando_datos_login')
+                ->screenshot('iniciar_sesion_success_1')
                 ->press('Iniciar Sesión')
                 ->assertPathIs('/perfil')
-                ->pause(2000)
-                ->screenshot('redirect_vista_perfil');
+                ->pause(1000)
+                ->screenshot('iniciar_sesion_success_2')
+                ->press('@cerrar-sesion');
         });
     }
 }

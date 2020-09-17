@@ -7,6 +7,7 @@
       <div class="row">
         <div class="col-md-12 col-lg-12">
           <button
+            :dusk="'btn-caract-cepa-'+rowData.id"
             v-if="getPermisoByNombre('caract-cepa')"
             class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success"
             v-tooltip.left="'Agregar y Editar Caracteristicas'"
@@ -16,6 +17,7 @@
           </button>
 
           <button
+            :dusk="'btn-ver-cepa-'+rowData.id"
             v-if="getPermisoByNombre('ver-cepa')"
             class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info"
             v-tooltip="'Ver Cepa'"
@@ -28,6 +30,7 @@
       <div class="row">
         <div class="col-md-12 col-lg-12">
           <button
+            :dusk="'btn-editar-cepa-'+rowData.id"
             v-if="getPermisoByNombre('editar-cepa')"
             class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
             v-tooltip.left="'Editar Cepa'"
@@ -37,6 +40,7 @@
           </button>
 
           <button
+            :dusk="'btn-eliminar-cepa-'+rowData.id"
             v-if="getPermisoByNombre('eliminar-cepa')"
             class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
             v-tooltip="'Eliminar Cepa'"

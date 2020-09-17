@@ -212,6 +212,7 @@ var render = function() {
                     "button",
                     {
                       staticClass: "btn btn-success",
+                      attrs: { dusk: "btn-croppie" },
                       on: { click: _vm.resultado }
                     },
                     [_vm._v("Aprobar Imagen")]
