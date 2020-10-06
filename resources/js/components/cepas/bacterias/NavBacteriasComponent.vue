@@ -1,10 +1,13 @@
 <template>
   <div>
     <template v-if="$route.params.cepaSlug">
-      <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+      <ul
+        class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
+      >
         <li class="nav-item">
           <router-link
-            :to="{name:'caract-macro-cepa-bacteria'}"
+            dusk="nav-caract-macro"
+            :to="{ name: 'caract-macro-cepa-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -14,7 +17,8 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'caract-micro-cepa-bacteria'}"
+            dusk="nav-caract-micro"
+            :to="{ name: 'caract-micro-cepa-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -24,7 +28,8 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'caract-bioqui-cepa-bacteria'}"
+            dusk="nav-caract-bioqui"
+            :to="{ name: 'caract-bioqui-cepa-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -34,7 +39,8 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'caract-fisio-cepa-bacteria'}"
+            dusk="nav-caract-fisio"
+            :to="{ name: 'caract-fisio-cepa-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -44,7 +50,8 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'identi-molecu-cepa-bacteria'}"
+            dusk="nav-identi-molecu"
+            :to="{ name: 'identi-molecu-cepa-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -54,7 +61,7 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'metodo-conser-cepa-bacteria'}"
+            :to="{ name: 'metodo-conser-cepa-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -65,10 +72,12 @@
       </ul>
     </template>
     <template v-else>
-      <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+      <ul
+        class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
+      >
         <li class="nav-item">
           <router-link
-            :to="{name:'caract-macro-bacteria'}"
+            :to="{ name: 'caract-macro-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -78,7 +87,7 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'caract-micro-bacteria'}"
+            :to="{ name: 'caract-micro-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -88,7 +97,7 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'caract-bioqui-bacteria'}"
+            :to="{ name: 'caract-bioqui-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -98,7 +107,7 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'caract-fisio-bacteria'}"
+            :to="{ name: 'caract-fisio-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -108,7 +117,7 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'identi-molecu-bacteria'}"
+            :to="{ name: 'identi-molecu-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"
@@ -118,7 +127,7 @@
         </li>
         <li class="nav-item">
           <router-link
-            :to="{name:'metodo-conser-bacteria'}"
+            :to="{ name: 'metodo-conser-bacteria' }"
             role="tab"
             class="nav-link"
             active-class="active"

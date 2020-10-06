@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 use TiposMetodosConservacionHLSeeder;
 
-class InfoCaracHongosControllerTest extends TestCase
+class InfoCaracHongoControllerTest extends TestCase
 {
     use RefreshDatabase;
 

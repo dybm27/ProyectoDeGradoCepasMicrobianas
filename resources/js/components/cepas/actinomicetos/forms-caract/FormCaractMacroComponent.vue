@@ -5,27 +5,37 @@
         <div class="col-sm-6">
           <div class="main-card mb-3 card">
             <div class="card-body">
-              <h5 class="card-title">{{titulo}}</h5>
+              <h5 class="card-title">{{ titulo }}</h5>
               <form @submit.prevent="evento">
-                <template v-if="errors!=''">
+                <template v-if="errors != ''">
                   <div class="alert alert-danger">
-                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                    <p v-for="(item, index) in errors" :key="index">
+                      {{ item[0] }}
+                    </p>
                   </div>
                 </template>
                 <div class="position-relative form-group">
                   <label for="medio" class>Medio</label>
                   <input
+                    dusk="medio"
                     name="medio"
                     id="medio"
                     placeholder="..."
                     type="text"
-                    :class="['form-control', $v.parametros.medio.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.medio.$error ? 'error-input-select' : '',
+                    ]"
                     v-model.trim="$v.parametros.medio.$model"
                   />
                   <em
-                    v-if="$v.parametros.medio.$error&&!$v.parametros.medio.required"
+                    v-if="
+                      $v.parametros.medio.$error &&
+                      !$v.parametros.medio.required
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
                 <template v-if="getInfoCaractMacroActinomicetos">
                   <div class="form-row">
@@ -35,16 +45,26 @@
                         <select
                           name="select"
                           id="textura"
-                          :class="['form-control', $v.parametros.textura.$error? 'error-input-select':'']"
+                          :class="[
+                            'form-control',
+                            $v.parametros.textura.$error
+                              ? 'error-input-select'
+                              : '',
+                          ]"
                           v-model.trim="$v.parametros.textura.$model"
                         >
                           <option
-                            v-for="(e,index) in obtenerTexturas"
+                            v-for="(e, index) in obtenerTexturas"
                             :key="index"
                             :value="e.id"
-                          >{{e.nombre}}</option>
+                          >
+                            {{ e.nombre }}
+                          </option>
                         </select>
-                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <div
+                          class="input-group-append"
+                          v-if="getPermisoByNombre('agregar-otra')"
+                        >
                           <button
                             class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                             @click.prevent="showModal('textura')"
@@ -54,9 +74,13 @@
                         </div>
                       </div>
                       <em
-                        v-if="$v.parametros.textura.$error&&!$v.parametros.textura.required"
+                        v-if="
+                          $v.parametros.textura.$error &&
+                          !$v.parametros.textura.required
+                        "
                         class="text-error-select"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                     <div class="col-md-6">
                       <label for="color" class>Color</label>
@@ -64,16 +88,26 @@
                         <select
                           name="select"
                           id="color"
-                          :class="['form-control', $v.parametros.color.$error? 'error-input-select':'']"
+                          :class="[
+                            'form-control',
+                            $v.parametros.color.$error
+                              ? 'error-input-select'
+                              : '',
+                          ]"
                           v-model.trim="$v.parametros.color.$model"
                         >
                           <option
-                            v-for="(c,index) in obtenerColores"
+                            v-for="(c, index) in obtenerColores"
                             :key="index"
                             :value="c.id"
-                          >{{c.nombre}}</option>
+                          >
+                            {{ c.nombre }}
+                          </option>
                         </select>
-                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <div
+                          class="input-group-append"
+                          v-if="getPermisoByNombre('agregar-otra')"
+                        >
                           <button
                             class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                             @click.prevent="showModal('color')"
@@ -83,9 +117,13 @@
                         </div>
                       </div>
                       <em
-                        v-if="$v.parametros.color.$error&&!$v.parametros.color.required"
+                        v-if="
+                          $v.parametros.color.$error &&
+                          !$v.parametros.color.required
+                        "
                         class="text-error-select"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="form-row">
@@ -96,16 +134,26 @@
                           <select
                             name="select"
                             id="forma"
-                            :class="['form-control', $v.parametros.forma.$error? 'error-input-select':'']"
+                            :class="[
+                              'form-control',
+                              $v.parametros.forma.$error
+                                ? 'error-input-select'
+                                : '',
+                            ]"
                             v-model.trim="$v.parametros.forma.$model"
                           >
                             <option
-                              v-for="(f,index) in obtenerFormas"
+                              v-for="(f, index) in obtenerFormas"
                               :key="index"
                               :value="f.id"
-                            >{{f.nombre}}</option>
+                            >
+                              {{ f.nombre }}
+                            </option>
                           </select>
-                          <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <div
+                            class="input-group-append"
+                            v-if="getPermisoByNombre('agregar-otra')"
+                          >
                             <button
                               class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                               @click.prevent="showModal('forma_macro')"
@@ -115,9 +163,13 @@
                           </div>
                         </div>
                         <em
-                          v-if="$v.parametros.forma.$error&&!$v.parametros.forma.required"
+                          v-if="
+                            $v.parametros.forma.$error &&
+                            !$v.parametros.forma.required
+                          "
                           class="text-error-select"
-                        >{{mensajes.required}}</em>
+                          >{{ mensajes.required }}</em
+                        >
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -126,16 +178,26 @@
                         <select
                           name="select"
                           id="superficie"
-                          :class="['form-control', $v.parametros.superficie.$error? 'error-input-select':'']"
+                          :class="[
+                            'form-control',
+                            $v.parametros.superficie.$error
+                              ? 'error-input-select'
+                              : '',
+                          ]"
                           v-model.trim="$v.parametros.superficie.$model"
                         >
                           <option
-                            v-for="(s,index) in obtenerSuperficies"
+                            v-for="(s, index) in obtenerSuperficies"
                             :key="index"
                             :value="s.id"
-                          >{{s.nombre}}</option>
+                          >
+                            {{ s.nombre }}
+                          </option>
                         </select>
-                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <div
+                          class="input-group-append"
+                          v-if="getPermisoByNombre('agregar-otra')"
+                        >
                           <button
                             class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                             @click.prevent="showModal('superficie')"
@@ -145,9 +207,13 @@
                         </div>
                       </div>
                       <em
-                        v-if="$v.parametros.superficie.$error&&!$v.parametros.superficie.required"
+                        v-if="
+                          $v.parametros.superficie.$error &&
+                          !$v.parametros.superficie.required
+                        "
                         class="text-error-select"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="form-row">
@@ -157,16 +223,26 @@
                         <select
                           name="select"
                           id="borde"
-                          :class="['form-control', $v.parametros.borde.$error? 'error-input-select':'']"
+                          :class="[
+                            'form-control',
+                            $v.parametros.borde.$error
+                              ? 'error-input-select'
+                              : '',
+                          ]"
                           v-model.trim="$v.parametros.borde.$model"
                         >
                           <option
-                            v-for="(b,index) in obtenerBordes"
+                            v-for="(b, index) in obtenerBordes"
                             :key="index"
                             :value="b.id"
-                          >{{b.nombre}}</option>
+                          >
+                            {{ b.nombre }}
+                          </option>
                         </select>
-                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <div
+                          class="input-group-append"
+                          v-if="getPermisoByNombre('agregar-otra')"
+                        >
                           <button
                             class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                             @click.prevent="showModal('borde')"
@@ -176,9 +252,13 @@
                         </div>
                       </div>
                       <em
-                        v-if="$v.parametros.borde.$error&&!$v.parametros.borde.required"
+                        v-if="
+                          $v.parametros.borde.$error &&
+                          !$v.parametros.borde.required
+                        "
                         class="text-error-select"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                     <div class="col-md-6">
                       <label for="pigmento" class>Pigmento</label>
@@ -186,16 +266,26 @@
                         <select
                           name="select"
                           id="pigmento"
-                          :class="['form-control', $v.parametros.pigmento.$error? 'error-input-select':'']"
+                          :class="[
+                            'form-control',
+                            $v.parametros.pigmento.$error
+                              ? 'error-input-select'
+                              : '',
+                          ]"
                           v-model.trim="$v.parametros.pigmento.$model"
                         >
                           <option
-                            v-for="(d,index) in obtenerPigmentos"
+                            v-for="(d, index) in obtenerPigmentos"
                             :key="index"
                             :value="d.id"
-                          >{{d.nombre}}</option>
+                          >
+                            {{ d.nombre }}
+                          </option>
                         </select>
-                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <div
+                          class="input-group-append"
+                          v-if="getPermisoByNombre('agregar-otra')"
+                        >
                           <button
                             class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                             @click.prevent="showModal('pigmento')"
@@ -205,47 +295,74 @@
                         </div>
                       </div>
                       <em
-                        v-if="$v.parametros.pigmento.$error&&!$v.parametros.pigmento.required"
+                        v-if="
+                          $v.parametros.pigmento.$error &&
+                          !$v.parametros.pigmento.required
+                        "
                         class="text-error-select"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                 </template>
                 <div class="position-relative form-group">
-                  <label for="secrecion_geosminas" class>Secreción de Geosminas</label>
+                  <label for="secrecion_geosminas" class
+                    >Secreción de Geosminas</label
+                  >
                   <input
+                    dusk="secrecion_geosminas"
                     name="secrecion_geosminas"
                     id="secrecion_geosminas"
                     placeholder="..."
                     type="text"
-                    :class="['form-control', $v.parametros.secrecion_geosminas.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.secrecion_geosminas.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     v-model.trim="$v.parametros.secrecion_geosminas.$model"
                   />
                   <em
-                    v-if="$v.parametros.secrecion_geosminas.$error&&!$v.parametros.secrecion_geosminas.required"
+                    v-if="
+                      $v.parametros.secrecion_geosminas.$error &&
+                      !$v.parametros.secrecion_geosminas.required
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imagen</label>
                   <input
+                    dusk="imagen"
                     name="imagen"
                     @change="obtenerImagen"
                     id="imagen"
                     accept="image/jpeg, image/png"
                     type="file"
-                    :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control-file',
+                      $v.parametros.imagen.$error ? 'error-input-select' : '',
+                    ]"
                     ref="inputImagen"
                   />
-                  <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                  <em v-if="imagenError" class="text-error-input">{{
+                    imagenError
+                  }}</em>
                   <em
-                    v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                    v-if="
+                      $v.parametros.imagen.$error &&
+                      !$v.parametros.imagen.required
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
                 <div class="position-relative form-group">
                   <label for="otras_caract">Otras Características</label>
                   <textarea
+                    dusk="otras_caract"
                     name="text"
                     id="otras_caract"
                     class="form-control"
@@ -253,10 +370,13 @@
                   ></textarea>
                 </div>
                 <button
+                  dusk="btn-accion"
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
                   :disabled="bloquearBtn"
-                >{{nomBtnComputed}}</button>
+                >
+                  {{ nomBtnComputed }}
+                </button>
               </form>
             </div>
           </div>

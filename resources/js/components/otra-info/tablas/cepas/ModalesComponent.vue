@@ -12,15 +12,21 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Agregar {{primeraMayus(modal.tipo)}}</h5>
-            <button type="button" class="close" @click="$modal.hide('modal_agregar_tipo_cepa')">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Agregar {{ primeraMayus(modal.tipo) }}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_agregar_tipo_cepa')"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div
               class="position-relative form-group"
-              v-if="modal.tipo==='genero'||modal.tipo==='especie'"
+              v-if="modal.tipo === 'genero' || modal.tipo === 'especie'"
             >
               <label for="grupo_microbiano-modal" class>Grupo Microbiano</label>
               <select
@@ -30,38 +36,60 @@
                 v-model="modal.grupo_microbiano"
                 @change="cambiarGeneroEspecie"
               >
-                <option v-for="(gm,index) in getGrupos" :key="index" :value="gm.id">{{gm.nombre}}</option>
+                <option
+                  v-for="(gm, index) in getGrupos"
+                  :key="index"
+                  :value="gm.id"
+                >
+                  {{ gm.nombre }}
+                </option>
               </select>
             </div>
-            <div class="position-relative form-group" v-if="modal.tipo==='especie'">
+            <div
+              class="position-relative form-group"
+              v-if="modal.tipo === 'especie'"
+            >
               <label for="genero-modal" class>Genero</label>
-              <select name="select" id="genero-modal" class="form-control" v-model="modal.genero">
+              <select
+                name="select"
+                id="genero-modal"
+                class="form-control"
+                v-model="modal.genero"
+              >
                 <option
-                  v-for="(g,index) in getGenerosId(modal.grupo_microbiano)"
+                  v-for="(g, index) in getGenerosId(modal.grupo_microbiano)"
                   :key="index"
                   :value="g.id"
-                >{{g.nombre}}</option>
+                >
+                  {{ g.nombre }}
+                </option>
               </select>
             </div>
             <div class="position-relative form-group">
               <label for="nombre" class>Nombre</label>
               <input
+                dusk="nombre"
                 name="nombre"
                 id="nombre"
                 placeholder="..."
                 type="text"
                 class="form-control"
-                :class="['form-control', $v.modal.nombre.$error||errors? 'error-input-select':'']"
+                :class="[
+                  'form-control',
+                  $v.modal.nombre.$error || errors ? 'error-input-select' : '',
+                ]"
                 v-model.trim="$v.modal.nombre.$model"
               />
               <em
-                v-if="$v.modal.nombre.$error&&!$v.modal.nombre.required"
+                v-if="$v.modal.nombre.$error && !$v.modal.nombre.required"
                 class="text-error-input"
-              >{{mensajes.required}}</em>
+                >{{ mensajes.required }}</em
+              >
               <em
-                v-if="$v.modal.nombre.$error&&!$v.modal.nombre.unique"
+                v-if="$v.modal.nombre.$error && !$v.modal.nombre.unique"
                 class="text-error-input"
-              >{{mensajes.unique}}</em>
+                >{{ mensajes.unique }}</em
+              >
             </div>
           </div>
           <div class="modal-footer">
@@ -69,13 +97,18 @@
               type="button"
               class="btn btn-secondary"
               @click="$modal.hide('modal_agregar_tipo_cepa')"
-            >Cancelar</button>
+            >
+              Cancelar
+            </button>
             <button
+              dusk="btn-accion-modal"
               type="button"
               class="btn btn-success"
               @click="agregarTipo"
               :disabled="bloquearBtnModal"
-            >Agregar</button>
+            >
+              Agregar
+            </button>
           </div>
         </div>
       </modal>
@@ -93,40 +126,62 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Editar {{primeraMayus(modal.tipo)}}</h5>
-            <button type="button" class="close" @click="$modal.hide('modal_editar_tipo_cepa')">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Editar {{ primeraMayus(modal.tipo) }}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_editar_tipo_cepa')"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <div class="position-relative form-group" v-if="modal.tipo==='especie'">
+            <div
+              class="position-relative form-group"
+              v-if="modal.tipo === 'especie'"
+            >
               <label for="genero-modal" class>Genero</label>
-              <select name="select" id="genero-modal" class="form-control" v-model="modal.genero">
+              <select
+                name="select"
+                id="genero-modal"
+                class="form-control"
+                v-model="modal.genero"
+              >
                 <option
-                  v-for="(g,index) in getGenerosId(modal.grupo_microbiano)"
+                  v-for="(g, index) in getGenerosId(modal.grupo_microbiano)"
                   :key="index"
                   :value="g.id"
-                >{{g.nombre}}</option>
+                >
+                  {{ g.nombre }}
+                </option>
               </select>
             </div>
             <div class="position-relative form-group">
               <label for="nombre">Nombre</label>
               <input
+                dusk="nombre"
                 name="nombre"
                 id="nombre"
                 placeholder="..."
                 type="text"
-                :class="['form-control', $v.modal.nombre.$error||errors? 'error-input-select':'']"
+                :class="[
+                  'form-control',
+                  $v.modal.nombre.$error || errors ? 'error-input-select' : '',
+                ]"
                 v-model.trim="$v.modal.nombre.$model"
               />
               <em
-                v-if="$v.modal.nombre.$error&&!$v.modal.nombre.required"
+                v-if="$v.modal.nombre.$error && !$v.modal.nombre.required"
                 class="text-error-input"
-              >{{mensajes.required}}</em>
+                >{{ mensajes.required }}</em
+              >
               <em
-                v-if="$v.modal.nombre.$error&&!$v.modal.nombre.unique"
+                v-if="$v.modal.nombre.$error && !$v.modal.nombre.unique"
                 class="text-error-input"
-              >{{mensajes.unique}}</em>
+                >{{ mensajes.unique }}</em
+              >
             </div>
           </div>
           <div class="modal-footer">
@@ -134,13 +189,18 @@
               type="button"
               class="btn btn-secondary"
               @click="$modal.hide('modal_editar_tipo_cepa')"
-            >Cancelar</button>
+            >
+              Cancelar
+            </button>
             <button
+              dusk="btn-accion-modal"
               type="button"
               class="btn btn-success"
               @click="editarTipo"
               :disabled="bloquearBtnModal"
-            >Editar</button>
+            >
+              Editar
+            </button>
           </div>
         </div>
       </modal>
@@ -158,26 +218,39 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar {{primeraMayus(modal.tipo)}}</h5>
-            <button type="button" class="close" @click="$modal.hide('modal_eliminar_tipo_cepa')">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Eliminar {{ primeraMayus(modal.tipo) }}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_eliminar_tipo_cepa')"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Esta segura/o de eliminar el/la {{primeraMayus(modal.tipo)}}?.</p>
+            <p>
+              Esta segura/o de eliminar el/la {{ primeraMayus(modal.tipo) }}?.
+            </p>
           </div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
               @click="$modal.hide('modal_eliminar_tipo_cepa')"
-            >Cancelar</button>
+            >
+              Cancelar
+            </button>
             <button
+              dusk="btn-accion-modal"
               type="button"
               class="btn btn-success"
               :disabled="bloquearBtnModal"
               @click="eliminarTipo"
-            >Eliminar</button>
+            >
+              Eliminar
+            </button>
           </div>
         </div>
       </modal>

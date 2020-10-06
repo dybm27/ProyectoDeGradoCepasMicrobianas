@@ -217,6 +217,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-macro",
                           to: { name: "caract-macro-cepa-actinomiceto" },
                           role: "tab",
                           "active-class": "active"
@@ -237,6 +238,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-micro",
                           to: { name: "caract-micro-cepa-actinomiceto" },
                           "active-class": "active",
                           role: "tab"
@@ -257,6 +259,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-identi-bioqui",
                           to: { name: "identi-bioqui-cepa-actinomiceto" },
                           "active-class": "active",
                           role: "tab"
@@ -277,6 +280,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-otras-caract",
                           to: { name: "otras-caract-cepa-actinomiceto" },
                           "active-class": "active",
                           role: "tab"
@@ -514,6 +518,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-macro",
                           to: { name: "caract-macro-cepa-bacteria" },
                           role: "tab",
                           "active-class": "active"
@@ -534,6 +539,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-micro",
                           to: { name: "caract-micro-cepa-bacteria" },
                           role: "tab",
                           "active-class": "active"
@@ -554,6 +560,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-bioqui",
                           to: { name: "caract-bioqui-cepa-bacteria" },
                           role: "tab",
                           "active-class": "active"
@@ -574,6 +581,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-fisio",
                           to: { name: "caract-fisio-cepa-bacteria" },
                           role: "tab",
                           "active-class": "active"
@@ -594,6 +602,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-identi-molecu",
                           to: { name: "identi-molecu-cepa-bacteria" },
                           role: "tab",
                           "active-class": "active"
@@ -811,6 +820,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-macro",
                           to: { name: "caract-macro-cepa-hongo" },
                           role: "tab",
                           "active-class": "active"
@@ -831,6 +841,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-micro",
                           to: { name: "caract-micro-cepa-hongo" },
                           role: "tab",
                           "active-class": "active"
@@ -851,6 +862,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-bioqui",
                           to: { name: "caract-bioqui-cepa-hongo" },
                           role: "tab",
                           "active-class": "active"
@@ -871,6 +883,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-identi-molecu",
                           to: { name: "identi-molecu-cepa-hongo" },
                           role: "tab",
                           "active-class": "active"
@@ -1068,6 +1081,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-macro",
                           to: { name: "caract-macro-cepa-levadura" },
                           role: "tab",
                           "active-class": "active"
@@ -1088,6 +1102,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-micro",
                           to: { name: "caract-micro-cepa-levadura" },
                           role: "tab",
                           "active-class": "active"
@@ -1108,6 +1123,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-caract-bioqui",
                           to: { name: "caract-bioqui-cepa-levadura" },
                           role: "tab",
                           "active-class": "active"
@@ -1128,6 +1144,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
+                          dusk: "nav-identi-molecu",
                           to: { name: "identi-molecu-cepa-levadura" },
                           role: "tab",
                           "active-class": "active"

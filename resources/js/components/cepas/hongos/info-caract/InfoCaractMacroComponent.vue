@@ -3,7 +3,9 @@
     <div class="tabs-animation">
       <div class="mb-3 card">
         <div class="card-header-tab card-header">
-          <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+          <div
+            class="card-header-title font-size-lg text-capitalize font-weight-normal"
+          >
             <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
             Características Macroscópicas
           </div>
@@ -12,17 +14,25 @@
               v-show="mostrarBtnCancelar"
               @click="cancelar"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
-            >Cancelar</button>
+            >
+              Cancelar
+            </button>
             <button
+              dusk="btn-eliminar"
               v-show="mostrarBtnEliminar"
               @click="eliminarMedio"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
-            >Eliminar Medio</button>
+            >
+              Eliminar Medio
+            </button>
             <button
+              dusk="btn-agregar"
               v-show="mostrarBtnAgregarComputed"
               @click="abrirForm"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
-            >Agregar Medio</button>
+            >
+              Agregar Medio
+            </button>
           </div>
         </div>
 
@@ -33,13 +43,17 @@
                 <ul class="nav nav-justified">
                   <template v-if="mostrar1">
                     <li class="nav-item">
-                      <a class="nav-link" :class="computedActive1" @click="cambiarActive(1)">
+                      <a
+                        class="nav-link"
+                        :class="computedActive1"
+                        @click="cambiarActive(1)"
+                      >
                         <div class="widget-number text-success">Medio 1</div>
                         <div class="tab-subheading">
                           <span class="pr-2 opactiy-6">
                             <i class="pe-7s-note2"></i>
                           </span>
-                          {{medio1}}
+                          {{ medio1 }}
                         </div>
                       </a>
                     </li>
@@ -47,13 +61,17 @@
 
                   <template v-if="mostrar2">
                     <li class="nav-item">
-                      <a class="nav-link" :class="computedActive2" @click="cambiarActive(2)">
+                      <a
+                        class="nav-link"
+                        :class="computedActive2"
+                        @click="cambiarActive(2)"
+                      >
                         <div class="widget-number text-success">Medio 2</div>
                         <div class="tab-subheading">
                           <span class="pr-2 opactiy-6">
                             <i class="pe-7s-note2"></i>
                           </span>
-                          {{medio2}}
+                          {{ medio2 }}
                         </div>
                       </a>
                     </li>
@@ -61,13 +79,17 @@
 
                   <template v-if="mostrar3">
                     <li class="nav-item">
-                      <a class="nav-link" :class="computedActive3" @click="cambiarActive(3)">
+                      <a
+                        class="nav-link"
+                        :class="computedActive3"
+                        @click="cambiarActive(3)"
+                      >
                         <div class="widget-number text-success">Medio 3</div>
                         <div class="tab-subheading">
                           <span class="pr-2 opactiy-6">
                             <i class="pe-7s-note2"></i>
                           </span>
-                          {{medio3}}
+                          {{ medio3 }}
                         </div>
                       </a>
                     </li>

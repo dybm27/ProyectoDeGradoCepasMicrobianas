@@ -143,6 +143,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["tipo", "tipoCaract", "caract", "url"],
@@ -290,7 +301,13 @@ var render = function() {
                       staticClass: "modal-title",
                       attrs: { id: "exampleModalLongTitle" }
                     },
-                    [_vm._v("Eliminar " + _vm._s(_vm.tipoCaract))]
+                    [
+                      _vm._v(
+                        "\n            Eliminar " +
+                          _vm._s(_vm.tipoCaract) +
+                          "\n          "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -332,17 +349,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "btn-eliminar-modal",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.eliminar }
                     },
-                    [_vm._v("Eliminar")]
+                    [_vm._v("\n            Eliminar\n          ")]
                   )
                 ])
               ])

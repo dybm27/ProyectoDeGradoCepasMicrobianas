@@ -5,127 +5,199 @@
         <div class="main-card mb-3 card">
           <form @submit.prevent="evento">
             <div class="card-body">
-              <h5 class="card-title">{{titulo}}</h5>
-              <template v-if="errors!=''">
+              <h5 class="card-title">{{ titulo }}</h5>
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="nombres" class>Nombres</label>
                 <input
+                  dusk="nombres"
                   name="nombres"
                   id="nombres"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.nombres.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.nombres.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.nombres.$model"
                 />
                 <em
-                  v-if="$v.parametros.nombres.$error&&!$v.parametros.nombres.required"
+                  v-if="
+                    $v.parametros.nombres.$error &&
+                    !$v.parametros.nombres.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.nombres.$error&&!$v.parametros.nombres.alpha"
+                  v-if="
+                    $v.parametros.nombres.$error && !$v.parametros.nombres.alpha
+                  "
                   class="text-error-input"
-                >{{mensajes.alpha}}</em>
+                  >{{ mensajes.alpha }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="apellidos" class>Apellidos</label>
                 <input
+                  dusk="apellidos"
                   name="apellidos"
                   id="apellidos"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.apellidos.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.apellidos.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.apellidos.$model"
                 />
                 <em
-                  v-if="$v.parametros.apellidos.$error&&!$v.parametros.apellidos.required"
+                  v-if="
+                    $v.parametros.apellidos.$error &&
+                    !$v.parametros.apellidos.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.apellidos.$error&&!$v.parametros.apellidos.alpha"
+                  v-if="
+                    $v.parametros.apellidos.$error &&
+                    !$v.parametros.apellidos.alpha
+                  "
                   class="text-error-input"
-                >{{mensajes.alpha}}</em>
+                  >{{ mensajes.alpha }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="email" class>Email</label>
                 <input
+                  dusk="email"
                   name="email"
                   id="email"
                   placeholder="..."
                   type="email"
-                  :class="['form-control', $v.parametros.email.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.email.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.email.$model"
                 />
                 <em
-                  v-if="$v.parametros.email.$error&&!$v.parametros.email.required"
+                  v-if="
+                    $v.parametros.email.$error && !$v.parametros.email.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.email.$error&&!$v.parametros.email.email"
+                  v-if="
+                    $v.parametros.email.$error && !$v.parametros.email.email
+                  "
                   class="text-error-input"
-                >{{mensajes.email}}</em>
+                  >{{ mensajes.email }}</em
+                >
                 <em
-                  v-if="$v.parametros.email.$error&&!$v.parametros.email.unique"
+                  v-if="
+                    $v.parametros.email.$error && !$v.parametros.email.unique
+                  "
                   class="text-error-input"
-                >{{mensajes.unique}}</em>
+                  >{{ mensajes.unique }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="nivel_estudio" class>Nivel de Estudio</label>
                 <input
+                  dusk="nivel_estudio"
                   name="nivel_estudio"
                   id="nivel_estudio"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.nivel_estudio.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.nivel_estudio.$error
+                      ? 'error-input-select'
+                      : '',
+                  ]"
                   v-model.trim="$v.parametros.nivel_estudio.$model"
                 />
                 <em
-                  v-if="$v.parametros.nivel_estudio.$error&&!$v.parametros.nivel_estudio.required"
+                  v-if="
+                    $v.parametros.nivel_estudio.$error &&
+                    !$v.parametros.nivel_estudio.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.nivel_estudio.$error&&!$v.parametros.nivel_estudio.alpha"
+                  v-if="
+                    $v.parametros.nivel_estudio.$error &&
+                    !$v.parametros.nivel_estudio.alpha
+                  "
                   class="text-error-input"
-                >{{mensajes.alpha}}</em>
+                  >{{ mensajes.alpha }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="cargo" class>Cargo</label>
                 <input
+                  dusk="cargo"
                   name="cargo"
                   id="cargo"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.cargo.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.cargo.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.cargo.$model"
                 />
                 <em
-                  v-if="$v.parametros.cargo.$error&&!$v.parametros.cargo.required"
+                  v-if="
+                    $v.parametros.cargo.$error && !$v.parametros.cargo.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.cargo.$error&&!$v.parametros.cargo.alpha"
+                  v-if="
+                    $v.parametros.cargo.$error && !$v.parametros.cargo.alpha
+                  "
                   class="text-error-input"
-                >{{mensajes.alpha}}</em>
+                  >{{ mensajes.alpha }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="imagen" class>Imagen</label>
                 <input
+                  dusk="imagen"
                   name="imagen"
                   @change="obtenerImagen"
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control-file',
+                    $v.parametros.imagen.$error ? 'error-input-select' : '',
+                  ]"
                   ref="inputImagen"
                 />
-                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{
+                  imagenError
+                }}</em>
                 <em
-                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  v-if="
+                    $v.parametros.imagen.$error &&
+                    !$v.parametros.imagen.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <div class="custom-checkbox custom-control mb-2">
                 <input
@@ -134,13 +206,21 @@
                   class="custom-control-input"
                   v-model="parametros.publicar"
                 />
-                <label class="custom-control-label" for="publicar">Desea publicar el Investigador?</label>
+                <label
+                  class="custom-control-label"
+                  dusk="publicar"
+                  for="publicar"
+                  >Desea publicar el Investigador?</label
+                >
               </div>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtnComputed}}</button>
+              >
+                {{ nomBtnComputed }}
+              </button>
             </div>
           </form>
         </div>
@@ -150,7 +230,7 @@
           <div class="card-body">
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
-              <template v-if="mostraImagen===info.imagenPublica">
+              <template v-if="mostraImagen === info.imagenPublica">
                 <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"

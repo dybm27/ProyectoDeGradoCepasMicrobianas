@@ -83,8 +83,8 @@ export default {
       "accionEliminarTipoCaractActinomiceto",
     ]),
     cambiarTipo(ruta) {
-      if (ruta.includes("cepas")) {
-        this.tipo = "Cepas";
+      if (ruta.includes("actinomicetos")) {
+        this.tipo = "Actinomicetos";
       } else if (ruta.includes("bacterias")) {
         this.tipo = "Bacterias";
       } else if (ruta.includes("hongos")) {
@@ -92,7 +92,7 @@ export default {
       } else if (ruta.includes("levaduras")) {
         this.tipo = "Levaduras";
       } else {
-        this.tipo = "Actinomicetos";
+        this.tipo = "Cepas";
       }
     },
   },

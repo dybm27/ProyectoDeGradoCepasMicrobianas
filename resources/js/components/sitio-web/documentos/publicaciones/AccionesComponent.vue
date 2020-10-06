@@ -2,10 +2,14 @@
   <div class="container">
     <div
       class="row"
-      v-if="getPermisoByNombres(['editar-publicacion','eliminar-publicacion'])&&!disabledBtns"
+      v-if="
+        getPermisoByNombres(['editar-publicacion', 'eliminar-publicacion']) &&
+        !disabledBtns
+      "
     >
       <div class="col-md-12 col-lg-12">
         <button
+          :dusk="'btn-editar-' + rowData.id"
           v-if="getPermisoByNombre('editar-publicacion')"
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar'"
@@ -15,6 +19,7 @@
         </button>
 
         <button
+          :dusk="'btn-eliminar-' + rowData.id"
           v-if="getPermisoByNombre('eliminar-publicacion')"
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar'"

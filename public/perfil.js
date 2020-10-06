@@ -453,6 +453,82 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -813,35 +889,59 @@ var render = function() {
                                       "menu-header-content btn-pane-right"
                                   },
                                   [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "avatar-icon-wrapper mr-2 avatar-icon-xl"
-                                      },
-                                      [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass: "avatar-icon rounded"
-                                          },
-                                          [
-                                            _c("img", {
-                                              attrs: {
-                                                src: _vm.auth.avatarPublico,
-                                                alt: "Avatar"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", [
+                                    _c("div", { staticClass: "container" }, [
                                       _c(
-                                        "h5",
-                                        { staticClass: "menu-header-title" },
-                                        [_vm._v(_vm._s(_vm.auth.name))]
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "row justify-content-center"
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "avatar-icon-wrapper mr-2 avatar-icon-xl"
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "avatar-icon rounded"
+                                                },
+                                                [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        _vm.auth.avatarPublico,
+                                                      alt: "Avatar"
+                                                    }
+                                                  })
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "row justify-content-center"
+                                        },
+                                        [
+                                          _c("div", [
+                                            _c(
+                                              "h5",
+                                              {
+                                                staticClass: "menu-header-title"
+                                              },
+                                              [_vm._v(_vm._s(_vm.auth.name))]
+                                            )
+                                          ])
+                                        ]
                                       )
                                     ])
                                   ]
@@ -1205,7 +1305,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -1219,7 +1319,7 @@ var render = function() {
                       },
                       on: { click: _vm.eventBtn }
                     },
-                    [_vm._v("Cambiar")]
+                    [_vm._v("\n            Cambiar\n          ")]
                   )
                 ])
               ])
@@ -1555,7 +1655,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -1569,7 +1669,7 @@ var render = function() {
                       },
                       on: { click: _vm.eventBtn }
                     },
-                    [_vm._v("Cambiar")]
+                    [_vm._v("\n            Cambiar\n          ")]
                   )
                 ])
               ])
@@ -1631,7 +1731,11 @@ var staticRenderFns = [
                   staticClass: "alert alert-danger mt-4 text-center",
                   attrs: { role: "alert" }
                 },
-                [_vm._v("Ya has ingresado desde otra pestaña del navegador!!")]
+                [
+                  _vm._v(
+                    "\n                  Ya has ingresado desde otra pestaña del navegador!!\n                "
+                  )
+                ]
               )
             ])
           ])

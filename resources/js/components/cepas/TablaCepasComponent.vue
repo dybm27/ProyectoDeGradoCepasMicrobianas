@@ -3,57 +3,70 @@
     <template v-if="mostrarTabla">
       <MyVuetable
         ref="tabla"
-        :apiUrl="'/info-panel/'+tipo+'s-tabla'"
+        :apiUrl="'/info-panel/' + tipo + 's-tabla'"
         :fields="FieldDefs"
         :sortOrder="sortOrder"
         :detailRowComponent="detailRowComponent"
-        :nameGet="tipo+'s'"
+        :nameGet="tipo + 's'"
       ></MyVuetable>
     </template>
     <template v-else>
       <div class="text-center">
         <h5 class="mt-5 mb-5">
           <span class="pr-1">
-            <b class="text-success">AÚN NO SE HAN AGREGADO {{titulo}}</b>
+            <b class="text-success">AÚN NO SE HAN AGREGADO {{ titulo }}</b>
           </span>
         </h5>
       </div>
     </template>
-    <modal
-      :name="'modal_eliminar_cepa'"
-      classes="my_modal"
-      :maxWidth="400"
-      :adaptive="true"
-      height="auto"
-      :scrollable="true"
-      @before-open="beforeOpenEliminar"
-      @closed="closeEliminar"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Cepa Microbiana</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_eliminar_cepa')">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <transition name="fade">
+      <modal
+        :name="'modal_eliminar_cepa'"
+        classes="my_modal"
+        :maxWidth="400"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+        @before-open="beforeOpenEliminar"
+        @closed="closeEliminar"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Eliminar Cepa Microbiana
+            </h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_eliminar_cepa')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Esta segura/o de eliminar la Cepa?.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_eliminar_cepa')"
+            >
+              Cancelar
+            </button>
+            <button
+              dusk="eliminar-cepa"
+              type="button"
+              class="btn btn-success"
+              :disabled="bloquearBtnModal"
+              @click="eliminarCepa"
+            >
+              Eliminar
+            </button>
+          </div>
         </div>
-        <div class="modal-body">
-          <p>Esta segura/o de eliminar la Cepa?.</p>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_eliminar_cepa')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="eliminarCepa"
-          >Eliminar</button>
-        </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 

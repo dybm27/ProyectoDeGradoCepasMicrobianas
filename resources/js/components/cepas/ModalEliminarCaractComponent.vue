@@ -11,26 +11,37 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar {{tipoCaract}}</h5>
-            <button type="button" class="close" @click="$modal.hide('modal_eliminar_caract')">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Eliminar {{ tipoCaract }}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_eliminar_caract')"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Esta segura/o de eliminar la {{tipo}}?.</p>
+            <p>Esta segura/o de eliminar la {{ tipo }}?.</p>
           </div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
               @click="$modal.hide('modal_eliminar_caract')"
-            >Cancelar</button>
+            >
+              Cancelar
+            </button>
             <button
+              dusk="btn-eliminar-modal"
               type="button"
               class="btn btn-success"
               :disabled="bloquearBtnModal"
               @click="eliminar"
-            >Eliminar</button>
+            >
+              Eliminar
+            </button>
           </div>
         </div>
       </modal>

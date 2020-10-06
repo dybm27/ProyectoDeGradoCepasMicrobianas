@@ -2,16 +2,37 @@
   <div>
     <ul
       class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
-      v-if="getPermisoByNombres(['agregar-proyecto','editar-proyecto','eliminar-proyecto'])
-      &&getPermisoByNombres(['agregar-publicacion','editar-publicacion','eliminar-publicacion'])"
+      v-if="
+        getPermisoByNombres([
+          'agregar-proyecto',
+          'editar-proyecto',
+          'eliminar-proyecto',
+        ]) &&
+        getPermisoByNombres([
+          'agregar-publicacion',
+          'editar-publicacion',
+          'eliminar-publicacion',
+        ])
+      "
     >
       <li class="nav-item">
-        <router-link :to="{name:'proyectos'}" class="nav-link" active-class="active" exact>
+        <router-link
+          :to="{ name: 'proyectos' }"
+          class="nav-link"
+          active-class="active"
+          dusk="nav-proyectos"
+          exact
+        >
           <span>Proyectos</span>
         </router-link>
       </li>
       <li class="nav-item">
-        <router-link :to="{name:'publicaciones'}" class="nav-link" active-class="active">
+        <router-link
+          dusk="nav-publicaciones"
+          :to="{ name: 'publicaciones' }"
+          class="nav-link"
+          active-class="active"
+        >
           <span>Publicaciones</span>
         </router-link>
       </li>

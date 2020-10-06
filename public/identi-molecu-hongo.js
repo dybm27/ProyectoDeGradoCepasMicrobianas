@@ -371,6 +371,136 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -642,6 +772,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -763,7 +905,11 @@ var render = function() {
                         { staticClass: "alert alert-danger" },
                         _vm._l(_vm.errors, function(item, index) {
                           return _c("p", { key: index }, [
-                            _vm._v(_vm._s(item[0]))
+                            _vm._v(
+                              "\n                  " +
+                                _vm._s(item[0]) +
+                                "\n                "
+                            )
                           ])
                         }),
                         0
@@ -796,6 +942,7 @@ var render = function() {
                               : ""
                           ],
                           attrs: {
+                            dusk: "nombre_forward",
                             placeholder: "Nombre..",
                             name: "nombre_forward",
                             id: "nombre_forward",
@@ -854,6 +1001,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "secuencia_forward",
                               name: "secuencia_forward",
                               id: "secuencia_forward",
                               placeholder: "Secuencia...",
@@ -913,6 +1061,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "producto_forward",
                               name: "producto_forward",
                               id: "producto_forward",
                               placeholder: "Producto...",
@@ -972,6 +1121,7 @@ var render = function() {
                               : ""
                           ],
                           attrs: {
+                            dusk: "nombre_reversed",
                             placeholder: "Nombre..",
                             name: "nombre_reversed",
                             id: "nombre_reversed",
@@ -1030,6 +1180,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "secuencia_reversed",
                               name: "secuencia_reversed",
                               id: "secuencia_reversed",
                               placeholder: "Secuencia...",
@@ -1089,6 +1240,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "producto_reversed",
                               name: "producto_reversed",
                               id: "producto_reversed",
                               placeholder: "Producto...",
@@ -1178,6 +1330,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "imagen1",
                               name: "imagen_pcr",
                               id: "imagen_pcr",
                               type: "file",
@@ -1220,6 +1373,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "imagen2",
                               name: "imagen_blast",
                               id: "imagen_blast",
                               type: "file",
@@ -1277,6 +1431,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "condiciones_pcr",
                               name: "condiciones_pcr",
                               id: "condiciones_pcr",
                               placeholder: "...",
@@ -1338,6 +1493,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "blast",
                               name: "blast",
                               id: "blast",
                               placeholder: "...",
@@ -1408,6 +1564,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "analisis_filogenetico",
                               name: "analisis_filogenetico",
                               id: "analisis_filogenetico"
                             },
@@ -1462,6 +1619,7 @@ var render = function() {
                             ],
                             staticClass: "form-control",
                             attrs: {
+                              dusk: "observaciones",
                               name: "observaciones",
                               id: "observaciones"
                             },
@@ -1490,9 +1648,15 @@ var render = function() {
                   {
                     staticClass: "mb-2 mr-2 btn btn-block",
                     class: _vm.btnClase,
-                    attrs: { disabled: _vm.bloquearBtn }
+                    attrs: { dusk: "btn-accion", disabled: _vm.bloquearBtn }
                   },
-                  [_vm._v(_vm._s(_vm.nomBtnComputed))]
+                  [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(_vm.nomBtnComputed) +
+                        "\n            "
+                    )
+                  ]
                 )
               ],
               2
@@ -1716,7 +1880,7 @@ var render = function() {
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                       on: { click: _vm.cancelar }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -1732,13 +1896,18 @@ var render = function() {
                       ],
                       staticClass:
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                      attrs: { dusk: "btn-eliminar" },
                       on: {
                         click: function($event) {
                           return _vm.$modal.show("modal_eliminar_caract")
                         }
                       }
                     },
-                    [_vm._v("Eliminar Identificación")]
+                    [
+                      _vm._v(
+                        "\n            Eliminar Identificación\n          "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -1754,9 +1923,10 @@ var render = function() {
                       ],
                       staticClass:
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                      attrs: { dusk: "btn-agregar" },
                       on: { click: _vm.btnAgregar }
                     },
-                    [_vm._v("Agregar Identificación")]
+                    [_vm._v("\n            Agregar Identificación\n          ")]
                   )
                 ]
               )

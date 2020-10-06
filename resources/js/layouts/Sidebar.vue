@@ -10,7 +10,7 @@
             </router-link>
           </li>
           <li
-            :class="mostrarMenuCepas?'mm-active':''"
+            :class="['mostrar-cursor',mostrarMenuCepas?'mm-active':'']"
             v-if="getPermisoByNombres(['agregar-cepa','ver-cepa','editar-cepa','eliminar-cepa','caract-cepa'])"
           >
             <a :class="classActive" @click="mostrarMenuCepas=!mostrarMenuCepas">

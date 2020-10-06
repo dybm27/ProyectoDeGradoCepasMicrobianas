@@ -4,46 +4,65 @@
       <div class="col-md-6">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <h5 class="card-title">{{tituloForm}}</h5>
+            <h5 class="card-title">{{ tituloForm }}</h5>
             <form @submit.prevent="evento">
-              <template v-if="errors!=''">
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="enzimas" class>Enzimas</label>
                 <textarea
+                  dusk="enzimas"
                   name="enzimas"
                   id="enzimas"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.enzimas.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.enzimas.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.enzimas.$model"
                 />
                 <em
-                  v-if="$v.parametros.enzimas.$error&&!$v.parametros.enzimas.required"
+                  v-if="
+                    $v.parametros.enzimas.$error &&
+                    !$v.parametros.enzimas.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="azucares" class>Azúcares</label>
                 <textarea
+                  dusk="azucares"
                   name="azucares"
                   id="azucares"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.azucares.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.azucares.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.azucares.$model"
                 />
                 <em
-                  v-if="$v.parametros.azucares.$error&&!$v.parametros.azucares.required"
+                  v-if="
+                    $v.parametros.azucares.$error &&
+                    !$v.parametros.azucares.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="otras_caract">Otras Características</label>
                 <textarea
+                  dusk="otras_caract"
                   name="otras_caract"
                   id="otras_caract"
                   class="form-control"
@@ -54,38 +73,48 @@
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
+                    dusk="imagen"
                     name="imagen"
                     @change="obtenerImagenes"
                     id="imagen"
                     type="file"
                     accept="image/jpeg, image/png"
-                    :class="['form-control-file', 
-                      $v.parametros.imagen1.$error
-                      ||$v.parametros.imagen2.$error
-                      ||$v.parametros.imagen3.$error
-                      ? 'error-input-select':'']"
+                    :class="[
+                      'form-control-file',
+                      $v.parametros.imagen1.$error ||
+                      $v.parametros.imagen2.$error ||
+                      $v.parametros.imagen3.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     ref="inputImagen"
                     multiple
                   />
-                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em v-if="erroresImagenes" class="text-error-input">{{
+                    erroresImagenes
+                  }}</em>
                   <em
-                    v-if="($v.parametros.imagen1.$error
-                        &&!$v.parametros.imagen1.required)
-                        ||
-                        ($v.parametros.imagen2.$error
-                        &&!$v.parametros.imagen2.required) 
-                        ||
-                        ($v.parametros.imagen3.$error
-                        &&!$v.parametros.imagen3.required)"
+                    v-if="
+                      ($v.parametros.imagen1.$error &&
+                        !$v.parametros.imagen1.required) ||
+                      ($v.parametros.imagen2.$error &&
+                        !$v.parametros.imagen2.required) ||
+                      ($v.parametros.imagen3.$error &&
+                        !$v.parametros.imagen3.required)
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
               </template>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtn}}</button>
+              >
+                {{ nomBtn }}
+              </button>
             </form>
           </div>
         </div>
@@ -94,7 +123,12 @@
         <div class="main-card mb-3 card">
           <div class="card-body">
             <template v-if="validarTipoForm">
-              <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+              <template
+                v-if="
+                  imagenesCroppie.length === cantImagenes &&
+                  $refs.inputImagen.value
+                "
+              >
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"

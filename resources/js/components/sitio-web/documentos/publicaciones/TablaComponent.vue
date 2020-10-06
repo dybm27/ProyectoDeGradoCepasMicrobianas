@@ -32,8 +32,14 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Publicación</h5>
-            <button type="button" class="close" @click="$modal.hide('modal_eliminar_publicacion')">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Eliminar Publicación
+            </h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_eliminar_publicacion')"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -45,13 +51,18 @@
               type="button"
               class="btn btn-secondary"
               @click="$modal.hide('modal_eliminar_publicacion')"
-            >Cancelar</button>
+            >
+              Cancelar
+            </button>
             <button
+              dusk="btn-eliminar-modal"
               type="button"
               class="btn btn-success"
               :disabled="bloquearBtnModal"
               @click="eliminarPublicacion"
-            >Eliminar</button>
+            >
+              Eliminar
+            </button>
           </div>
         </div>
       </modal>

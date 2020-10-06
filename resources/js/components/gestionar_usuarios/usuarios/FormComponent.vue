@@ -5,30 +5,41 @@
         <div class="main-card mb-3 card">
           <form @submit.prevent="evento">
             <div class="card-body">
-              <h5 class="card-title">{{titulo}}</h5>
-              <template v-if="errors!=''">
+              <h5 class="card-title">{{ titulo }}</h5>
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item}}</p>
+                  <p v-for="(item, index) in errors" :key="index">{{ item[0] }}</p>
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="nombre" class>Nombre</label>
                 <input
+                  dusk="nombre"
                   name="nombre"
                   id="nombre"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.nombre.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.nombre.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.nombre.$model"
                 />
                 <em
-                  v-if="$v.parametros.nombre.$error&&!$v.parametros.nombre.required"
+                  v-if="
+                    $v.parametros.nombre.$error &&
+                    !$v.parametros.nombre.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.nombre.$error&&!$v.parametros.nombre.alpha"
+                  v-if="
+                    $v.parametros.nombre.$error && !$v.parametros.nombre.alpha
+                  "
                   class="text-error-input"
-                >{{mensajes.alpha}}</em>
+                  >{{ mensajes.alpha }}</em
+                >
               </div>
               <template v-if="getRoles">
                 <div class="osition-relative form-group">
@@ -36,116 +47,189 @@
                   <select
                     name="select"
                     id="rol"
-                    :class="['form-control', $v.parametros.rol.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.rol.$error ? 'error-input-select' : '',
+                    ]"
                     v-model.trim="$v.parametros.rol.$model"
                   >
-                    <option v-for="(tu,index) in getRoles" :key="index" :value="tu.id">{{tu.nombre}}</option>
+                    <option
+                      v-for="(tu, index) in getRoles"
+                      :key="index"
+                      :value="tu.id"
+                    >
+                      {{ tu.nombre }}
+                    </option>
                   </select>
                   <em
-                    v-if="$v.parametros.rol.$error&&!$v.parametros.rol.required"
+                    v-if="
+                      $v.parametros.rol.$error && !$v.parametros.rol.required
+                    "
                     class="text-error-select"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="imagen" class>Imagen</label>
                 <input
+                  dusk="imagen"
                   name="imagen"
                   @change="obtenerImagen"
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control-file',
+                    $v.parametros.imagen.$error ? 'error-input-select' : '',
+                  ]"
                   ref="inputImagen"
                 />
-                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{
+                  imagenError
+                }}</em>
                 <em
-                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  v-if="
+                    $v.parametros.imagen.$error &&
+                    !$v.parametros.imagen.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="email" class>Email</label>
                 <input
+                  dusk="email"
                   name="email"
                   id="email"
                   placeholder="..."
                   type="email"
-                  :class="['form-control', $v.parametros.email.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.email.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.email.$model"
                 />
                 <em
-                  v-if="$v.parametros.email.$error&&!$v.parametros.email.required"
+                  v-if="
+                    $v.parametros.email.$error && !$v.parametros.email.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.email.$error&&!$v.parametros.email.email"
+                  v-if="
+                    $v.parametros.email.$error && !$v.parametros.email.email
+                  "
                   class="text-error-input"
-                >{{mensajes.email}}</em>
+                  >{{ mensajes.email }}</em
+                >
                 <em
-                  v-if="$v.parametros.email.$error&&!$v.parametros.email.unique"
+                  v-if="
+                    $v.parametros.email.$error && !$v.parametros.email.unique
+                  "
                   class="text-error-input"
-                >{{mensajes.unique}}</em>
+                  >{{ mensajes.unique }}</em
+                >
               </div>
               <label for="pass" class>Contraseña</label>
               <div class="input-group mb-3">
                 <input
+                  dusk="pass1"
                   name="pass"
                   id="pass"
                   placeholder="..."
-                  :type="showPass?'text':'password'"
-                  :class="['form-control', $v.parametros.pass.$error? 'error-input-select':'']"
+                  :type="showPass ? 'text' : 'password'"
+                  :class="[
+                    'form-control',
+                    $v.parametros.pass.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.pass.$model"
                 />
                 <div class="input-group-append verContraseña">
-                  <span class="input-group-text" @click="showPass=!showPass">
+                  <span class="input-group-text" @click="showPass = !showPass">
                     <i class="fas fa-eye" v-if="showPass"></i>
                     <i class="fas fa-eye-slash" v-else></i>
                   </span>
                 </div>
                 <em
-                  v-if="$v.parametros.pass.$error&&!$v.parametros.pass.required&&validarTipoForm"
+                  v-if="
+                    $v.parametros.pass.$error &&
+                    !$v.parametros.pass.required &&
+                    validarTipoForm
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.pass.$error&&!$v.parametros.pass.minLength"
+                  v-if="
+                    $v.parametros.pass.$error && !$v.parametros.pass.minLength
+                  "
                   class="text-error-input"
-                >{{mensajes.minLength}}</em>
+                  >{{ mensajes.minLength }}</em
+                >
                 <em
-                  v-if="$v.parametros.pass.$error&&!$v.parametros.pass.maxLength"
+                  v-if="
+                    $v.parametros.pass.$error && !$v.parametros.pass.maxLength
+                  "
                   class="text-error-input"
-                >{{mensajes.maxLength}}</em>
+                  >{{ mensajes.maxLength }}</em
+                >
               </div>
               <label for="pass1" class>Confirmar Contraseña</label>
               <div class="input-group mb-3">
                 <input
+                  dusk="pass2"
                   name="pass1"
                   id="pass1"
                   placeholder="..."
-                  :type="showPass1==true?'text':'password'"
-                  :class="['form-control', $v.parametros.pass1.$error? 'error-input-select':'']"
+                  :type="showPass1 == true ? 'text' : 'password'"
+                  :class="[
+                    'form-control',
+                    $v.parametros.pass1.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.pass1.$model"
                 />
                 <div class="input-group-append verContraseña">
                   <span class="input-group-text">
-                    <i class="fas fa-eye" v-if="showPass1" @click="showPass1=!showPass1"></i>
-                    <i class="fas fa-eye-slash" v-else @click="showPass1=!showPass1"></i>
+                    <i
+                      class="fas fa-eye"
+                      v-if="showPass1"
+                      @click="showPass1 = !showPass1"
+                    ></i>
+                    <i
+                      class="fas fa-eye-slash"
+                      v-else
+                      @click="showPass1 = !showPass1"
+                    ></i>
                   </span>
                 </div>
                 <em
-                  v-if="$v.parametros.pass1.$error&&!$v.parametros.pass1.required&&validarTipoForm"
+                  v-if="
+                    $v.parametros.pass1.$error &&
+                    !$v.parametros.pass1.required &&
+                    validarTipoForm
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.pass1.$error&&!$v.parametros.pass1.sameAs"
+                  v-if="
+                    $v.parametros.pass1.$error && !$v.parametros.pass1.sameAs
+                  "
                   class="text-error-input"
-                >{{mensajes.sameAs}}</em>
+                  >{{ mensajes.sameAs }}</em
+                >
               </div>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtnComputed}}</button>
+              >
+                {{ nomBtnComputed }}
+              </button>
             </div>
           </form>
         </div>
@@ -155,7 +239,7 @@
           <div class="card-body">
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
-              <template v-if="mostraImagen===info.avatarPublico">
+              <template v-if="mostraImagen === info.avatarPublico">
                 <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"

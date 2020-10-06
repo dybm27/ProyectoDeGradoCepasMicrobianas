@@ -206,6 +206,69 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -586,6 +649,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -648,7 +733,11 @@ var render = function() {
                             { staticClass: "alert alert-danger" },
                             _vm._l(_vm.errors, function(item, index) {
                               return _c("p", { key: index }, [
-                                _vm._v(_vm._s(item[0]))
+                                _vm._v(
+                                  "\n                    " +
+                                    _vm._s(item[0]) +
+                                    "\n                  "
+                                )
                               ])
                             }),
                             0
@@ -678,6 +767,7 @@ var render = function() {
                             : ""
                         ],
                         attrs: {
+                          dusk: "medio",
                           name: "medio",
                           id: "medio",
                           placeholder: "...",
@@ -768,7 +858,13 @@ var render = function() {
                                     return _c(
                                       "option",
                                       { key: index, domProps: { value: f.id } },
-                                      [_vm._v(_vm._s(f.nombre))]
+                                      [
+                                        _vm._v(
+                                          "\n                          " +
+                                            _vm._s(f.nombre) +
+                                            "\n                        "
+                                        )
+                                      ]
                                     )
                                   }),
                                   0
@@ -868,7 +964,13 @@ var render = function() {
                                     return _c(
                                       "option",
                                       { key: index, domProps: { value: b.id } },
-                                      [_vm._v(_vm._s(b.nombre))]
+                                      [
+                                        _vm._v(
+                                          "\n                          " +
+                                            _vm._s(b.nombre) +
+                                            "\n                        "
+                                        )
+                                      ]
                                     )
                                   }),
                                   0
@@ -929,6 +1031,7 @@ var render = function() {
                             : ""
                         ],
                         attrs: {
+                          dusk: "imagen",
                           name: "imagen",
                           id: "imagen",
                           type: "file",
@@ -974,7 +1077,11 @@ var render = function() {
                             ? "error-input-select"
                             : ""
                         ],
-                        attrs: { name: "text", id: "caracteristicas_reverso" },
+                        attrs: {
+                          dusk: "caracteristicas_reverso",
+                          name: "text",
+                          id: "caracteristicas_reverso"
+                        },
                         domProps: {
                           value:
                             _vm.$v.parametros.caracteristicas_reverso.$model
@@ -1009,9 +1116,15 @@ var render = function() {
                       {
                         staticClass: "mb-2 mr-2 btn btn-block",
                         class: _vm.btnClase,
-                        attrs: { disabled: _vm.bloquearBtn }
+                        attrs: { dusk: "btn-accion", disabled: _vm.bloquearBtn }
                       },
-                      [_vm._v(_vm._s(_vm.nomBtnComputed))]
+                      [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(_vm.nomBtnComputed) +
+                            "\n              "
+                        )
+                      ]
                     )
                   ],
                   2
@@ -1147,7 +1260,7 @@ var render = function() {
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                     on: { click: _vm.cancelar }
                   },
-                  [_vm._v("Cancelar")]
+                  [_vm._v("\n            Cancelar\n          ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -1163,9 +1276,10 @@ var render = function() {
                     ],
                     staticClass:
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                    attrs: { dusk: "btn-eliminar" },
                     on: { click: _vm.eliminarMedio }
                   },
-                  [_vm._v("Eliminar Medio")]
+                  [_vm._v("\n            Eliminar Medio\n          ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -1181,9 +1295,10 @@ var render = function() {
                     ],
                     staticClass:
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                    attrs: { dusk: "btn-agregar" },
                     on: { click: _vm.abrirForm }
                   },
-                  [_vm._v("Agregar Medio")]
+                  [_vm._v("\n            Agregar Medio\n          ")]
                 )
               ]
             )

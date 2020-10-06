@@ -11,6 +11,15 @@ use Tests\DuskTestCase;
 class LoginTest extends DuskTestCase
 {
 
+    protected  function setUp(): void
+    {
+        parent::setUp();
+
+        $user = User::find(1);
+        $user->session_id = null;
+        $user->save();
+    }
+
     /** @test */
     public function iniciar_sesion_error()
     {
@@ -21,14 +30,10 @@ class LoginTest extends DuskTestCase
             $browser->waitForText('Bienvenido!!.. Por favor, inicia sesión con tu cuenta.')
                 ->type('email', 'email_erroneo@gmail.com')
                 ->type('password', '12345678')
-                ->screenshot('iniciar_sesion_error_1')
-                ->press('Iniciar Sesión')
-                ->assertPathIs('/')
-                ->assertSee('Estas credenciales no coinciden con nuestros registros.')
-                ->screenshot('iniciar_sesion_error_2');
+                ->press('Iniciar Sesión')->assertPathIs('/')
+                ->assertSee('Estas credenciales no coinciden con nuestros registros.');
         });
     }
-
     /** @test */
     public function iniciar_sesion_success()
     {
@@ -38,13 +43,8 @@ class LoginTest extends DuskTestCase
 
             $browser->waitForText('Bienvenido!!.. Por favor, inicia sesión con tu cuenta.')
                 ->type('email', 'majumba.ufps@gmail.com')
-                ->type('password', '12345678')
-                ->screenshot('iniciar_sesion_success_1')
-                ->press('Iniciar Sesión')
-                ->assertPathIs('/perfil')
-                ->pause(1000)
-                ->screenshot('iniciar_sesion_success_2')
-                ->press('@cerrar-sesion');
+                ->type('password', '12345678')->press('Iniciar Sesión')
+                ->assertPathIs('/perfil')->pause(1000);
         });
     }
 }

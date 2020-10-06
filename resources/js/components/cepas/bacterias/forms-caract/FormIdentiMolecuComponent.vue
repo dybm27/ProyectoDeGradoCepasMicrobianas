@@ -4,11 +4,13 @@
       <div class="col-sm-12">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <h5 class="card-title">{{titulo}}</h5>
+            <h5 class="card-title">{{ titulo }}</h5>
             <form @submit.prevent="evento">
-              <template v-if="errors!=''">
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -20,49 +22,79 @@
                         <span class="input-group-text">F</span>
                       </div>
                       <input
+                        dusk="nombre_forward"
                         placeholder="Nombre.."
                         name="nombre_forward"
                         id="nombre_forward"
                         type="text"
-                        :class="['form-control', $v.parametros.nombre_forward.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.nombre_forward.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.nombre_forward.$model"
                       />
                       <em
-                        v-if="$v.parametros.nombre_forward.$error&&!$v.parametros.nombre_forward.required"
+                        v-if="
+                          $v.parametros.nombre_forward.$error &&
+                          !$v.parametros.nombre_forward.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="position-relative form-group">
                       <input
+                        dusk="secuen_forward"
                         name="secuen_forward"
                         id="secuen_forward"
                         placeholder="Secuencia..."
                         type="text"
-                        :class="['form-control', $v.parametros.secuen_forward.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.secuen_forward.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.secuen_forward.$model"
                       />
                       <em
-                        v-if="$v.parametros.secuen_forward.$error&&!$v.parametros.secuen_forward.required"
+                        v-if="
+                          $v.parametros.secuen_forward.$error &&
+                          !$v.parametros.secuen_forward.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="position-relative form-group">
                       <input
+                        dusk="produc_forward"
                         name="produc_forward"
                         id="produc_forward"
                         placeholder="Producto..."
                         type="text"
-                        :class="['form-control', $v.parametros.produc_forward.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.produc_forward.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.produc_forward.$model"
                       />
                       <em
-                        v-if="$v.parametros.produc_forward.$error&&!$v.parametros.produc_forward.required"
+                        v-if="
+                          $v.parametros.produc_forward.$error &&
+                          !$v.parametros.produc_forward.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                 </div>
@@ -73,49 +105,79 @@
                         <span class="input-group-text">R</span>
                       </div>
                       <input
+                        dusk="nombre_reversed"
                         placeholder="Nombre.."
                         name="nombre_reversed"
                         id="nombre_reversed"
                         type="text"
-                        :class="['form-control', $v.parametros.nombre_reversed.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.nombre_reversed.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.nombre_reversed.$model"
                       />
                       <em
-                        v-if="$v.parametros.nombre_reversed.$error&&!$v.parametros.nombre_reversed.required"
+                        v-if="
+                          $v.parametros.nombre_reversed.$error &&
+                          !$v.parametros.nombre_reversed.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="position-relative form-group">
                       <input
+                        dusk="secuen_reversed"
                         name="secuen_reversed"
                         id="secuen_reversed"
                         placeholder="Secuencia..."
                         type="text"
-                        :class="['form-control', $v.parametros.secuen_reversed.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.secuen_reversed.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.secuen_reversed.$model"
                       />
                       <em
-                        v-if="$v.parametros.secuen_reversed.$error&&!$v.parametros.secuen_reversed.required"
+                        v-if="
+                          $v.parametros.secuen_reversed.$error &&
+                          !$v.parametros.secuen_reversed.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="position-relative form-group">
                       <input
+                        dusk="produc_reversed"
                         name="produc_reversed"
                         id="produc_reversed"
                         placeholder="Producto..."
                         type="text"
-                        :class="['form-control', $v.parametros.produc_reversed.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.produc_reversed.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.produc_reversed.$model"
                       />
                       <em
-                        v-if="$v.parametros.produc_reversed.$error&&!$v.parametros.produc_reversed.required"
+                        v-if="
+                          $v.parametros.produc_reversed.$error &&
+                          !$v.parametros.produc_reversed.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                 </div>
@@ -126,7 +188,12 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">Genero</span>
                     </div>
-                    <input type="text" class="form-control" :value="getGeneroCepa.nombre" disabled />
+                    <input
+                      type="text"
+                      class="form-control"
+                      :value="getGeneroCepa.nombre"
+                      disabled
+                    />
                   </div>
                 </div>
                 <div class="col-md-5">
@@ -134,7 +201,12 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">Especie</span>
                     </div>
-                    <input type="text" class="form-control" :value="getEspecieCepa.nombre" disabled />
+                    <input
+                      type="text"
+                      class="form-control"
+                      :value="getEspecieCepa.nombre"
+                      disabled
+                    />
                   </div>
                 </div>
               </div>
@@ -143,63 +215,102 @@
                   <div class="position-relative form-group">
                     <label for="imagen1" class>Imagen PCR</label>
                     <input
+                      dusk="imagen1"
                       name="imagen1"
                       @change="obtenerImagen1"
                       id="imagen1"
                       type="file"
                       accept="image/jpeg, image/png"
-                      :class="['form-control-file', $v.parametros.imagen1.$error? 'error-input-select':'']"
+                      :class="[
+                        'form-control-file',
+                        $v.parametros.imagen1.$error
+                          ? 'error-input-select'
+                          : '',
+                      ]"
                       ref="inputImagen1"
                     />
-                    <em v-if="imagenError.imagen1" class="text-error-input">{{imagenError.imagen1}}</em>
+                    <em v-if="imagenError.imagen1" class="text-error-input">{{
+                      imagenError.imagen1
+                    }}</em>
                     <em
-                      v-if="$v.parametros.imagen1.$error&&!$v.parametros.imagen1.required"
+                      v-if="
+                        $v.parametros.imagen1.$error &&
+                        !$v.parametros.imagen1.required
+                      "
                       class="text-error-input"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="position-relative form-group">
                     <label for="imagen2" class>Imagen Secuencia</label>
                     <input
+                      dusk="imagen2"
                       name="imagen2"
                       @change="obtenerImagen2"
                       id="imagen2"
                       type="file"
                       accept="image/jpeg, image/png"
-                      :class="['form-control-file', $v.parametros.imagen2.$error? 'error-input-select':'']"
+                      :class="[
+                        'form-control-file',
+                        $v.parametros.imagen2.$error
+                          ? 'error-input-select'
+                          : '',
+                      ]"
                       ref="inputImagen2"
                     />
-                    <em v-if="imagenError.imagen2" class="text-error-input">{{imagenError.imagen2}}</em>
+                    <em v-if="imagenError.imagen2" class="text-error-input">{{
+                      imagenError.imagen2
+                    }}</em>
                     <em
-                      v-if="$v.parametros.imagen2.$error&&!$v.parametros.imagen2.required"
+                      v-if="
+                        $v.parametros.imagen2.$error &&
+                        !$v.parametros.imagen2.required
+                      "
                       class="text-error-input"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                 </div>
               </div>
               <div class="form-row justify-content-md-center">
                 <div class="col-md-8">
                   <div class="position-relative form-group">
-                    <label for="obser_secuenciacion">Informe de Secuenciación</label>
+                    <label for="obser_secuenciacion"
+                      >Informe de Secuenciación</label
+                    >
                     <textarea
+                      dusk="obser_secuenciacion"
                       name="obser_secuenciacion"
                       id="obser_secuenciacion"
-                      :class="['form-control', $v.parametros.obser_secuenciacion.$error? 'error-input-select':'']"
+                      :class="[
+                        'form-control',
+                        $v.parametros.obser_secuenciacion.$error
+                          ? 'error-input-select'
+                          : '',
+                      ]"
                       v-model.trim="$v.parametros.obser_secuenciacion.$model"
                     ></textarea>
                     <em
-                      v-if="$v.parametros.obser_secuenciacion.$error&&!$v.parametros.obser_secuenciacion.required"
+                      v-if="
+                        $v.parametros.obser_secuenciacion.$error &&
+                        !$v.parametros.obser_secuenciacion.required
+                      "
                       class="text-error-input"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                 </div>
               </div>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtnComputed}}</button>
+              >
+                {{ nomBtnComputed }}
+              </button>
             </form>
           </div>
         </div>

@@ -33,7 +33,9 @@ class UsuarioController extends Controller
         $usuario->save();
         broadcast(new UsuarioEvent($usuario, 'agregar'))->toOthers();
         $this->crearSeguimiento("Creó un usuario: " . $usuario->email);
-        $usuario->sendEmailVerificationNotification();
+        if (env('APP_ENV') != "local") {
+            $usuario->sendEmailVerificationNotification();
+        }
         return $usuario;
     }
     public function show(Request $request)
@@ -59,7 +61,9 @@ class UsuarioController extends Controller
             $usuario->email = $request->email;
             if ($usuario->email != $emailAnterior) {
                 $usuario->email_verified_at = null;
-                $usuario->sendEmailVerificationNotification();
+                if (env('APP_ENV') != "local") {
+                    $usuario->sendEmailVerificationNotification();
+                }
             }
             $usuario->name = ucfirst($request->nombre);
             $usuario->rol_id = intval($request->rol);

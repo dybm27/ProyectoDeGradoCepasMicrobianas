@@ -555,6 +555,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1254,6 +1260,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1670,6 +1689,7 @@ var render = function() {
                                   ],
                                   staticClass: "form-control",
                                   attrs: {
+                                    dusk: "select-cepa",
                                     name: "select",
                                     id: "grupo_microbiano"
                                   },
@@ -1702,7 +1722,11 @@ var render = function() {
                                 _vm._l(_vm.getGrupos, function(gm, index) {
                                   return _c(
                                     "option",
-                                    { key: index, domProps: { value: gm.id } },
+                                    {
+                                      key: index,
+                                      attrs: { dusk: gm.nombre },
+                                      domProps: { value: gm.id }
+                                    },
                                     [_vm._v(_vm._s(gm.nombre))]
                                   )
                                 }),
@@ -2641,7 +2665,11 @@ var render = function() {
                                     }
                                   ],
                                   staticClass: "form-control",
-                                  attrs: { name: "select", id: "origen" },
+                                  attrs: {
+                                    dusk: "select-origen-cepa",
+                                    name: "select",
+                                    id: "origen"
+                                  },
                                   on: {
                                     change: function($event) {
                                       var $$selectedVal = Array.prototype.filter
@@ -2668,17 +2696,31 @@ var render = function() {
                                 [
                                   _c(
                                     "option",
-                                    { attrs: { value: "Donación" } },
+                                    {
+                                      attrs: {
+                                        dusk: "Donación",
+                                        value: "Donación"
+                                      }
+                                    },
                                     [_vm._v("Donación")]
                                   ),
                                   _vm._v(" "),
-                                  _c("option", { attrs: { value: "Compra" } }, [
-                                    _vm._v("Compra")
-                                  ]),
+                                  _c(
+                                    "option",
+                                    {
+                                      attrs: { dusk: "Compra", value: "Compra" }
+                                    },
+                                    [_vm._v("Compra")]
+                                  ),
                                   _vm._v(" "),
                                   _c(
                                     "option",
-                                    { attrs: { value: "Proyecto" } },
+                                    {
+                                      attrs: {
+                                        dusk: "Proyecto",
+                                        value: "Proyecto"
+                                      }
+                                    },
                                     [_vm._v("Proyecto")]
                                   ),
                                   _vm._v(" "),
@@ -2686,6 +2728,7 @@ var render = function() {
                                     "option",
                                     {
                                       attrs: {
+                                        dusk: "Aislamiento del Laboratorio",
                                         value: "Aislamiento del Laboratorio"
                                       }
                                     },
@@ -3108,83 +3151,98 @@ var render = function() {
           ],
       _vm._v(" "),
       _c(
-        "modal",
-        {
-          attrs: {
-            name: "modal_eliminar_cepa",
-            classes: "my_modal",
-            maxWidth: 400,
-            adaptive: true,
-            height: "auto",
-            scrollable: true
-          },
-          on: {
-            "before-open": _vm.beforeOpenEliminar,
-            closed: _vm.closeEliminar
-          }
-        },
+        "transition",
+        { attrs: { name: "fade" } },
         [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Eliminar Cepa Microbiana")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("modal_eliminar_cepa")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("p", [_vm._v("Esta segura/o de eliminar la Cepa?.")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("modal_eliminar_cepa")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
-                  on: { click: _vm.eliminarCepa }
-                },
-                [_vm._v("Eliminar")]
-              )
-            ])
-          ])
-        ]
+          _c(
+            "modal",
+            {
+              attrs: {
+                name: "modal_eliminar_cepa",
+                classes: "my_modal",
+                maxWidth: 400,
+                adaptive: true,
+                height: "auto",
+                scrollable: true
+              },
+              on: {
+                "before-open": _vm.beforeOpenEliminar,
+                closed: _vm.closeEliminar
+              }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "modal-title",
+                      attrs: { id: "exampleModalLongTitle" }
+                    },
+                    [
+                      _vm._v(
+                        "\n            Eliminar Cepa Microbiana\n          "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("modal_eliminar_cepa")
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c("p", [_vm._v("Esta segura/o de eliminar la Cepa?.")])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("modal_eliminar_cepa")
+                        }
+                      }
+                    },
+                    [_vm._v("\n            Cancelar\n          ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: {
+                        dusk: "eliminar-cepa",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
+                      on: { click: _vm.eliminarCepa }
+                    },
+                    [_vm._v("\n            Eliminar\n          ")]
+                  )
+                ])
+              ])
+            ]
+          )
+        ],
+        1
       )
     ],
     2

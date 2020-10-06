@@ -3721,6 +3721,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -4342,6 +4347,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4359,7 +4372,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("textura", "texturas-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4727,6 +4740,11 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5404,6 +5422,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5671,6 +5696,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6126,6 +6158,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -6382,6 +6419,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -6532,6 +6574,11 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6746,6 +6793,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -6895,6 +6947,11 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
 //
 //
 //
@@ -61041,6 +61098,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { dusk: "btn-editar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61065,6 +61123,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { dusk: "btn-eliminar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61746,52 +61805,56 @@ var render = function() {
     !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-            _c(
-              "button",
-              {
-                directives: [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
                   {
-                    name: "tooltip",
-                    rawName: "v-tooltip.left",
-                    value: "Editar",
-                    expression: "'Editar'",
-                    modifiers: { left: true }
-                  }
-                ],
-                staticClass:
-                  "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                attrs: { disabled: _vm.disabledBtns },
-                on: {
-                  click: function($event) {
-                    return _vm.editar(_vm.rowData)
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fas fa-pencil-alt" })]
-            ),
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { dusk: "btn-editar-" + _vm.rowData.id },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                directives: [
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
                   {
-                    name: "tooltip",
-                    rawName: "v-tooltip",
-                    value: "Eliminar",
-                    expression: "'Eliminar'"
-                  }
-                ],
-                staticClass:
-                  "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                attrs: { disabled: _vm.disabledBtns },
-                on: {
-                  click: function($event) {
-                    return _vm.eliminar(_vm.rowData)
-                  }
-                }
-              },
-              [_c("i", { staticClass: "far fa-trash-alt" })]
-            )
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { dusk: "btn-eliminar-" + _vm.rowData.id },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
           ])
         ])
       : _c("div", [_c("IconoNoAccess")], 1)
@@ -62238,7 +62301,10 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
+                    attrs: {
+                      dusk: "btn-editar-" + _vm.rowData.id,
+                      disabled: _vm.disabledBtns
+                    },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62263,7 +62329,10 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
+                    attrs: {
+                      dusk: "btn-eliminar-" + _vm.rowData.id,
+                      disabled: _vm.disabledBtns
+                    },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62969,6 +63038,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { dusk: "btn-editar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62993,6 +63063,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { dusk: "btn-eliminar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63289,6 +63360,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { dusk: "btn-editar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63313,6 +63385,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { dusk: "btn-eliminar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63786,7 +63859,10 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
+                    attrs: {
+                      dusk: "btn-editar-" + _vm.rowData.id,
+                      disabled: _vm.disabledBtns
+                    },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63811,7 +63887,10 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
+                    attrs: {
+                      dusk: "btn-eliminar-" + _vm.rowData.id,
+                      disabled: _vm.disabledBtns
+                    },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64076,6 +64155,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { dusk: "btn-editar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64100,6 +64180,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { dusk: "btn-eliminar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64235,6 +64316,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { dusk: "btn-editar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64259,6 +64341,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { dusk: "btn-eliminar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64394,6 +64477,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { dusk: "btn-editar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64418,6 +64502,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { dusk: "btn-eliminar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64553,6 +64638,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { dusk: "btn-editar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64577,6 +64663,7 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { dusk: "btn-eliminar-" + _vm.rowData.id },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -66574,142 +66661,151 @@ var render = function() {
             "eliminar-cepa",
             "caract-cepa"
           ])
-            ? _c("li", { class: _vm.mostrarMenuCepas ? "mm-active" : "" }, [
-                _c(
-                  "a",
-                  {
-                    class: _vm.classActive,
-                    on: {
-                      click: function($event) {
-                        _vm.mostrarMenuCepas = !_vm.mostrarMenuCepas
+            ? _c(
+                "li",
+                {
+                  class: [
+                    "mostrar-cursor",
+                    _vm.mostrarMenuCepas ? "mm-active" : ""
+                  ]
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      class: _vm.classActive,
+                      on: {
+                        click: function($event) {
+                          _vm.mostrarMenuCepas = !_vm.mostrarMenuCepas
+                        }
                       }
-                    }
-                  },
-                  [
-                    _c("i", { staticClass: "metismenu-icon pe-7s-science" }),
-                    _vm._v("\n            Cepas\n            "),
-                    _c("i", {
-                      staticClass:
-                        "metismenu-state-icon pe-7s-angle-down caret-left"
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    class: [
-                      "mm-collapse",
-                      _vm.mostrarMenuCepas ? "mm-show" : ""
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-science" }),
+                      _vm._v("\n            Cepas\n            "),
+                      _c("i", {
+                        staticClass:
+                          "metismenu-state-icon pe-7s-angle-down caret-left"
+                      })
                     ]
-                  },
-                  [
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            attrs: {
-                              to: { name: "cepas" },
-                              "active-class": "mm-active"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "metismenu-icon" }),
-                            _vm._v("Todas\n              ")
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            attrs: {
-                              to: { name: "bacterias" },
-                              "active-class": "mm-active"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "metismenu-icon" }),
-                            _vm._v("Bacterias\n              ")
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            attrs: {
-                              to: { name: "hongos" },
-                              "active-class": "mm-active"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "metismenu-icon" }),
-                            _vm._v("Hongos Filamentosos\n              ")
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            attrs: {
-                              to: { name: "levaduras" },
-                              "active-class": "mm-active"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "metismenu-icon" }),
-                            _vm._v(
-                              "\n                Levaduras\n              "
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            attrs: {
-                              to: { name: "actinomicetos" },
-                              "active-class": "mm-active"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "metismenu-icon" }),
-                            _vm._v(
-                              "\n                Actinomicetos\n              "
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    )
-                  ]
-                )
-              ])
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    {
+                      class: [
+                        "mm-collapse",
+                        _vm.mostrarMenuCepas ? "mm-show" : ""
+                      ]
+                    },
+                    [
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: { name: "cepas" },
+                                "active-class": "mm-active"
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "metismenu-icon" }),
+                              _vm._v("Todas\n              ")
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: { name: "bacterias" },
+                                "active-class": "mm-active"
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "metismenu-icon" }),
+                              _vm._v("Bacterias\n              ")
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: { name: "hongos" },
+                                "active-class": "mm-active"
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "metismenu-icon" }),
+                              _vm._v("Hongos Filamentosos\n              ")
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: { name: "levaduras" },
+                                "active-class": "mm-active"
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "metismenu-icon" }),
+                              _vm._v(
+                                "\n                Levaduras\n              "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: { name: "actinomicetos" },
+                                "active-class": "mm-active"
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "metismenu-icon" }),
+                              _vm._v(
+                                "\n                Actinomicetos\n              "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                ]
+              )
             : _vm._e(),
           _vm._v(" "),
           _vm.getPermisoByNombres([

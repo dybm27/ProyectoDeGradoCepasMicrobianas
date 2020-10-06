@@ -117,6 +117,75 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["imagenes", "posicion"],
@@ -813,13 +882,18 @@ var render = function() {
                                     "button",
                                     {
                                       staticClass: "btn btn-success mb-2",
+                                      attrs: { dusk: "btn-croppie-1" },
                                       on: {
                                         click: function($event) {
                                           return _vm.resultado(1)
                                         }
                                       }
                                     },
-                                    [_vm._v("Aprobar Imagen")]
+                                    [
+                                      _vm._v(
+                                        "\n                  Aprobar Imagen\n                "
+                                      )
+                                    ]
                                   ),
                                   _vm._v(" "),
                                   _vm.mostrarMensaje1
@@ -842,7 +916,11 @@ var render = function() {
                                         }
                                       }
                                     },
-                                    [_vm._v("Cancelar")]
+                                    [
+                                      _vm._v(
+                                        "\n                  Cancelar\n                "
+                                      )
+                                    ]
                                   )
                                 ]
                           ]
@@ -867,13 +945,18 @@ var render = function() {
                                     "button",
                                     {
                                       staticClass: "btn btn-success mb-2",
+                                      attrs: { dusk: "btn-croppie-2" },
                                       on: {
                                         click: function($event) {
                                           return _vm.resultado(2)
                                         }
                                       }
                                     },
-                                    [_vm._v("Aprobar Imagen")]
+                                    [
+                                      _vm._v(
+                                        "\n                  Aprobar Imagen\n                "
+                                      )
+                                    ]
                                   ),
                                   _vm._v(" "),
                                   _vm.mostrarMensaje2
@@ -896,7 +979,11 @@ var render = function() {
                                         }
                                       }
                                     },
-                                    [_vm._v("Cancelar")]
+                                    [
+                                      _vm._v(
+                                        "\n                  Cancelar\n                "
+                                      )
+                                    ]
                                   )
                                 ]
                           ]
@@ -921,13 +1008,18 @@ var render = function() {
                                     "button",
                                     {
                                       staticClass: "btn btn-success mb-2",
+                                      attrs: { dusk: "btn-croppie-3" },
                                       on: {
                                         click: function($event) {
                                           return _vm.resultado(3)
                                         }
                                       }
                                     },
-                                    [_vm._v("Aprobar Imagen")]
+                                    [
+                                      _vm._v(
+                                        "\n                  Aprobar Imagen\n                "
+                                      )
+                                    ]
                                   ),
                                   _vm._v(" "),
                                   _vm.mostrarMensaje3
@@ -950,7 +1042,11 @@ var render = function() {
                                         }
                                       }
                                     },
-                                    [_vm._v("Cancelar")]
+                                    [
+                                      _vm._v(
+                                        "\n                  Cancelar\n                "
+                                      )
+                                    ]
                                   )
                                 ]
                           ]
@@ -983,13 +1079,18 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass: "btn btn-success",
+                                        attrs: { dusk: "btn-croppie-1" },
                                         on: {
                                           click: function($event) {
                                             return _vm.resultado(1)
                                           }
                                         }
                                       },
-                                      [_vm._v("Aprobar Imagen")]
+                                      [
+                                        _vm._v(
+                                          "\n                  Aprobar Imagen\n                "
+                                        )
+                                      ]
                                     ),
                                     _vm._v(" "),
                                     _vm.mostrarMensaje1
@@ -1014,7 +1115,11 @@ var render = function() {
                                           }
                                         }
                                       },
-                                      [_vm._v("Cancelar")]
+                                      [
+                                        _vm._v(
+                                          "\n                  Cancelar\n                "
+                                        )
+                                      ]
                                     )
                                   ]
                             ],
@@ -1046,13 +1151,18 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass: "btn btn-success",
+                                        attrs: { dusk: "btn-croppie-2" },
                                         on: {
                                           click: function($event) {
                                             return _vm.resultado(2)
                                           }
                                         }
                                       },
-                                      [_vm._v("Aprobar Imagen")]
+                                      [
+                                        _vm._v(
+                                          "\n                  Aprobar Imagen\n                "
+                                        )
+                                      ]
                                     ),
                                     _vm._v(" "),
                                     _vm.mostrarMensaje2
@@ -1077,7 +1187,11 @@ var render = function() {
                                           }
                                         }
                                       },
-                                      [_vm._v("Cancelar")]
+                                      [
+                                        _vm._v(
+                                          "\n                  Cancelar\n                "
+                                        )
+                                      ]
                                     )
                                   ]
                             ],
@@ -1109,13 +1223,18 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass: "btn btn-success",
+                                        attrs: { dusk: "btn-croppie-3" },
                                         on: {
                                           click: function($event) {
                                             return _vm.resultado(3)
                                           }
                                         }
                                       },
-                                      [_vm._v("Aprobar Imagen")]
+                                      [
+                                        _vm._v(
+                                          "\n                  Aprobar Imagen\n                "
+                                        )
+                                      ]
                                     ),
                                     _vm._v(" "),
                                     _vm.mostrarMensaje3
@@ -1140,7 +1259,11 @@ var render = function() {
                                           }
                                         }
                                       },
-                                      [_vm._v("Cancelar")]
+                                      [
+                                        _vm._v(
+                                          "\n                  Cancelar\n                "
+                                        )
+                                      ]
                                     )
                                   ]
                             ],

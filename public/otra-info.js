@@ -47,6 +47,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     cambiarTipo: function cambiarTipo(tipo) {
@@ -144,8 +170,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("otraInfo")],
   methods: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["accionAgregarTipoCepa", "accionEditarTipoCepa", "accionEliminarTipoCepa"])), vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["accionAgregarTipoCaractBacteria", "accionEditarTipoCaractBacteria", "accionEliminarTipoCaractBacteria", "accionAgregarTipoCaractLevadura", "accionEditarTipoCaractLevadura", "accionEliminarTipoCaractLevadura", "accionAgregarTipoCaractHongo", "accionEditarTipoCaractHongo", "accionEliminarTipoCaractHongo", "accionAgregarTipoCaractActinomiceto", "accionEditarTipoCaractActinomiceto", "accionEliminarTipoCaractActinomiceto"])), {}, {
     cambiarTipo: function cambiarTipo(ruta) {
-      if (ruta.includes("cepas")) {
-        this.tipo = "Cepas";
+      if (ruta.includes("actinomicetos")) {
+        this.tipo = "Actinomicetos";
       } else if (ruta.includes("bacterias")) {
         this.tipo = "Bacterias";
       } else if (ruta.includes("hongos")) {
@@ -153,7 +179,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       } else if (ruta.includes("levaduras")) {
         this.tipo = "Levaduras";
       } else {
-        this.tipo = "Actinomicetos";
+        this.tipo = "Cepas";
       }
     }
   }),
@@ -345,6 +371,7 @@ var render = function() {
                 attrs: {
                   to: { name: "otra-info-cepas" },
                   "active-class": "active",
+                  dusk: "nav-cepas",
                   exact: ""
                 }
               },
@@ -364,6 +391,7 @@ var render = function() {
                 staticClass: "nav-link",
                 attrs: {
                   to: { name: "otra-info-bacterias" },
+                  dusk: "nav-bacterias",
                   "active-class": "active"
                 }
               },
@@ -383,6 +411,7 @@ var render = function() {
                 staticClass: "nav-link",
                 attrs: {
                   to: { name: "otra-info-hongos" },
+                  dusk: "nav-hongos",
                   "active-class": "active"
                 }
               },
@@ -402,6 +431,7 @@ var render = function() {
                 staticClass: "nav-link",
                 attrs: {
                   to: { name: "otra-info-levaduras" },
+                  dusk: "nav-levaduras",
                   "active-class": "active"
                 }
               },
@@ -421,6 +451,7 @@ var render = function() {
                 staticClass: "nav-link",
                 attrs: {
                   to: { name: "otra-info-actinomicetos" },
+                  dusk: "nav-actinomicetos",
                   "active-class": "active"
                 }
               },
