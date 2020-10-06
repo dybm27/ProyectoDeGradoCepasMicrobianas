@@ -179,6 +179,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
@@ -400,6 +421,7 @@ var render = function() {
                     attrs: {
                       to: { name: "proyectos" },
                       "active-class": "active",
+                      dusk: "nav-proyectos",
                       exact: ""
                     }
                   },
@@ -418,6 +440,7 @@ var render = function() {
                   {
                     staticClass: "nav-link",
                     attrs: {
+                      dusk: "nav-publicaciones",
                       to: { name: "publicaciones" },
                       "active-class": "active"
                     }

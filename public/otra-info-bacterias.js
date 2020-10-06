@@ -168,6 +168,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -280,6 +293,53 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1522,6 +1582,7 @@ var render = function() {
                         _c("img", {
                           staticClass: "mostrar-cursor",
                           attrs: {
+                            dusk: "btn-mostrar-1",
                             src:
                               "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                           },
@@ -1876,7 +1937,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "Agregar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
+                        "\n            Agregar " +
+                          _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
+                          "\n          "
                       )
                     ]
                   ),
@@ -1924,6 +1987,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "nombre",
                         name: "nombre",
                         id: "nombre",
                         placeholder: "...",
@@ -1979,17 +2043,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "btn-accion-modal",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.agregarTipo }
                     },
-                    [_vm._v("Agregar")]
+                    [_vm._v("\n            Agregar\n          ")]
                   )
                 ])
               ])
@@ -2030,7 +2098,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "Editar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
+                        "\n            Editar " +
+                          _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
+                          "\n          "
                       )
                     ]
                   ),
@@ -2077,6 +2147,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "nombre",
                         name: "nombre",
                         id: "nombre",
                         placeholder: "...",
@@ -2132,17 +2203,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "btn-accion-modal",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.editarTipo }
                     },
-                    [_vm._v("Editar")]
+                    [_vm._v("\n            Editar\n          ")]
                   )
                 ])
               ])
@@ -2183,7 +2258,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "Eliminar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
+                        "\n            Eliminar " +
+                          _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
+                          "\n          "
                       )
                     ]
                   ),
@@ -2210,9 +2287,9 @@ var render = function() {
                 _c("div", { staticClass: "modal-body" }, [
                   _c("p", [
                     _vm._v(
-                      "Esta segura/o de eliminar el/la " +
+                      "\n            Esta segura/o de eliminar el/la " +
                         _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
-                        "?."
+                        "?.\n          "
                     )
                   ])
                 ]),
@@ -2229,17 +2306,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "btn-accion-modal",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.eliminarTipo }
                     },
-                    [_vm._v("Eliminar")]
+                    [_vm._v("\n            Eliminar\n          ")]
                   )
                 ])
               ])

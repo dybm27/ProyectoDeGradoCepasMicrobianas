@@ -622,27 +622,6 @@ span.buttonText {
     text-align: center;
 }
 
-/*list roles*/
-.flip-list-move {
-    transition: transform 0.5s;
-}
-.no-move {
-    transition: transform 0s;
-}
-.ghost {
-    opacity: 0.5;
-    background: #c8ebfb;
-}
-.list-group {
-    min-height: 20px;
-}
-.list-group-item {
-    cursor: move;
-}
-.list-group-item i {
-    cursor: pointer;
-}
-
 /* page title*/
 .app-theme-white .app-page-title {
     /*rgba(255, 255, 255, 0.45);*/

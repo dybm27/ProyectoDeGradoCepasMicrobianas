@@ -3,7 +3,7 @@
     <div :id="id"></div>
     <template v-if="mostrarBtnCroppie">
       <template v-if="btnAprobar">
-        <button class="btn btn-success" @click="resultado">Aprobar Imagen</button>
+        <button class="btn btn-success" @click="resultado"  dusk="btn-croppie">Aprobar Imagen</button>
         <em class="text-danger small" v-if="mostrarMensaje">Debe Aprobar la imagen</em>
       </template>
       <template v-else>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 use TiposMetodosConservacionHLSeeder;
 
-class InfoCaracLevadurasControllerTest extends TestCase
+class InfoCaracLevaduraControllerTest extends TestCase
 {
     use RefreshDatabase;
 

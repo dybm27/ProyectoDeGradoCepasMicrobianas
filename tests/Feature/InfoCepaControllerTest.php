@@ -27,7 +27,7 @@ use PhylumsSeeder;
 use ReinosSeeder;
 use Tests\TestCase;
 
-class InfoCepasControllerTest extends TestCase
+class InfoCepaControllerTest extends TestCase
 {
     use RefreshDatabase;
 

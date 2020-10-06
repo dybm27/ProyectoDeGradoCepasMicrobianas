@@ -4,6 +4,7 @@
       <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
         <li class="nav-item">
           <router-link
+            dusk="nav-caract-macro"
             :to="{name:'caract-macro-cepa-levadura'}"
             role="tab"
             class="nav-link"
@@ -14,6 +15,7 @@
         </li>
         <li class="nav-item">
           <router-link
+            dusk="nav-caract-micro"
             :to="{name:'caract-micro-cepa-levadura'}"
             role="tab"
             class="nav-link"
@@ -24,6 +26,7 @@
         </li>
         <li class="nav-item">
           <router-link
+            dusk="nav-caract-bioqui"
             :to="{name:'caract-bioqui-cepa-levadura'}"
             role="tab"
             class="nav-link"
@@ -34,6 +37,7 @@
         </li>
         <li class="nav-item">
           <router-link
+            dusk="nav-identi-molecu"
             :to="{name:'identi-molecu-cepa-levadura'}"
             role="tab"
             class="nav-link"

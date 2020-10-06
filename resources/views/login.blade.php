@@ -160,7 +160,8 @@
                   </div>
                 </div>
               </div>
-        </div>
+        </div>        
+        <script src="{{asset('assets/scripts/template.js')}}"></script>  
         <script src="{{ asset('js/dumar.js') }}"></script>
       </body>
 </html>

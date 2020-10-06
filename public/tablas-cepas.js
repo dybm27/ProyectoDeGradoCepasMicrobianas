@@ -369,6 +369,79 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1488,7 +1561,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "Agregar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
+                        "\n            Agregar " +
+                          _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
+                          "\n          "
                       )
                     ]
                   ),
@@ -1568,7 +1643,13 @@ var render = function() {
                               return _c(
                                 "option",
                                 { key: index, domProps: { value: gm.id } },
-                                [_vm._v(_vm._s(gm.nombre))]
+                                [
+                                  _vm._v(
+                                    "\n                " +
+                                      _vm._s(gm.nombre) +
+                                      "\n              "
+                                  )
+                                ]
                               )
                             }),
                             0
@@ -1626,7 +1707,13 @@ var render = function() {
                                 return _c(
                                   "option",
                                   { key: index, domProps: { value: g.id } },
-                                  [_vm._v(_vm._s(g.nombre))]
+                                  [
+                                    _vm._v(
+                                      "\n                " +
+                                        _vm._s(g.nombre) +
+                                        "\n              "
+                                    )
+                                  ]
                                 )
                               }
                             ),
@@ -1659,6 +1746,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "nombre",
                         name: "nombre",
                         id: "nombre",
                         placeholder: "...",
@@ -1708,17 +1796,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "btn-accion-modal",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.agregarTipo }
                     },
-                    [_vm._v("Agregar")]
+                    [_vm._v("\n            Agregar\n          ")]
                   )
                 ])
               ])
@@ -1759,7 +1851,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "Editar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
+                        "\n            Editar " +
+                          _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
+                          "\n          "
                       )
                     ]
                   ),
@@ -1833,7 +1927,13 @@ var render = function() {
                                 return _c(
                                   "option",
                                   { key: index, domProps: { value: g.id } },
-                                  [_vm._v(_vm._s(g.nombre))]
+                                  [
+                                    _vm._v(
+                                      "\n                " +
+                                        _vm._s(g.nombre) +
+                                        "\n              "
+                                    )
+                                  ]
                                 )
                               }
                             ),
@@ -1865,6 +1965,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "nombre",
                         name: "nombre",
                         id: "nombre",
                         placeholder: "...",
@@ -1914,17 +2015,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "btn-accion-modal",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.editarTipo }
                     },
-                    [_vm._v("Editar")]
+                    [_vm._v("\n            Editar\n          ")]
                   )
                 ])
               ])
@@ -1965,7 +2070,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "Eliminar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
+                        "\n            Eliminar " +
+                          _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
+                          "\n          "
                       )
                     ]
                   ),
@@ -1992,9 +2099,9 @@ var render = function() {
                 _c("div", { staticClass: "modal-body" }, [
                   _c("p", [
                     _vm._v(
-                      "Esta segura/o de eliminar el/la " +
+                      "\n            Esta segura/o de eliminar el/la " +
                         _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
-                        "?."
+                        "?.\n          "
                     )
                   ])
                 ]),
@@ -2011,17 +2118,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "btn-accion-modal",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.eliminarTipo }
                     },
-                    [_vm._v("Eliminar")]
+                    [_vm._v("\n            Eliminar\n          ")]
                   )
                 ])
               ])

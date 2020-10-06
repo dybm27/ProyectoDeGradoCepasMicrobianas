@@ -5,81 +5,125 @@
         <div class="main-card mb-3 card">
           <form @submit.prevent="evento">
             <div class="card-body">
-              <h5 class="card-title">{{titulo}}</h5>
-              <template v-if="errors!=''">
+              <h5 class="card-title">{{ titulo }}</h5>
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="nombre" class>Nombre</label>
                 <input
+                  dusk="nombre"
                   name="nombre"
                   id="nombre"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.nombre.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.nombre.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.nombre.$model"
                 />
                 <em
-                  v-if="$v.parametros.nombre.$error&&!$v.parametros.nombre.required"
+                  v-if="
+                    $v.parametros.nombre.$error &&
+                    !$v.parametros.nombre.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.nombre.$error&&!$v.parametros.nombre.unique"
+                  v-if="
+                    $v.parametros.nombre.$error && !$v.parametros.nombre.unique
+                  "
                   class="text-error-input"
-                >{{mensajes.unique}}</em>
+                  >{{ mensajes.unique }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="funcion" class>Funcion</label>
                 <input
+                  dusk="funcion"
                   name="funcion"
                   id="funcion"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.funcion.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.funcion.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.funcion.$model"
                 />
                 <em
-                  v-if="$v.parametros.funcion.$error&&!$v.parametros.funcion.required"
+                  v-if="
+                    $v.parametros.funcion.$error &&
+                    !$v.parametros.funcion.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.funcion.$error&&!$v.parametros.funcion.alpha"
+                  v-if="
+                    $v.parametros.funcion.$error && !$v.parametros.funcion.alpha
+                  "
                   class="text-error-input"
-                >{{mensajes.alpha}}</em>
+                  >{{ mensajes.alpha }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="imagen" class>Imagen</label>
                 <input
+                  dusk="imagen"
                   name="imagen"
                   @change="obtenerImagen"
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control-file',
+                    $v.parametros.imagen.$error ? 'error-input-select' : '',
+                  ]"
                   ref="inputImagen"
                 />
-                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{
+                  imagenError
+                }}</em>
                 <em
-                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  v-if="
+                    $v.parametros.imagen.$error &&
+                    !$v.parametros.imagen.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label for="caracteristicas" class>Características</label>
                 <textarea
+                  dusk="caracteristicas"
                   name="caracteristicas"
                   id="caracteristicas"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.caracteristicas.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.caracteristicas.$error
+                      ? 'error-input-select'
+                      : '',
+                  ]"
                   v-model.trim="$v.parametros.caracteristicas.$model"
                 />
                 <em
-                  v-if="$v.parametros.caracteristicas.$error&&!$v.parametros.caracteristicas.required"
+                  v-if="
+                    $v.parametros.caracteristicas.$error &&
+                    !$v.parametros.caracteristicas.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <div class="custom-checkbox custom-control mb-2">
                 <input
@@ -88,13 +132,21 @@
                   class="custom-control-input"
                   v-model="parametros.publicar"
                 />
-                <label class="custom-control-label" for="publicar">Desea publicar el Equipo?</label>
+                <label
+                  class="custom-control-label"
+                  dusk="publicar"
+                  for="publicar"
+                  >Desea publicar el Equipo?</label
+                >
               </div>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtnComputed}}</button>
+              >
+                {{ nomBtnComputed }}
+              </button>
             </div>
           </form>
         </div>
@@ -104,7 +156,7 @@
           <div class="card-body">
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
-              <template v-if="mostraImagen===info.imagenPublica">
+              <template v-if="mostraImagen === info.imagenPublica">
                 <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"

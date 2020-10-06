@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Actividad;
 use App\Cepa;
 use App\Documento;
 use App\Equipamiento;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ActinomicetoCaractResource;
 use App\Http\Resources\ActinomicetoCollection;
+use App\Http\Resources\ActividadCollection;
+use App\Http\Resources\ActividadResource;
 use App\Http\Resources\BacteriaCaractResource;
 use App\Http\Resources\BacteriaCollection;
 use App\Http\Resources\EquipamientoCollection;
@@ -230,7 +233,7 @@ class SitioWebController extends Controller
         return response()->json(['error' => 'No existe el noticia.'], 404);
     }
 
-    public function getNovedads(Request $request)
+    public function getNovedades(Request $request)
     {
         if (!$request->sort) {
             return response()->json(['error' => 'variable sort nula'], 500);
@@ -253,7 +256,7 @@ class SitioWebController extends Controller
         return response()->json(['error' => 'No existe el novedad.'], 404);
     }
 
-    public function getActividads(Request $request)
+    public function getActividades(Request $request)
     {
         if (!$request->sort) {
             return response()->json(['error' => 'variable sort nula'], 500);

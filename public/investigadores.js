@@ -177,6 +177,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -219,6 +226,86 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -702,6 +789,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -921,13 +1019,14 @@ var render = function() {
                       {
                         staticClass:
                           "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        attrs: { dusk: "btn-agregar" },
                         on: {
                           click: function($event) {
                             return _vm.abrirFormulario(0)
                           }
                         }
                       },
-                      [_vm._v("Agregar")]
+                      [_vm._v("\n          Agregar\n        ")]
                     )
                   : _vm._e()
               ]
@@ -939,7 +1038,7 @@ var render = function() {
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                     on: { click: _vm.cerrarFormulario }
                   },
-                  [_vm._v("Cancelar")]
+                  [_vm._v("\n          Cancelar\n        ")]
                 )
               ]
         ],
@@ -1038,7 +1137,11 @@ var render = function() {
                           { staticClass: "alert alert-danger" },
                           _vm._l(_vm.errors, function(item, index) {
                             return _c("p", { key: index }, [
-                              _vm._v(_vm._s(item[0]))
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(item[0]) +
+                                  "\n                "
+                              )
                             ])
                           }),
                           0
@@ -1068,6 +1171,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "nombres",
                         name: "nombres",
                         id: "nombres",
                         placeholder: "...",
@@ -1128,6 +1232,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "apellidos",
                         name: "apellidos",
                         id: "apellidos",
                         placeholder: "...",
@@ -1186,6 +1291,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "email",
                         name: "email",
                         id: "email",
                         placeholder: "...",
@@ -1253,6 +1359,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "nivel_estudio",
                         name: "nivel_estudio",
                         id: "nivel_estudio",
                         placeholder: "...",
@@ -1313,6 +1420,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "cargo",
                         name: "cargo",
                         id: "cargo",
                         placeholder: "...",
@@ -1365,6 +1473,7 @@ var render = function() {
                           : ""
                       ],
                       attrs: {
+                        dusk: "imagen",
                         name: "imagen",
                         id: "imagen",
                         accept: "image/jpeg, image/png",
@@ -1441,7 +1550,7 @@ var render = function() {
                         "label",
                         {
                           staticClass: "custom-control-label",
-                          attrs: { for: "publicar" }
+                          attrs: { dusk: "publicar", for: "publicar" }
                         },
                         [_vm._v("Desea publicar el Investigador?")]
                       )
@@ -1453,9 +1562,15 @@ var render = function() {
                     {
                       staticClass: "mb-2 mr-2 btn btn-block",
                       class: _vm.btnClase,
-                      attrs: { disabled: _vm.bloquearBtn }
+                      attrs: { dusk: "btn-accion", disabled: _vm.bloquearBtn }
                     },
-                    [_vm._v(_vm._s(_vm.nomBtnComputed))]
+                    [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(_vm.nomBtnComputed) +
+                          "\n            "
+                      )
+                    ]
                   )
                 ],
                 2
@@ -1598,7 +1713,7 @@ var render = function() {
                       staticClass: "modal-title",
                       attrs: { id: "exampleModalLongTitle" }
                     },
-                    [_vm._v("Eliminar Investigador")]
+                    [_vm._v("\n            Eliminar Investigador\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -1638,17 +1753,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "btn-eliminar-modal",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.eliminarInvestigador }
                     },
-                    [_vm._v("Eliminar")]
+                    [_vm._v("\n            Eliminar\n          ")]
                   )
                 ])
               ])

@@ -19,13 +19,6 @@ class AdminSeeder extends Seeder
             'rol_id' => 1
         ]);
 
-        DB::table('users')->insert([
-            'name' => 'Rafael Cano',
-            'email' => 'rafa@gmail.com',
-            'password' => Hash::make('12345678'),
-            'rol_id' => 3
-        ]);
-
         for ($i = 0; $i < 36; $i++) {
             $id = $i + 1;
             DB::table('rol_permisos')->insert([

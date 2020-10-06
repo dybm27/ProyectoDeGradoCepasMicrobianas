@@ -176,6 +176,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -426,6 +480,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -548,7 +614,11 @@ var render = function() {
                         { staticClass: "alert alert-danger" },
                         _vm._l(_vm.errors, function(item, index) {
                           return _c("p", { key: index }, [
-                            _vm._v(_vm._s(item[0]))
+                            _vm._v(
+                              "\n                  " +
+                                _vm._s(item[0]) +
+                                "\n                "
+                            )
                           ])
                         }),
                         0
@@ -578,6 +648,7 @@ var render = function() {
                         : ""
                     ],
                     attrs: {
+                      dusk: "acido_indolacetico",
                       name: "acido_indolacetico",
                       id: "acido_indolacetico",
                       placeholder: "...",
@@ -633,6 +704,7 @@ var render = function() {
                         : ""
                     ],
                     attrs: {
+                      dusk: "fosforo",
                       name: "fosforo",
                       id: "fosforo",
                       placeholder: "...",
@@ -686,6 +758,7 @@ var render = function() {
                         : ""
                     ],
                     attrs: {
+                      dusk: "sideroforos",
                       name: "sideroforos",
                       id: "sideroforos",
                       placeholder: "...",
@@ -739,6 +812,7 @@ var render = function() {
                         : ""
                     ],
                     attrs: {
+                      dusk: "nitrogeno",
                       name: "nitrogeno",
                       id: "nitrogeno",
                       placeholder: "...",
@@ -791,6 +865,7 @@ var render = function() {
                                 : ""
                             ],
                             attrs: {
+                              dusk: "imagen",
                               name: "imagen",
                               id: "imagen",
                               accept: "image/jpeg, image/png",
@@ -836,7 +911,11 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { name: "otras_caract", id: "otras_caract" },
+                    attrs: {
+                      dusk: "otras_caract",
+                      name: "otras_caract",
+                      id: "otras_caract"
+                    },
                     domProps: { value: _vm.parametros.otras_caract },
                     on: {
                       input: function($event) {
@@ -858,9 +937,13 @@ var render = function() {
                   {
                     staticClass: "mb-2 mr-2 btn btn-block",
                     class: _vm.btnClase,
-                    attrs: { disabled: _vm.bloquearBtn }
+                    attrs: { dusk: "btn-accion", disabled: _vm.bloquearBtn }
                   },
-                  [_vm._v(_vm._s(_vm.nomBtn))]
+                  [
+                    _vm._v(
+                      "\n              " + _vm._s(_vm.nomBtn) + "\n            "
+                    )
+                  ]
                 )
               ],
               2
@@ -976,7 +1059,7 @@ var render = function() {
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                       on: { click: _vm.cancelar }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -992,13 +1075,18 @@ var render = function() {
                       ],
                       staticClass:
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                      attrs: { dusk: "btn-eliminar" },
                       on: {
                         click: function($event) {
                           return _vm.$modal.show("modal_eliminar_caract")
                         }
                       }
                     },
-                    [_vm._v("Eliminar Características")]
+                    [
+                      _vm._v(
+                        "\n            Eliminar Características\n          "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -1014,9 +1102,14 @@ var render = function() {
                       ],
                       staticClass:
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                      attrs: { dusk: "btn-agregar" },
                       on: { click: _vm.btnAgregar }
                     },
-                    [_vm._v("Agregar Características")]
+                    [
+                      _vm._v(
+                        "\n            Agregar Características\n          "
+                      )
+                    ]
                   )
                 ]
               )

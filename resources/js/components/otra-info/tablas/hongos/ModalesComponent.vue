@@ -20,7 +20,7 @@
           <div class="modal-body">
             <div class="position-relative form-group">
               <label for="nombre" class>Nombre</label>
-              <input
+              <input dusk="nombre"
                 name="nombre"
                 id="nombre"
                 placeholder="..."
@@ -46,7 +46,7 @@
               class="btn btn-secondary"
               @click="$modal.hide('modal_agregar_tipo_hongo')"
             >Cancelar</button>
-            <button
+            <button dusk="btn-accion-modal"
               type="button"
               class="btn btn-success"
               @click="agregarTipo"
@@ -77,7 +77,7 @@
           <div class="modal-body">
             <div class="position-relative form-group">
               <label for="nombre">Nombre</label>
-              <input
+              <input dusk="nombre"
                 name="nombre"
                 id="nombre"
                 placeholder="..."
@@ -102,7 +102,7 @@
               class="btn btn-secondary"
               @click="$modal.hide('modal_editar_tipo_hongo')"
             >Cancelar</button>
-            <button
+            <button dusk="btn-accion-modal"
               type="button"
               class="btn btn-success"
               @click="editarTipo"
@@ -139,7 +139,7 @@
               class="btn btn-secondary"
               @click="$modal.hide('modal_eliminar_tipo_hongo')"
             >Cancelar</button>
-            <button
+            <button dusk="btn-accion-modal"
               type="button"
               class="btn btn-success"
               :disabled="bloquearBtnModal"

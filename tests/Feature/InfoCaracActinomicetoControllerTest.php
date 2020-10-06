@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Storage;
 use ImgLoginSeeder;
 use Tests\TestCase;
 
-class InfoCaracActinomicetosControllerTest extends TestCase
+class InfoCaracActinomicetoControllerTest extends TestCase
 {
     use RefreshDatabase;
 

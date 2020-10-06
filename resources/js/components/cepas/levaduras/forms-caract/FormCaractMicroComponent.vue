@@ -4,11 +4,13 @@
       <div class="col-sm-6">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <h5 class="card-title">{{tituloForm}}</h5>
+            <h5 class="card-title">{{ tituloForm }}</h5>
             <form @submit.prevent="evento">
-              <template v-if="errors!=''">
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <div class="form-row">
@@ -16,7 +18,9 @@
                   <div class="position-relative form-group">
                     <label>Hifas</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="hifas1"
@@ -25,9 +29,13 @@
                           value="Presencia"
                           v-model="parametros.hifas"
                         />
-                        <label class="custom-control-label" for="hifas1">Presencia</label>
+                        <label class="custom-control-label" for="hifas1"
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="hifas2"
@@ -36,7 +44,9 @@
                           value="Ausencia"
                           v-model="parametros.hifas"
                         />
-                        <label class="custom-control-label" for="hifas2">Ausencia</label>
+                        <label class="custom-control-label" for="hifas2"
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -45,7 +55,9 @@
                   <div class="position-relative form-group">
                     <label>Cápsula</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="capsula1"
@@ -54,9 +66,13 @@
                           value="Presencia"
                           v-model="parametros.capsula"
                         />
-                        <label class="custom-control-label" for="capsula1">Presencia</label>
+                        <label class="custom-control-label" for="capsula1"
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="capsula2"
@@ -65,7 +81,9 @@
                           value="Ausencia"
                           v-model="parametros.capsula"
                         />
-                        <label class="custom-control-label" for="capsula2">Ausencia</label>
+                        <label class="custom-control-label" for="capsula2"
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -76,7 +94,9 @@
                   <div class="position-relative form-group">
                     <label>Balistoconidias</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="balistoconidias1"
@@ -85,9 +105,15 @@
                           value="Presencia"
                           v-model="parametros.balistoconidias"
                         />
-                        <label class="custom-control-label" for="balistoconidias1">Presencia</label>
+                        <label
+                          class="custom-control-label"
+                          for="balistoconidias1"
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="balistoconidias2"
@@ -96,7 +122,11 @@
                           value="Ausencia"
                           v-model="parametros.balistoconidias"
                         />
-                        <label class="custom-control-label" for="balistoconidias2">Ausencia</label>
+                        <label
+                          class="custom-control-label"
+                          for="balistoconidias2"
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -105,7 +135,9 @@
                   <div class="position-relative form-group">
                     <label>Artroconidias</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="artroconidias1"
@@ -114,9 +146,13 @@
                           value="Presencia"
                           v-model="parametros.artroconidias"
                         />
-                        <label class="custom-control-label" for="artroconidias1">Presencia</label>
+                        <label class="custom-control-label" for="artroconidias1"
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="artroconidias2"
@@ -125,7 +161,9 @@
                           value="Ausencia"
                           v-model="parametros.artroconidias"
                         />
-                        <label class="custom-control-label" for="artroconidias2">Ausencia</label>
+                        <label class="custom-control-label" for="artroconidias2"
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -136,7 +174,9 @@
                   <div class="position-relative form-group">
                     <label>Pseudohifas</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="pseudohifas1"
@@ -145,9 +185,13 @@
                           value="Presencia"
                           v-model="parametros.pseudohifas"
                         />
-                        <label class="custom-control-label" for="pseudohifas1">Presencia</label>
+                        <label class="custom-control-label" for="pseudohifas1"
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="pseudohifas2"
@@ -156,7 +200,9 @@
                           value="Ausencia"
                           v-model="parametros.pseudohifas"
                         />
-                        <label class="custom-control-label" for="pseudohifas2">Ausencia</label>
+                        <label class="custom-control-label" for="pseudohifas2"
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -165,7 +211,9 @@
                   <div class="position-relative form-group">
                     <label>Blastoconidias</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="blastoconidias1"
@@ -174,9 +222,15 @@
                           value="Presencia"
                           v-model="parametros.blastoconidias"
                         />
-                        <label class="custom-control-label" for="blastoconidias1">Presencia</label>
+                        <label
+                          class="custom-control-label"
+                          for="blastoconidias1"
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="blastoconidias2"
@@ -185,7 +239,11 @@
                           value="Ausencia"
                           v-model="parametros.blastoconidias"
                         />
-                        <label class="custom-control-label" for="blastoconidias2">Ausencia</label>
+                        <label
+                          class="custom-control-label"
+                          for="blastoconidias2"
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -196,7 +254,9 @@
                   <div class="position-relative form-group">
                     <label>Producción de Clamidosporas</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="produccion_clamidosporas1"
@@ -208,9 +268,12 @@
                         <label
                           class="custom-control-label"
                           for="produccion_clamidosporas1"
-                        >Presencia</label>
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="produccion_clamidosporas2"
@@ -219,7 +282,11 @@
                           value="Ausencia"
                           v-model="parametros.produccion_clamidosporas"
                         />
-                        <label class="custom-control-label" for="produccion_clamidosporas2">Ausencia</label>
+                        <label
+                          class="custom-control-label"
+                          for="produccion_clamidosporas2"
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -228,7 +295,9 @@
                   <div class="position-relative form-group">
                     <label>Inducción de Filamentización</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="induccion_filamentizacion1"
@@ -240,9 +309,12 @@
                         <label
                           class="custom-control-label"
                           for="induccion_filamentizacion1"
-                        >Presencia</label>
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="induccion_filamentizacion2"
@@ -254,7 +326,8 @@
                         <label
                           class="custom-control-label"
                           for="induccion_filamentizacion2"
-                        >Ausencia</label>
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -265,7 +338,9 @@
                   <div class="position-relative form-group">
                     <label>Producción de Tubo Germinativo</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="produccion_tubo_germinativo1"
@@ -277,9 +352,12 @@
                         <label
                           class="custom-control-label"
                           for="produccion_tubo_germinativo1"
-                        >Presencia</label>
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="produccion_tubo_germinativo2"
@@ -291,7 +369,8 @@
                         <label
                           class="custom-control-label"
                           for="produccion_tubo_germinativo2"
-                        >Ausencia</label>
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -300,7 +379,9 @@
                   <div class="position-relative form-group">
                     <label>Formación de Asco y Ascosporas</label>
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="formacion_asco_y_ascosporas1"
@@ -312,9 +393,12 @@
                         <label
                           class="custom-control-label"
                           for="formacion_asco_y_ascosporas1"
-                        >Presencia</label>
+                          >Presencia</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="formacion_asco_y_ascosporas2"
@@ -326,7 +410,8 @@
                         <label
                           class="custom-control-label"
                           for="formacion_asco_y_ascosporas2"
-                        >Ausencia</label>
+                          >Ausencia</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -336,36 +421,44 @@
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
+                    dusk="imagen"
                     name="imagen"
                     @change="obtenerImagenes"
                     id="imagen"
                     type="file"
-                    :class="['form-control-file', 
-                        $v.parametros.imagen1.$error
-                        ||$v.parametros.imagen2.$error
-                        ||$v.parametros.imagen3.$error
-                        ? 'error-input-select':'']"
+                    :class="[
+                      'form-control-file',
+                      $v.parametros.imagen1.$error ||
+                      $v.parametros.imagen2.$error ||
+                      $v.parametros.imagen3.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     ref="inputImagen"
                     accept="image/jpeg, image/png"
                     multiple
                   />
-                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em v-if="erroresImagenes" class="text-error-input">{{
+                    erroresImagenes
+                  }}</em>
                   <em
-                    v-if="($v.parametros.imagen1.$error
-                    &&!$v.parametros.imagen1.required)
-                    ||
-                    ($v.parametros.imagen2.$error
-                    &&!$v.parametros.imagen2.required) 
-                    ||
-                    ($v.parametros.imagen3.$error
-                    &&!$v.parametros.imagen3.required)"
+                    v-if="
+                      ($v.parametros.imagen1.$error &&
+                        !$v.parametros.imagen1.required) ||
+                      ($v.parametros.imagen2.$error &&
+                        !$v.parametros.imagen2.required) ||
+                      ($v.parametros.imagen3.$error &&
+                        !$v.parametros.imagen3.required)
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="otras_caract">Otras Características</label>
                 <textarea
+                  dusk="otras_caract"
                   name="text"
                   id="otras_caract"
                   class="form-control"
@@ -373,10 +466,13 @@
                 ></textarea>
               </div>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtn}}</button>
+              >
+                {{ nomBtn }}
+              </button>
             </form>
           </div>
         </div>
@@ -386,7 +482,12 @@
           <div class="card-body">
             <h5 class="card-title">Imagenes</h5>
             <template v-if="validarTipoForm">
-              <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+              <template
+                v-if="
+                  imagenesCroppie.length === cantImagenes &&
+                  $refs.inputImagen.value
+                "
+              >
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"

@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 use TiposMetodosConservacionBacteriasSeeder;
 
-class InfoCaracBacteriasControllerTest extends TestCase
+class InfoCaracBacteriaControllerTest extends TestCase
 {
     use RefreshDatabase;
 

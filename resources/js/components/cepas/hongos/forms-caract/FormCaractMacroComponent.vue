@@ -7,25 +7,35 @@
             <div class="card-body">
               <h5 class="card-title">{{ titulo }}</h5>
               <form @submit.prevent="evento">
-                <template v-if="errors!=''">
+                <template v-if="errors != ''">
                   <div class="alert alert-danger">
-                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                    <p v-for="(item, index) in errors" :key="index">
+                      {{ item[0] }}
+                    </p>
                   </div>
                 </template>
                 <div class="position-relative form-group">
                   <label for="medio" class>Medio</label>
                   <input
+                    dusk="medio"
                     name="medio"
                     id="medio"
                     placeholder="..."
                     type="text"
-                    :class="['form-control', $v.parametros.medio.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.medio.$error ? 'error-input-select' : '',
+                    ]"
                     v-model.trim="$v.parametros.medio.$model"
                   />
                   <em
-                    v-if="$v.parametros.medio.$error&&!$v.parametros.medio.required"
+                    v-if="
+                      $v.parametros.medio.$error &&
+                      !$v.parametros.medio.required
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
                 <template v-if="getInfoCaractMacroHongos">
                   <div class="form-row">
@@ -35,16 +45,26 @@
                         <select
                           name="select"
                           id="color"
-                          :class="['form-control', $v.parametros.color.$error? 'error-input-select':'']"
+                          :class="[
+                            'form-control',
+                            $v.parametros.color.$error
+                              ? 'error-input-select'
+                              : '',
+                          ]"
                           v-model.trim="$v.parametros.color.$model"
                         >
                           <option
-                            v-for="(f,index) in obtenerColores"
+                            v-for="(f, index) in obtenerColores"
                             :key="index"
                             :value="f.id"
-                          >{{ f.nombre }}</option>
+                          >
+                            {{ f.nombre }}
+                          </option>
                         </select>
-                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <div
+                          class="input-group-append"
+                          v-if="getPermisoByNombre('agregar-otra')"
+                        >
                           <button
                             class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                             @click.prevent="showModal('color')"
@@ -54,9 +74,13 @@
                         </div>
                       </div>
                       <em
-                        v-if="$v.parametros.color.$error&&!$v.parametros.color.required"
+                        v-if="
+                          $v.parametros.color.$error &&
+                          !$v.parametros.color.required
+                        "
                         class="text-error-select"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                     <div class="col-md-6">
                       <label for="borde" class>Textura</label>
@@ -64,16 +88,26 @@
                         <select
                           name="select"
                           id="textura"
-                          :class="['form-control', $v.parametros.textura.$error? 'error-input-select':'']"
+                          :class="[
+                            'form-control',
+                            $v.parametros.textura.$error
+                              ? 'error-input-select'
+                              : '',
+                          ]"
                           v-model.trim="$v.parametros.textura.$model"
                         >
                           <option
-                            v-for="(b,index) in obtenerTexturas"
+                            v-for="(b, index) in obtenerTexturas"
                             :key="index"
                             :value="b.id"
-                          >{{ b.nombre }}</option>
+                          >
+                            {{ b.nombre }}
+                          </option>
                         </select>
-                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <div
+                          class="input-group-append"
+                          v-if="getPermisoByNombre('agregar-otra')"
+                        >
                           <button
                             class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                             @click.prevent="showModal('textura')"
@@ -83,47 +117,76 @@
                         </div>
                       </div>
                       <em
-                        v-if="$v.parametros.textura.$error&&!$v.parametros.textura.required"
+                        v-if="
+                          $v.parametros.textura.$error &&
+                          !$v.parametros.textura.required
+                        "
                         class="text-error-select"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                 </template>
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imagen</label>
                   <input
+                    dusk="imagen"
                     name="imagen"
                     @change="obtenerImagen"
                     id="imagen"
                     type="file"
-                    :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control-file',
+                      $v.parametros.imagen.$error ? 'error-input-select' : '',
+                    ]"
                     accept="image/jpeg"
                     ref="inputImagen"
                   />
-                  <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                  <em v-if="imagenError" class="text-error-input">{{
+                    imagenError
+                  }}</em>
                   <em
-                    v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                    v-if="
+                      $v.parametros.imagen.$error &&
+                      !$v.parametros.imagen.required
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
                 <div class="position-relative form-group">
-                  <label for="otras_caracteristicas">Características del reverso</label>
+                  <label for="otras_caracteristicas"
+                    >Características del reverso</label
+                  >
                   <textarea
+                    dusk="caracteristicas_reverso"
                     name="text"
                     id="caracteristicas_reverso"
-                    :class="['form-control', $v.parametros.caracteristicas_reverso.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.caracteristicas_reverso.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     v-model.trim="$v.parametros.caracteristicas_reverso.$model"
                   ></textarea>
                   <em
-                    v-if="$v.parametros.caracteristicas_reverso.$error&&!$v.parametros.caracteristicas_reverso.required"
+                    v-if="
+                      $v.parametros.caracteristicas_reverso.$error &&
+                      !$v.parametros.caracteristicas_reverso.required
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
                 <button
+                  dusk="btn-accion"
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
                   :disabled="bloquearBtn"
-                >{{ nomBtnComputed }}</button>
+                >
+                  {{ nomBtnComputed }}
+                </button>
               </form>
             </div>
           </div>

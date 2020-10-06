@@ -9,6 +9,7 @@
         <template v-if="!formulario">
           <button
             v-if="getPermisoByNombre('agregar-cepa')"
+            dusk="btn-agregar-cepa"
             @click="abrirFormulario(0)"
             class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
             :disabled="tipos==''"

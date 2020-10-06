@@ -4,11 +4,13 @@
       <div class="col-sm-6">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <h5 class="card-title">{{tituloForm}}</h5>
+            <h5 class="card-title">{{ tituloForm }}</h5>
             <form @submit.prevent="evento">
-              <template v-if="errors!=''">
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <template v-if="getInfoCaractMicroActinomicetos">
@@ -19,16 +21,26 @@
                       <select
                         name="select"
                         id="tincion"
-                        :class="['form-control', $v.parametros.tincion.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.tincion.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.tincion.$model"
                       >
                         <option
-                          v-for="(f,index) in obtenerTinciones"
+                          v-for="(f, index) in obtenerTinciones"
                           :key="index"
                           :value="f.id"
-                        >{{f.nombre}}</option>
+                        >
+                          {{ f.nombre }}
+                        </option>
                       </select>
-                      <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                      <div
+                        class="input-group-append"
+                        v-if="getPermisoByNombre('agregar-otra')"
+                      >
                         <button
                           class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                           @click.prevent="showModal('tincion')"
@@ -38,9 +50,13 @@
                       </div>
                     </div>
                     <em
-                      v-if="$v.parametros.tincion.$error&&!$v.parametros.tincion.required"
+                      v-if="
+                        $v.parametros.tincion.$error &&
+                        !$v.parametros.tincion.required
+                      "
                       class="text-error-select"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                   <div class="col-md-6">
                     <label for="forma" class>Forma</label>
@@ -48,16 +64,26 @@
                       <select
                         name="select"
                         id="forma"
-                        :class="['form-control', $v.parametros.forma.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.forma.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.forma.$model"
                       >
                         <option
-                          v-for="(f,index) in obtenerFormas"
+                          v-for="(f, index) in obtenerFormas"
                           :key="index"
                           :value="f.id"
-                        >{{f.nombre}}</option>
+                        >
+                          {{ f.nombre }}
+                        </option>
                       </select>
-                      <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                      <div
+                        class="input-group-append"
+                        v-if="getPermisoByNombre('agregar-otra')"
+                      >
                         <button
                           class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                           @click.prevent="showModal('forma_micro')"
@@ -67,9 +93,13 @@
                       </div>
                     </div>
                     <em
-                      v-if="$v.parametros.forma.$error&&!$v.parametros.forma.required"
+                      v-if="
+                        $v.parametros.forma.$error &&
+                        !$v.parametros.forma.required
+                      "
                       class="text-error-select"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                 </div>
                 <div class="form-row">
@@ -79,16 +109,26 @@
                       <select
                         name="select"
                         id="micelio"
-                        :class="['form-control', $v.parametros.micelio.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.micelio.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.micelio.$model"
                       >
                         <option
-                          v-for="(f,index) in obtenerMicelios"
+                          v-for="(f, index) in obtenerMicelios"
                           :key="index"
                           :value="f.id"
-                        >{{f.nombre}}</option>
+                        >
+                          {{ f.nombre }}
+                        </option>
                       </select>
-                      <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                      <div
+                        class="input-group-append"
+                        v-if="getPermisoByNombre('agregar-otra')"
+                      >
                         <button
                           class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                           @click.prevent="showModal('micelio')"
@@ -98,9 +138,13 @@
                       </div>
                     </div>
                     <em
-                      v-if="$v.parametros.micelio.$error&&!$v.parametros.micelio.required"
+                      v-if="
+                        $v.parametros.micelio.$error &&
+                        !$v.parametros.micelio.required
+                      "
                       class="text-error-select"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                   <div class="col-md-6">
                     <label for="conidioforo" class>Conidióforo</label>
@@ -108,16 +152,26 @@
                       <select
                         name="select"
                         id="conidioforo"
-                        :class="['form-control', $v.parametros.conidioforo.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.conidioforo.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.conidioforo.$model"
                       >
                         <option
-                          v-for="(f,index) in obtenerConidioforos"
+                          v-for="(f, index) in obtenerConidioforos"
                           :key="index"
                           :value="f.id"
-                        >{{f.nombre}}</option>
+                        >
+                          {{ f.nombre }}
+                        </option>
                       </select>
-                      <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                      <div
+                        class="input-group-append"
+                        v-if="getPermisoByNombre('agregar-otra')"
+                      >
                         <button
                           class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                           @click.prevent="showModal('conidioforo')"
@@ -127,61 +181,87 @@
                       </div>
                     </div>
                     <em
-                      v-if="$v.parametros.conidioforo.$error&&!$v.parametros.conidioforo.required"
+                      v-if="
+                        $v.parametros.conidioforo.$error &&
+                        !$v.parametros.conidioforo.required
+                      "
                       class="text-error-select"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                 </div>
               </template>
               <div class="position-relative form-group">
-                <label for="forma_estructura_reproduccion" class>Forma Estructura de Reproducción</label>
+                <label for="forma_estructura_reproduccion" class
+                  >Forma Estructura de Reproducción</label
+                >
                 <input
+                  dusk="forma_estructura_reproduccion"
                   name="forma_estructura_reproduccion"
                   id="forma_estructura_reproduccion"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.forma_estructura_reproduccion.$error? 'error-input-select':'']"
-                  v-model.trim="$v.parametros.forma_estructura_reproduccion.$model"
+                  :class="[
+                    'form-control',
+                    $v.parametros.forma_estructura_reproduccion.$error
+                      ? 'error-input-select'
+                      : '',
+                  ]"
+                  v-model.trim="
+                    $v.parametros.forma_estructura_reproduccion.$model
+                  "
                 />
                 <em
-                  v-if="$v.parametros.forma_estructura_reproduccion.$error&&!$v.parametros.forma_estructura_reproduccion.required"
+                  v-if="
+                    $v.parametros.forma_estructura_reproduccion.$error &&
+                    !$v.parametros.forma_estructura_reproduccion.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <template v-if="validarTipoForm">
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
+                    dusk="imagen"
                     name="imagen"
                     @change="obtenerImagenes"
                     id="imagen"
                     accept="image/jpeg, image/png"
                     type="file"
-                    :class="['form-control-file', 
-                        $v.parametros.imagen1.$error
-                        ||$v.parametros.imagen2.$error
-                        ||$v.parametros.imagen3.$error
-                        ? 'error-input-select':'']"
+                    :class="[
+                      'form-control-file',
+                      $v.parametros.imagen1.$error ||
+                      $v.parametros.imagen2.$error ||
+                      $v.parametros.imagen3.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     ref="inputImagen"
                     multiple
                   />
-                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em v-if="erroresImagenes" class="text-error-input">{{
+                    erroresImagenes
+                  }}</em>
                   <em
-                    v-if="($v.parametros.imagen1.$error
-                    &&!$v.parametros.imagen1.required)
-                    ||
-                    ($v.parametros.imagen2.$error
-                    &&!$v.parametros.imagen2.required) 
-                    ||
-                    ($v.parametros.imagen3.$error
-                    &&!$v.parametros.imagen3.required)"
+                    v-if="
+                      ($v.parametros.imagen1.$error &&
+                        !$v.parametros.imagen1.required) ||
+                      ($v.parametros.imagen2.$error &&
+                        !$v.parametros.imagen2.required) ||
+                      ($v.parametros.imagen3.$error &&
+                        !$v.parametros.imagen3.required)
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="otras_caract">Otras Características</label>
                 <textarea
+                  dusk="otras_caract"
                   name="otras_caract"
                   id="otras_caract"
                   class="form-control"
@@ -189,10 +269,13 @@
                 ></textarea>
               </div>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtn}}</button>
+              >
+                {{ nomBtn }}
+              </button>
             </form>
           </div>
         </div>
@@ -201,7 +284,12 @@
         <div class="main-card mb-3 card">
           <div class="card-body">
             <template v-if="validarTipoForm">
-              <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+              <template
+                v-if="
+                  imagenesCroppie.length === cantImagenes &&
+                  $refs.inputImagen.value
+                "
+              >
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"

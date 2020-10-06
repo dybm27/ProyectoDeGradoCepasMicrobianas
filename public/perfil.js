@@ -444,6 +444,91 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -705,6 +790,7 @@ var render = function() {
                     "button",
                     {
                       staticClass: "btn btn-success",
+                      attrs: { dusk: "btn-croppie" },
                       on: { click: _vm.resultado }
                     },
                     [_vm._v("Aprobar Imagen")]
@@ -803,35 +889,59 @@ var render = function() {
                                       "menu-header-content btn-pane-right"
                                   },
                                   [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "avatar-icon-wrapper mr-2 avatar-icon-xl"
-                                      },
-                                      [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass: "avatar-icon rounded"
-                                          },
-                                          [
-                                            _c("img", {
-                                              attrs: {
-                                                src: _vm.auth.avatarPublico,
-                                                alt: "Avatar"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", [
+                                    _c("div", { staticClass: "container" }, [
                                       _c(
-                                        "h5",
-                                        { staticClass: "menu-header-title" },
-                                        [_vm._v(_vm._s(_vm.auth.name))]
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "row justify-content-center"
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "avatar-icon-wrapper mr-2 avatar-icon-xl"
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "avatar-icon rounded"
+                                                },
+                                                [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        _vm.auth.avatarPublico,
+                                                      alt: "Avatar"
+                                                    }
+                                                  })
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "row justify-content-center"
+                                        },
+                                        [
+                                          _c("div", [
+                                            _c(
+                                              "h5",
+                                              {
+                                                staticClass: "menu-header-title"
+                                              },
+                                              [_vm._v(_vm._s(_vm.auth.name))]
+                                            )
+                                          ])
+                                        ]
                                       )
                                     ])
                                   ]
@@ -923,6 +1033,7 @@ var render = function() {
                                             {
                                               staticClass:
                                                 "btn-icon-vertical btn-square btn-transition btn btn-outline-link",
+                                              attrs: { dusk: "cambiar-nombre" },
                                               on: {
                                                 click: function($event) {
                                                   return _vm.showModal("nombre")
@@ -947,6 +1058,7 @@ var render = function() {
                                             {
                                               staticClass:
                                                 "btn-icon-vertical btn-square btn-transition btn btn-outline-link",
+                                              attrs: { dusk: "cambiar-imagen" },
                                               on: {
                                                 click: function($event) {
                                                   return _vm.showModal("imagen")
@@ -971,6 +1083,9 @@ var render = function() {
                                             {
                                               staticClass:
                                                 "btn-icon-vertical btn-square btn-transition btn btn-outline-link",
+                                              attrs: {
+                                                dusk: "cambiar-password"
+                                              },
                                               on: {
                                                 click: function($event) {
                                                   return _vm.showModal(
@@ -1083,6 +1198,7 @@ var render = function() {
                                           : ""
                                       ],
                                       attrs: {
+                                        dusk: "imagen",
                                         name: "imagen",
                                         id: "imagen",
                                         accept: "image/jpeg",
@@ -1189,17 +1305,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "button",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.eventBtn }
                     },
-                    [_vm._v("Cambiar")]
+                    [_vm._v("\n            Cambiar\n          ")]
                   )
                 ])
               ])
@@ -1287,6 +1407,7 @@ var render = function() {
                                     : ""
                                 ],
                                 attrs: {
+                                  dusk: "nombre",
                                   name: "nombre",
                                   id: "nombre",
                                   placeholder: "...",
@@ -1352,6 +1473,7 @@ var render = function() {
                                 _vm.$v.pass.$error ? "error-input-select" : ""
                               ],
                               attrs: {
+                                dusk: "password",
                                 name: "pass",
                                 id: "pass",
                                 placeholder: "...",
@@ -1446,6 +1568,7 @@ var render = function() {
                                 _vm.$v.pass1.$error ? "error-input-select" : ""
                               ],
                               attrs: {
+                                dusk: "password-reply",
                                 name: "pass1",
                                 id: "pass1",
                                 placeholder: "...",
@@ -1532,17 +1655,21 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Cancelar")]
+                    [_vm._v("\n            Cancelar\n          ")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
                       staticClass: "btn btn-success",
-                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      attrs: {
+                        dusk: "button",
+                        type: "button",
+                        disabled: _vm.bloquearBtnModal
+                      },
                       on: { click: _vm.eventBtn }
                     },
-                    [_vm._v("Cambiar")]
+                    [_vm._v("\n            Cambiar\n          ")]
                   )
                 ])
               ])
@@ -1604,7 +1731,11 @@ var staticRenderFns = [
                   staticClass: "alert alert-danger mt-4 text-center",
                   attrs: { role: "alert" }
                 },
-                [_vm._v("Ya has ingresado desde otra pestaña del navegador!!")]
+                [
+                  _vm._v(
+                    "\n                  Ya has ingresado desde otra pestaña del navegador!!\n                "
+                  )
+                ]
               )
             ])
           ])

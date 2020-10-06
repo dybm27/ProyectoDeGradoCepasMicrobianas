@@ -15,6 +15,7 @@
                 <div class="position-relative form-group">
                   <label for="codigo" class>Código</label>
                   <input
+                    dusk="codigo-cepa"
                     name="codigo"
                     id="codigo"
                     placeholder="..."
@@ -38,6 +39,7 @@
                 <div class="position-relative form-group" v-if="mostrarGrupos&&!disabled">
                   <label for="grupo_microbiano" class>Grupo Microbiano</label>
                   <select
+                    dusk="select-cepa"
                     name="select"
                     id="grupo_microbiano"
                     class="form-control"
@@ -45,6 +47,7 @@
                     @change="cambiarGeneroEspecie"
                   >
                     <option
+                      :dusk="gm.nombre"
                       v-for="(gm,index) in getGrupos"
                       :key="index"
                       :value="gm.id"
@@ -307,6 +310,7 @@
                     <div class="position-relative form-group">
                       <label for="estado" class>Estado</label>
                       <input
+                        dusk="estado-cepa"
                         name="estado"
                         id="estado"
                         placeholder="..."
@@ -324,15 +328,19 @@
                     <div class="position-relative form-group">
                       <label for="origen" class>Origen</label>
                       <select
+                        dusk="select-origen-cepa"
                         name="select"
                         id="origen"
                         class="form-control"
                         v-model="parametros.origen"
                       >
-                        <option value="Donación">Donación</option>
-                        <option value="Compra">Compra</option>
-                        <option value="Proyecto">Proyecto</option>
-                        <option value="Aislamiento del Laboratorio">Aislamiento del Laboratorio</option>
+                        <option dusk="Donación" value="Donación">Donación</option>
+                        <option dusk="Compra" value="Compra">Compra</option>
+                        <option dusk="Proyecto" value="Proyecto">Proyecto</option>
+                        <option
+                          dusk="Aislamiento del Laboratorio"
+                          value="Aislamiento del Laboratorio"
+                        >Aislamiento del Laboratorio</option>
                       </select>
                     </div>
                   </div>
@@ -340,6 +348,7 @@
                 <div class="position-relative form-group">
                   <label for="otras_caracteristicas">Otras Caracteristicas</label>
                   <textarea
+                    dusk="otras-caract-cepa"
                     name="text"
                     id="otras_caracteristicas"
                     class="form-control"
@@ -353,9 +362,14 @@
                     class="custom-control-input"
                     v-model="parametros.publicar"
                   />
-                  <label class="custom-control-label" for="publicar">Desea publicar la cepa?</label>
+                  <label
+                    dusk="check-cepa"
+                    class="custom-control-label"
+                    for="publicar"
+                  >Desea publicar la cepa?</label>
                 </div>
                 <button
+                  dusk="btn-form-cepa"
                   class="mt-2 btn btn-block"
                   :disabled="bloquearBtn"
                   :class="classBtn"

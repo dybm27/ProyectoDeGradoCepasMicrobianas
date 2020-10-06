@@ -4,11 +4,13 @@
       <div class="col-sm-6">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <h5 class="card-title">{{tituloForm}}</h5>
+            <h5 class="card-title">{{ tituloForm }}</h5>
             <form @submit.prevent="evento">
-              <template v-if="errors!=''">
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <template v-if="getInfoCaractMicroBacterias">
@@ -17,16 +19,24 @@
                   <select
                     name="select"
                     id="forma"
-                    :class="['form-control', $v.parametros.forma.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.forma.$error ? 'error-input-select' : '',
+                    ]"
                     v-model.trim="$v.parametros.forma.$model"
                   >
                     <option
-                      v-for="(f,index) in obtenerFormas"
+                      v-for="(f, index) in obtenerFormas"
                       :key="index"
                       :value="f.id"
-                    >{{f.nombre}}</option>
+                    >
+                      {{ f.nombre }}
+                    </option>
                   </select>
-                  <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                  <div
+                    class="input-group-append"
+                    v-if="getPermisoByNombre('agregar-otra')"
+                  >
                     <button
                       class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                       @click.prevent="showModal('forma_micro')"
@@ -36,29 +46,44 @@
                   </div>
                 </div>
                 <em
-                  v-if="$v.parametros.forma.$error&&!$v.parametros.forma.required"
+                  v-if="
+                    $v.parametros.forma.$error && !$v.parametros.forma.required
+                  "
                   class="text-error-select"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </template>
               <div class="position-relative form-group">
                 <label for="ordenamiento" class>Ordenamiento</label>
                 <input
+                  dusk="ordenamiento"
                   name="ordenamiento"
                   id="ordenamiento"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.ordenamiento.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.ordenamiento.$error
+                      ? 'error-input-select'
+                      : '',
+                  ]"
                   v-model.trim="$v.parametros.ordenamiento.$model"
                 />
                 <em
-                  v-if="$v.parametros.ordenamiento.$error&&!$v.parametros.ordenamiento.required"
+                  v-if="
+                    $v.parametros.ordenamiento.$error &&
+                    !$v.parametros.ordenamiento.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <div class="position-relative form-group">
                 <label>Tinción de Gram</label>
                 <div>
-                  <div class="custom-radio custom-control custom-control-inline">
+                  <div
+                    class="custom-radio custom-control custom-control-inline"
+                  >
                     <input
                       type="radio"
                       id="tincion_gram1"
@@ -67,9 +92,13 @@
                       value="Positivo"
                       v-model="parametros.tincion_gram"
                     />
-                    <label class="custom-control-label" for="tincion_gram1">Gram Positivos</label>
+                    <label class="custom-control-label" for="tincion_gram1"
+                      >Gram Positivos</label
+                    >
                   </div>
-                  <div class="custom-radio custom-control custom-control-inline">
+                  <div
+                    class="custom-radio custom-control custom-control-inline"
+                  >
                     <input
                       type="radio"
                       id="tincion_gram2"
@@ -78,14 +107,18 @@
                       value="Negativo"
                       v-model="parametros.tincion_gram"
                     />
-                    <label class="custom-control-label" for="tincion_gram2">Gram Negativos</label>
+                    <label class="custom-control-label" for="tincion_gram2"
+                      >Gram Negativos</label
+                    >
                   </div>
                 </div>
               </div>
               <div class="position-relative form-group">
                 <label>Tinción de Esporas</label>
                 <div>
-                  <div class="custom-radio custom-control custom-control-inline">
+                  <div
+                    class="custom-radio custom-control custom-control-inline"
+                  >
                     <input
                       type="radio"
                       id="tincion_esporas1"
@@ -94,9 +127,13 @@
                       value="Presencia"
                       v-model="parametros.tincion_esporas"
                     />
-                    <label class="custom-control-label" for="tincion_esporas1">Presencia</label>
+                    <label class="custom-control-label" for="tincion_esporas1"
+                      >Presencia</label
+                    >
                   </div>
-                  <div class="custom-radio custom-control custom-control-inline">
+                  <div
+                    class="custom-radio custom-control custom-control-inline"
+                  >
                     <input
                       type="radio"
                       id="tincion_esporas2"
@@ -105,15 +142,19 @@
                       value="Ausencia"
                       v-model="parametros.tincion_esporas"
                     />
-                    <label class="custom-control-label" for="tincion_esporas2">Ausencia</label>
+                    <label class="custom-control-label" for="tincion_esporas2"
+                      >Ausencia</label
+                    >
                   </div>
                 </div>
               </div>
               <div
                 class="position-relative form-group"
-                v-show="parametros.tincion_esporas==='Presencia'"
+                v-show="parametros.tincion_esporas === 'Presencia'"
               >
-                <label for="ubicacion_esporas" class>Ubicación de la Espora</label>
+                <label for="ubicacion_esporas" class
+                  >Ubicación de la Espora</label
+                >
                 <select
                   name="ubicacion_esporas"
                   id="ubicacion_esporas"
@@ -128,7 +169,9 @@
               <div class="position-relative form-group">
                 <label>Tinción de Cápsula</label>
                 <div>
-                  <div class="custom-radio custom-control custom-control-inline">
+                  <div
+                    class="custom-radio custom-control custom-control-inline"
+                  >
                     <input
                       type="radio"
                       id="tincion_capsula1"
@@ -137,9 +180,13 @@
                       value="Presencia"
                       v-model="parametros.tincion_capsula"
                     />
-                    <label class="custom-control-label" for="tincion_capsula1">Presencia</label>
+                    <label class="custom-control-label" for="tincion_capsula1"
+                      >Presencia</label
+                    >
                   </div>
-                  <div class="custom-radio custom-control custom-control-inline">
+                  <div
+                    class="custom-radio custom-control custom-control-inline"
+                  >
                     <input
                       type="radio"
                       id="tincion_capsula2"
@@ -148,7 +195,9 @@
                       value="Ausencia"
                       v-model="parametros.tincion_capsula"
                     />
-                    <label class="custom-control-label" for="tincion_capsula2">Ausencia</label>
+                    <label class="custom-control-label" for="tincion_capsula2"
+                      >Ausencia</label
+                    >
                   </div>
                 </div>
               </div>
@@ -156,36 +205,44 @@
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
+                    dusk="imagen"
                     name="imagen"
                     @change="obtenerImagenes"
                     id="imagen"
                     accept="image/jpeg, image/png"
                     type="file"
-                    :class="['form-control-file', 
-                        $v.parametros.imagen1.$error
-                        ||$v.parametros.imagen2.$error
-                        ||$v.parametros.imagen3.$error
-                        ? 'error-input-select':'']"
+                    :class="[
+                      'form-control-file',
+                      $v.parametros.imagen1.$error ||
+                      $v.parametros.imagen2.$error ||
+                      $v.parametros.imagen3.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     ref="inputImagen"
                     multiple
                   />
-                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em v-if="erroresImagenes" class="text-error-input">{{
+                    erroresImagenes
+                  }}</em>
                   <em
-                    v-if="($v.parametros.imagen1.$error
-                    &&!$v.parametros.imagen1.required)
-                    ||
-                    ($v.parametros.imagen2.$error
-                    &&!$v.parametros.imagen2.required) 
-                    ||
-                    ($v.parametros.imagen3.$error
-                    &&!$v.parametros.imagen3.required)"
+                    v-if="
+                      ($v.parametros.imagen1.$error &&
+                        !$v.parametros.imagen1.required) ||
+                      ($v.parametros.imagen2.$error &&
+                        !$v.parametros.imagen2.required) ||
+                      ($v.parametros.imagen3.$error &&
+                        !$v.parametros.imagen3.required)
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="otras_caract">Otras Características</label>
                 <textarea
+                  dusk="otras_caract"
                   name="otras_caract"
                   id="otras_caract"
                   class="form-control"
@@ -193,10 +250,13 @@
                 ></textarea>
               </div>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtn}}</button>
+              >
+                {{ nomBtn }}
+              </button>
             </form>
           </div>
         </div>
@@ -206,7 +266,12 @@
           <div class="card-body">
             <h5 class="card-title">Imagenes</h5>
             <template v-if="validarTipoForm">
-              <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+              <template
+                v-if="
+                  imagenesCroppie.length === cantImagenes &&
+                  $refs.inputImagen.value
+                "
+              >
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"

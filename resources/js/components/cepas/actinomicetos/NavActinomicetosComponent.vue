@@ -4,6 +4,7 @@
       <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
         <li class="nav-item">
           <router-link
+            dusk="nav-caract-macro"
             :to="{name:'caract-macro-cepa-actinomiceto'}"
             role="tab"
             class="nav-link"
@@ -14,6 +15,7 @@
         </li>
         <li class="nav-item">
           <router-link
+            dusk="nav-caract-micro"
             :to="{name:'caract-micro-cepa-actinomiceto'}"
             active-class="active"
             role="tab"
@@ -24,6 +26,7 @@
         </li>
         <li class="nav-item">
           <router-link
+            dusk="nav-identi-bioqui"
             :to="{name:'identi-bioqui-cepa-actinomiceto'}"
             active-class="active"
             role="tab"
@@ -34,6 +37,7 @@
         </li>
         <li class="nav-item">
           <router-link
+            dusk="nav-otras-caract"
             :to="{name:'otras-caract-cepa-actinomiceto'}"
             active-class="active"
             role="tab"

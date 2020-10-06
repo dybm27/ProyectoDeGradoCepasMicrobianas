@@ -70,8 +70,13 @@ class PublicidadController extends Controller
         }
         $this->eliminarImagenes($imagenesEditor, $imagenesGuardadas);
         $publicidad->titulo = $request->titulo;
-        $publicidad->link = $request->link;
-        $publicidad->cuerpo = $request->cuerpo;
+        if (is_null($request->cuerpo)) {
+            $publicidad->link = $request->link;
+            $publicidad->cuerpo = null;
+        } else {
+            $publicidad->link = null;
+            $publicidad->cuerpo = $request->cuerpo;
+        }
         $publicidad->publicar = $request->publicar;
         $publicidad->imagenesEditor = $imagenesEditor;
         $publicidad->imagen = $imagen['ruta'];
@@ -139,8 +144,13 @@ class PublicidadController extends Controller
         }
         $this->eliminarImagenes($imagenesEditor, $imagenesGuardadas);
         $publicidad->titulo = $request->titulo;
-        $publicidad->link = $request->link;
-        $publicidad->cuerpo = $request->cuerpo;
+        if (is_null($request->cuerpo)) {
+            $publicidad->link = $request->link;
+            $publicidad->cuerpo = null;
+        } else {
+            $publicidad->link = null;
+            $publicidad->cuerpo = $request->cuerpo;
+        }
         $publicidad->publicar = $request->publicar;
         $publicidad->imagenesEditor = $imagenesEditor;
         $publicidad->save();

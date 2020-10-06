@@ -3,7 +3,9 @@
     <div class="tabs-animation">
       <div class="mb-3 card">
         <div class="card-header-tab card-header">
-          <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+          <div
+            class="card-header-title font-size-lg text-capitalize font-weight-normal"
+          >
             <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
             Características Bioquímicas
           </div>
@@ -12,17 +14,25 @@
               v-show="mostrarBtnCancelar"
               @click="cancelar"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
-            >Cancelar</button>
+            >
+              Cancelar
+            </button>
             <button
+              dusk="btn-eliminar"
               v-show="mostrarBtnEliminar"
               @click="$modal.show('modal_eliminar_caract')"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
-            >Eliminar Características</button>
+            >
+              Eliminar Características
+            </button>
             <button
+              dusk="btn-agregar"
               v-show="mostrarBtnAgregarComputed"
               @click="btnAgregar"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
-            >Agregar Características</button>
+            >
+              Agregar Características
+            </button>
           </div>
         </div>
         <template v-if="mostrarForm">
@@ -38,7 +48,9 @@
           <div class="text-center">
             <h5 class="mt-5 mb-5">
               <span class="pr-1">
-                <b class="text-success">AÚN NO SE HAN AGREGADO LAS CARACTERÍSTICAS</b>
+                <b class="text-success"
+                  >AÚN NO SE HAN AGREGADO LAS CARACTERÍSTICAS</b
+                >
               </span>
             </h5>
           </div>

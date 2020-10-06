@@ -6,9 +6,11 @@
           <div class="card-body">
             <h5 class="card-title">{{ tituloForm }}</h5>
             <form @submit.prevent="evento">
-              <template v-if="errors!=''">
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <template v-if="getInfoCaractMicroHongos">
@@ -18,16 +20,26 @@
                     <select
                       name="select"
                       id="conidioforo"
-                      :class="['form-control', $v.parametros.conidioforo.$error? 'error-input-select':'']"
+                      :class="[
+                        'form-control',
+                        $v.parametros.conidioforo.$error
+                          ? 'error-input-select'
+                          : '',
+                      ]"
                       v-model.trim="$v.parametros.conidioforo.$model"
                     >
                       <option
-                        v-for="(f,index) in obtenerConidioforos"
+                        v-for="(f, index) in obtenerConidioforos"
                         :key="index"
                         :value="f.id"
-                      >{{ f.nombre }}</option>
+                      >
+                        {{ f.nombre }}
+                      </option>
                     </select>
-                    <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                    <div
+                      class="input-group-append"
+                      v-if="getPermisoByNombre('agregar-otra')"
+                    >
                       <button
                         class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('conidioforo')"
@@ -37,14 +49,20 @@
                     </div>
                   </div>
                   <em
-                    v-if="$v.parametros.conidioforo.$error&&!$v.parametros.conidioforo.required"
+                    v-if="
+                      $v.parametros.conidioforo.$error &&
+                      !$v.parametros.conidioforo.required
+                    "
                     class="text-error-select"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
                 <div class="position-relative form-group">
                   <label for="fialides" class>Fiálides</label>
                   <div>
-                    <div class="custom-radio custom-control custom-control-inline">
+                    <div
+                      class="custom-radio custom-control custom-control-inline"
+                    >
                       <input
                         type="radio"
                         id="fialides1"
@@ -53,9 +71,16 @@
                         value="Presencia"
                         v-model="parametros.fialides"
                       />
-                      <label class="custom-control-label" for="fialides1">Presencia</label>
+                      <label
+                        class="custom-control-label"
+                        for="fialides1"
+                        dusk="fialides1"
+                        >Presencia</label
+                      >
                     </div>
-                    <div class="custom-radio custom-control custom-control-inline">
+                    <div
+                      class="custom-radio custom-control custom-control-inline"
+                    >
                       <input
                         type="radio"
                         id="fialides2"
@@ -64,7 +89,12 @@
                         value="Ausencia"
                         v-model="parametros.fialides"
                       />
-                      <label class="custom-control-label" for="fialides2">Ausencia</label>
+                      <label
+                        class="custom-control-label"
+                        for="fialides2"
+                        dusk="fialides2"
+                        >Ausencia</label
+                      >
                     </div>
                   </div>
                 </div>
@@ -76,16 +106,27 @@
                       id="fialides_forma"
                       placeholder="..."
                       type="text"
-                      :class="['form-control', $v.parametros.fialides_forma.$error? 'error-input-select':'']"
+                      :class="[
+                        'form-control',
+                        $v.parametros.fialides_forma.$error
+                          ? 'error-input-select'
+                          : '',
+                      ]"
                       v-model.trim="$v.parametros.fialides_forma.$model"
                     />
                     <em
-                      v-if="$v.parametros.fialides_forma.$error&&!$v.parametros.fialides_forma.required"
+                      v-if="
+                        $v.parametros.fialides_forma.$error &&
+                        !$v.parametros.fialides_forma.required
+                      "
                       class="text-error-input"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                   <div class="position-relative form-group">
-                    <label for="fialides_otra_caracteristica" class>Otras características</label>
+                    <label for="fialides_otra_caracteristica" class
+                      >Otras características</label
+                    >
                     <input
                       name="fialides_otra_caracteristica"
                       id="fialides_otra_caracteristica"
@@ -98,7 +139,9 @@
                 </div>
                 <label for="fialides" class>Vesícula</label>
                 <div class="input-group mb-3">
-                  <div class="custom-radio custom-control custom-control-inline">
+                  <div
+                    class="custom-radio custom-control custom-control-inline"
+                  >
                     <input
                       type="radio"
                       id="vesicula1"
@@ -107,9 +150,13 @@
                       value="Presencia"
                       v-model="parametros.vesicula"
                     />
-                    <label class="custom-control-label" for="vesicula1">Presencia</label>
+                    <label class="custom-control-label" for="vesicula1"
+                      >Presencia</label
+                    >
                   </div>
-                  <div class="custom-radio custom-control custom-control-inline">
+                  <div
+                    class="custom-radio custom-control custom-control-inline"
+                  >
                     <input
                       type="radio"
                       id="vesicula2"
@@ -118,7 +165,9 @@
                       value="Ausencia"
                       v-model="parametros.vesicula"
                     />
-                    <label class="custom-control-label" for="vesicula2">Ausencia</label>
+                    <label class="custom-control-label" for="vesicula2"
+                      >Ausencia</label
+                    >
                   </div>
                 </div>
                 <label for="espora_asexual" class>Espora Asexual</label>
@@ -126,16 +175,26 @@
                   <select
                     name="select"
                     id="espora_asexual"
-                    :class="['form-control', $v.parametros.espora_asexual.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.espora_asexual.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     v-model.trim="$v.parametros.espora_asexual.$model"
                   >
                     <option
-                      v-for="(b,index) in obtenerEsporasAsexuales"
+                      v-for="(b, index) in obtenerEsporasAsexuales"
                       :key="index"
                       :value="b.id"
-                    >{{ b.nombre }}</option>
+                    >
+                      {{ b.nombre }}
+                    </option>
                   </select>
-                  <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                  <div
+                    class="input-group-append"
+                    v-if="getPermisoByNombre('agregar-otra')"
+                  >
                     <button
                       class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                       @click.prevent="showModal('esporaA')"
@@ -145,14 +204,22 @@
                   </div>
                 </div>
                 <em
-                  v-if="$v.parametros.espora_asexual.$error&&!$v.parametros.espora_asexual.required"
+                  v-if="
+                    $v.parametros.espora_asexual.$error &&
+                    !$v.parametros.espora_asexual.required
+                  "
                   class="text-error-select"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <div v-if="mostrarConidios" class="ml-3 mr-3">
                   <div class="position-relative form-group">
-                    <label for="esporas_asexuales_conidios_tamano">Tamaño</label>
+                    <label for="esporas_asexuales_conidios_tamano"
+                      >Tamaño</label
+                    >
                     <div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="esporas_asexuales_conidios_tamano1"
@@ -164,9 +231,12 @@
                         <label
                           class="custom-control-label"
                           for="esporas_asexuales_conidios_tamano1"
-                        >Grande</label>
+                          >Grande</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="esporas_asexuales_conidios_tamano2"
@@ -178,9 +248,12 @@
                         <label
                           class="custom-control-label"
                           for="esporas_asexuales_conidios_tamano2"
-                        >Mediano</label>
+                          >Mediano</label
+                        >
                       </div>
-                      <div class="custom-radio custom-control custom-control-inline">
+                      <div
+                        class="custom-radio custom-control custom-control-inline"
+                      >
                         <input
                           type="radio"
                           id="esporas_asexuales_conidios_tamano3"
@@ -192,42 +265,71 @@
                         <label
                           class="custom-control-label"
                           for="esporas_asexuales_conidios_tamano3"
-                        >Pequeño</label>
+                          >Pequeño</label
+                        >
                       </div>
                     </div>
                   </div>
                   <div class="position-relative form-group">
-                    <label for="esporas_asexuales_conidios_color" class>Color</label>
+                    <label for="esporas_asexuales_conidios_color" class
+                      >Color</label
+                    >
                     <input
                       name="esporas_asexuales_conidios_color"
                       id="esporas_asexuales_conidios_color"
                       placeholder="..."
                       type="text"
-                      :class="['form-control', $v.parametros.esporas_asexuales_conidios_color.$error? 'error-input-select':'']"
-                      v-model.trim="$v.parametros.esporas_asexuales_conidios_color.$model"
+                      :class="[
+                        'form-control',
+                        $v.parametros.esporas_asexuales_conidios_color.$error
+                          ? 'error-input-select'
+                          : '',
+                      ]"
+                      v-model.trim="
+                        $v.parametros.esporas_asexuales_conidios_color.$model
+                      "
                     />
                     <em
-                      v-if="$v.parametros.esporas_asexuales_conidios_color.$error&&!$v.parametros.esporas_asexuales_conidios_color.required"
+                      v-if="
+                        $v.parametros.esporas_asexuales_conidios_color.$error &&
+                        !$v.parametros.esporas_asexuales_conidios_color.required
+                      "
                       class="text-error-input"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                   <div class="position-relative form-group">
-                    <label for="esporas_asexuales_conidios_forma" class>Forma</label>
+                    <label for="esporas_asexuales_conidios_forma" class
+                      >Forma</label
+                    >
                     <input
                       name="esporas_asexuales_conidios_forma"
                       id="esporas_asexuales_conidios_forma"
                       placeholder="..."
                       type="text"
-                      :class="['form-control', $v.parametros.esporas_asexuales_conidios_forma.$error? 'error-input-select':'']"
-                      v-model.trim="$v.parametros.esporas_asexuales_conidios_forma.$model"
+                      :class="[
+                        'form-control',
+                        $v.parametros.esporas_asexuales_conidios_forma.$error
+                          ? 'error-input-select'
+                          : '',
+                      ]"
+                      v-model.trim="
+                        $v.parametros.esporas_asexuales_conidios_forma.$model
+                      "
                     />
                     <em
-                      v-if="$v.parametros.esporas_asexuales_conidios_forma.$error&&!$v.parametros.esporas_asexuales_conidios_forma.required"
+                      v-if="
+                        $v.parametros.esporas_asexuales_conidios_forma.$error &&
+                        !$v.parametros.esporas_asexuales_conidios_forma.required
+                      "
                       class="text-error-input"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                   <div class="position-relative form-group">
-                    <label for="esporas_asexuales_conidios_otras" class>Otras características</label>
+                    <label for="esporas_asexuales_conidios_otras" class
+                      >Otras características</label
+                    >
                     <input
                       name="esporas_asexuales_conidios_otras"
                       id="esporas_asexuales_conidios_otras"
@@ -243,16 +345,26 @@
                   <select
                     name="select"
                     id="espora_sexual"
-                    :class="['form-control', $v.parametros.espora_sexual.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.espora_sexual.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     v-model.trim="$v.parametros.espora_sexual.$model"
                   >
                     <option
-                      v-for="(b,index) in obtenerEsporasSexuales"
+                      v-for="(b, index) in obtenerEsporasSexuales"
                       :key="index"
                       :value="b.id"
-                    >{{ b.nombre }}</option>
+                    >
+                      {{ b.nombre }}
+                    </option>
                   </select>
-                  <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                  <div
+                    class="input-group-append"
+                    v-if="getPermisoByNombre('agregar-otra')"
+                  >
                     <button
                       class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                       @click.prevent="showModal('esporaS')"
@@ -262,44 +374,56 @@
                   </div>
                 </div>
                 <em
-                  v-if="$v.parametros.espora_sexual.$error&&!$v.parametros.espora_sexual.required"
+                  v-if="
+                    $v.parametros.espora_sexual.$error &&
+                    !$v.parametros.espora_sexual.required
+                  "
                   class="text-error-select"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </template>
               <template v-if="validarTipoForm">
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
+                    dusk="imagen"
                     name="imagen"
                     @change="obtenerImagenes"
                     id="imagen"
                     type="file"
                     accept="image/jpeg, image/png"
-                    :class="['form-control-file', 
-                        $v.parametros.imagen1.$error
-                        ||$v.parametros.imagen2.$error
-                        ||$v.parametros.imagen3.$error
-                        ? 'error-input-select':'']"
+                    :class="[
+                      'form-control-file',
+                      $v.parametros.imagen1.$error ||
+                      $v.parametros.imagen2.$error ||
+                      $v.parametros.imagen3.$error
+                        ? 'error-input-select'
+                        : '',
+                    ]"
                     ref="inputImagen"
                     multiple
                   />
-                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em v-if="erroresImagenes" class="text-error-input">{{
+                    erroresImagenes
+                  }}</em>
                   <em
-                    v-if="($v.parametros.imagen1.$error
-                    &&!$v.parametros.imagen1.required)
-                    ||
-                    ($v.parametros.imagen2.$error
-                    &&!$v.parametros.imagen2.required) 
-                    ||
-                    ($v.parametros.imagen3.$error
-                    &&!$v.parametros.imagen3.required)"
+                    v-if="
+                      ($v.parametros.imagen1.$error &&
+                        !$v.parametros.imagen1.required) ||
+                      ($v.parametros.imagen2.$error &&
+                        !$v.parametros.imagen2.required) ||
+                      ($v.parametros.imagen3.$error &&
+                        !$v.parametros.imagen3.required)
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                 </div>
               </template>
               <div class="position-relative form-group">
                 <label for="otras_estructuras">Otras estructuras</label>
                 <textarea
+                  dusk="otras_estructuras"
                   name="text"
                   id="otras_estructuras"
                   class="form-control"
@@ -307,10 +431,13 @@
                 ></textarea>
               </div>
               <button
+                dusk="btn-accion"
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{ nomBtn }}</button>
+              >
+                {{ nomBtn }}
+              </button>
             </form>
           </div>
         </div>
@@ -319,7 +446,12 @@
         <div class="main-card mb-3 card">
           <div class="card-body">
             <template v-if="validarTipoForm">
-              <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+              <template
+                v-if="
+                  imagenesCroppie.length === cantImagenes &&
+                  $refs.inputImagen.value
+                "
+              >
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -529,7 +661,7 @@ export default {
                 this.$emit("agregar", res.data);
                 this.toastr(
                   "Agregar Característica Microscópica",
-                  "Característica Microscópica agregada con éxito!",
+                  "Característica Microscópica agregada con exito!!",
                   "success"
                 );
               }

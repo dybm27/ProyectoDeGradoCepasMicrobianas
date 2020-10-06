@@ -3,12 +3,14 @@
     <div class="container mt-4">
       <div class="main-card mb-3 card">
         <div class="card-body">
-          <h5 class="card-title">{{tituloForm}}</h5>
+          <h5 class="card-title">{{ tituloForm }}</h5>
           <div class="row justify-content-md-center">
             <div class="col-md-12">
-              <template v-if="errors!=''">
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <form @submit.prevent="evento">
@@ -17,51 +19,81 @@
                     <div class="position-relative form-group">
                       <label for="oxidasa" class>Oxidasa</label>
                       <input
+                        dusk="oxidasa"
                         name="oxidasa"
                         id="oxidasa"
                         placeholder="..."
                         type="text"
-                        :class="['form-control', $v.parametros.oxidasa.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.oxidasa.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.oxidasa.$model"
                       />
                       <em
-                        v-if="$v.parametros.oxidasa.$error&&!$v.parametros.oxidasa.required"
+                        v-if="
+                          $v.parametros.oxidasa.$error &&
+                          !$v.parametros.oxidasa.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="position-relative form-group">
                       <label for="catalasa" class>Catalasa</label>
                       <input
+                        dusk="catalasa"
                         name="catalasa"
                         id="catalasa"
                         placeholder="..."
                         type="text"
-                        :class="['form-control', $v.parametros.catalasa.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.catalasa.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.catalasa.$model"
                       />
                       <em
-                        v-if="$v.parametros.catalasa.$error&&!$v.parametros.catalasa.required"
+                        v-if="
+                          $v.parametros.catalasa.$error &&
+                          !$v.parametros.catalasa.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="position-relative form-group">
                       <label for="citrato" class>Citrato</label>
                       <input
+                        dusk="citrato"
                         name="citrato"
                         id="citrato"
                         placeholder="..."
                         type="text"
-                        :class="['form-control', $v.parametros.citrato.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.citrato.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.citrato.$model"
                       />
                       <em
-                        v-if="$v.parametros.citrato.$error&&!$v.parametros.citrato.required"
+                        v-if="
+                          $v.parametros.citrato.$error &&
+                          !$v.parametros.citrato.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                 </div>
@@ -70,70 +102,114 @@
                     <div class="position-relative form-group">
                       <label for="nitrato" class>Nitratos</label>
                       <input
+                        dusk="nitratos"
                         name="nitrato"
                         id="nitrato"
                         placeholder="..."
                         type="text"
-                        :class="['form-control', $v.parametros.nitrato.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.nitrato.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.nitrato.$model"
                       />
                       <em
-                        v-if="$v.parametros.nitrato.$error&&!$v.parametros.nitrato.required"
+                        v-if="
+                          $v.parametros.nitrato.$error &&
+                          !$v.parametros.nitrato.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="position-relative form-group">
                       <label for="caseina" class>Caseina</label>
                       <input
+                        dusk="caseina"
                         name="caseina"
                         id="caseina"
                         placeholder="..."
                         type="text"
-                        :class="['form-control', $v.parametros.caseina.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.caseina.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.caseina.$model"
                       />
                       <em
-                        v-if="$v.parametros.caseina.$error&&!$v.parametros.caseina.required"
+                        v-if="
+                          $v.parametros.caseina.$error &&
+                          !$v.parametros.caseina.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="position-relative form-group">
-                      <label for="hidro_urea" class>Hidrolisís de la Úrea</label>
+                      <label for="hidro_urea" class
+                        >Hidrolisís de la Úrea</label
+                      >
                       <input
+                        dusk="hidro_urea"
                         name="hidro_urea"
                         id="hidro_urea"
                         placeholder="..."
                         type="text"
-                        :class="['form-control', $v.parametros.hidro_urea.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.hidro_urea.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.hidro_urea.$model"
                       />
                       <em
-                        v-if="$v.parametros.hidro_urea.$error&&!$v.parametros.hidro_urea.required"
+                        v-if="
+                          $v.parametros.hidro_urea.$error &&
+                          !$v.parametros.hidro_urea.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                 </div>
                 <div class="form-row">
                   <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="hidro_gelatina" class>Hidrolisís de la Gelatina</label>
+                      <label for="hidro_gelatina" class
+                        >Hidrolisís de la Gelatina</label
+                      >
                       <input
+                        dusk="hidro_gelatina"
                         name="hidro_gelatina"
                         id="hidro_gelatina"
                         placeholder="..."
                         type="text"
-                        :class="['form-control', $v.parametros.hidro_gelatina.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.hidro_gelatina.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.hidro_gelatina.$model"
                       />
                       <em
-                        v-if="$v.parametros.hidro_gelatina.$error&&!$v.parametros.hidro_gelatina.required"
+                        v-if="
+                          $v.parametros.hidro_gelatina.$error &&
+                          !$v.parametros.hidro_gelatina.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                   <template v-if="validarTipoForm">
@@ -141,49 +217,68 @@
                       <div class="position-relative form-group">
                         <label for="imagen" class>Imágenes</label>
                         <input
+                          dusk="imagen"
                           name="imagen"
                           @change="obtenerImagenes"
                           id="imagen"
                           type="file"
                           accept="image/jpeg, image/png"
-                          :class="['form-control-file', 
-                              $v.parametros.imagen1.$error
-                              ||$v.parametros.imagen2.$error
-                              ||$v.parametros.imagen3.$error
-                              ? 'error-input-select':'']"
+                          :class="[
+                            'form-control-file',
+                            $v.parametros.imagen1.$error ||
+                            $v.parametros.imagen2.$error ||
+                            $v.parametros.imagen3.$error
+                              ? 'error-input-select'
+                              : '',
+                          ]"
                           ref="inputImagen"
                           multiple
                         />
-                        <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                        <em v-if="erroresImagenes" class="text-error-input">{{
+                          erroresImagenes
+                        }}</em>
                         <em
-                          v-if="($v.parametros.imagen1.$error
-                              &&!$v.parametros.imagen1.required)
-                              ||
-                              ($v.parametros.imagen2.$error
-                              &&!$v.parametros.imagen2.required) 
-                              ||
-                              ($v.parametros.imagen3.$error
-                              &&!$v.parametros.imagen3.required)"
+                          v-if="
+                            ($v.parametros.imagen1.$error &&
+                              !$v.parametros.imagen1.required) ||
+                            ($v.parametros.imagen2.$error &&
+                              !$v.parametros.imagen2.required) ||
+                            ($v.parametros.imagen3.$error &&
+                              !$v.parametros.imagen3.required)
+                          "
                           class="text-error-input"
-                        >{{mensajes.required}}</em>
+                          >{{ mensajes.required }}</em
+                        >
                       </div>
                     </div>
                   </template>
                   <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="sensi_antibioticos" class>Sensibilidad a Antibióticos</label>
+                      <label for="sensi_antibioticos" class
+                        >Sensibilidad a Antibióticos</label
+                      >
                       <input
+                        dusk="sensi_antibioticos"
                         name="sensi_antibioticos"
                         id="sensi_antibioticos"
                         placeholder="..."
                         type="text"
-                        :class="['form-control', $v.parametros.sensi_antibioticos.$error? 'error-input-select':'']"
+                        :class="[
+                          'form-control',
+                          $v.parametros.sensi_antibioticos.$error
+                            ? 'error-input-select'
+                            : '',
+                        ]"
                         v-model.trim="$v.parametros.sensi_antibioticos.$model"
                       />
                       <em
-                        v-if="$v.parametros.sensi_antibioticos.$error&&!$v.parametros.sensi_antibioticos.required"
+                        v-if="
+                          $v.parametros.sensi_antibioticos.$error &&
+                          !$v.parametros.sensi_antibioticos.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                 </div>
@@ -197,34 +292,54 @@
                         <div class="position-relative form-group">
                           <label for="fer_lactosa" class>Lactosa</label>
                           <input
+                            dusk="fer_lactosa"
                             name="fer_lactosa"
                             id="fer_lactosa"
                             placeholder="..."
                             type="text"
-                            :class="['form-control', $v.parametros.fer_lactosa.$error? 'error-input-select':'']"
+                            :class="[
+                              'form-control',
+                              $v.parametros.fer_lactosa.$error
+                                ? 'error-input-select'
+                                : '',
+                            ]"
                             v-model.trim="$v.parametros.fer_lactosa.$model"
                           />
                           <em
-                            v-if="$v.parametros.fer_lactosa.$error&&!$v.parametros.fer_lactosa.required"
+                            v-if="
+                              $v.parametros.fer_lactosa.$error &&
+                              !$v.parametros.fer_lactosa.required
+                            "
                             class="text-error-input"
-                          >{{mensajes.required}}</em>
+                            >{{ mensajes.required }}</em
+                          >
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="position-relative form-group">
                           <label for="fer_manitol" class>Manitol</label>
                           <input
+                            dusk="fer_manitol"
                             name="fer_manitol"
                             id="fer_manitol"
                             placeholder="..."
                             type="text"
-                            :class="['form-control', $v.parametros.fer_manitol.$error? 'error-input-select':'']"
+                            :class="[
+                              'form-control',
+                              $v.parametros.fer_manitol.$error
+                                ? 'error-input-select'
+                                : '',
+                            ]"
                             v-model.trim="$v.parametros.fer_manitol.$model"
                           />
                           <em
-                            v-if="$v.parametros.fer_manitol.$error&&!$v.parametros.fer_manitol.required"
+                            v-if="
+                              $v.parametros.fer_manitol.$error &&
+                              !$v.parametros.fer_manitol.required
+                            "
                             class="text-error-input"
-                          >{{mensajes.required}}</em>
+                            >{{ mensajes.required }}</em
+                          >
                         </div>
                       </div>
                     </div>
@@ -233,40 +348,61 @@
                         <div class="position-relative form-group">
                           <label for="fer_inositol" class>Inositol</label>
                           <input
+                            dusk="fer_inositol"
                             name="fer_inositol"
                             id="fer_inositol"
                             placeholder="..."
                             type="text"
-                            :class="['form-control', $v.parametros.fer_inositol.$error? 'error-input-select':'']"
+                            :class="[
+                              'form-control',
+                              $v.parametros.fer_inositol.$error
+                                ? 'error-input-select'
+                                : '',
+                            ]"
                             v-model.trim="$v.parametros.fer_inositol.$model"
                           />
                           <em
-                            v-if="$v.parametros.fer_inositol.$error&&!$v.parametros.fer_inositol.required"
+                            v-if="
+                              $v.parametros.fer_inositol.$error &&
+                              !$v.parametros.fer_inositol.required
+                            "
                             class="text-error-input"
-                          >{{mensajes.required}}</em>
+                            >{{ mensajes.required }}</em
+                          >
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="position-relative form-group">
                           <label for="fer_sacarosa" class>Sacarosa</label>
                           <input
+                            dusk="fer_sacarosa"
                             name="fer_sacarosa"
                             id="fer_sacarosa"
                             placeholder="..."
                             type="text"
-                            :class="['form-control', $v.parametros.fer_sacarosa.$error? 'error-input-select':'']"
+                            :class="[
+                              'form-control',
+                              $v.parametros.fer_sacarosa.$error
+                                ? 'error-input-select'
+                                : '',
+                            ]"
                             v-model.trim="$v.parametros.fer_sacarosa.$model"
                           />
                           <em
-                            v-if="$v.parametros.fer_sacarosa.$error&&!$v.parametros.fer_sacarosa.required"
+                            v-if="
+                              $v.parametros.fer_sacarosa.$error &&
+                              !$v.parametros.fer_sacarosa.required
+                            "
                             class="text-error-input"
-                          >{{mensajes.required}}</em>
+                            >{{ mensajes.required }}</em
+                          >
                         </div>
                       </div>
                     </div>
                     <div class="position-relative form-group">
                       <label for="fer_otro" class>Otra Fermentación</label>
                       <input
+                        dusk="fer_otro"
                         name="fer_otro"
                         id="fer_otro"
                         placeholder="..."
@@ -280,7 +416,8 @@
                     <div class="position-relative form-group">
                       <label for="otras_caract">Otras Características</label>
                       <textarea
-                        style="height: 200px;"
+                        dusk="otras_caract"
+                        style="height: 200px"
                         name="otras_caract"
                         id="otras_caract"
                         class="form-control mt-2"
@@ -290,10 +427,13 @@
                   </div>
                 </div>
                 <button
+                  dusk="btn-accion"
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
                   :disabled="bloquearBtn"
-                >{{nomBtn}}</button>
+                >
+                  {{ nomBtn }}
+                </button>
               </form>
             </div>
           </div>
@@ -307,7 +447,12 @@
             <div class="main-card mb-3 card">
               <div class="card-body">
                 <h5 class="card-title">Imagenes</h5>
-                <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+                <template
+                  v-if="
+                    imagenesCroppie.length === cantImagenes &&
+                    $refs.inputImagen.value
+                  "
+                >
                   <CroppieCepas
                     :imagenes="imagenesCroppie"
                     @cambiarValorImagen="cambiarValorImagen"
