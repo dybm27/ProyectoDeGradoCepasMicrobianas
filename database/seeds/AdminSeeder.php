@@ -14,6 +14,14 @@ class AdminSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Dumar Basto',
             'email' => 'majumba.ufps@gmail.com',
+            'password' => Hash::make('majumba@2020'),
+            'email_verified_at' => now(),
+            'rol_id' => 1
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Dumar Basto',
+            'email' => 'dumaryekselbm@ufps.edu.co',
             'password' => Hash::make('12345678'),
             'email_verified_at' => now(),
             'rol_id' => 1
