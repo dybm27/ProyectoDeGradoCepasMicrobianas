@@ -86,10 +86,13 @@ class CepaTest extends DuskTestCase
             $browser->loginAs(User::find(1))->visit('/cepas')->pause(1000)
                 ->assertSee('Administrar Cepas Microbianas')->pause(5000)
                 ->press("@btn-eliminar-cepa-" . $cepa->id)->pause(2000)
-                ->press('@eliminar-cepa')->pause(2000);
+                ->press('@eliminar-cepa')->pause(2000)
+                ->assertSee('La cepa cuenta con caracteristicas registradas, favor eliminarlas');
         });
         $caract->delete();
-
+        $user = User::find(1);
+        $user->session_id = null;
+        $user->save();
         $this->browse(function (Browser $browser) use ($cepa) {
             $browser->loginAs(User::find(1))->visit('/cepas')->pause(1000)
                 ->assertSee('Administrar Cepas Microbianas')->pause(5000)

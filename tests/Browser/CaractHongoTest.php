@@ -15,10 +15,10 @@ class CaractHongoTest extends DuskTestCase
     {
         parent::setUp();
 
-        $bacteria = factory(HongoFilamentoso::class)->create();
-        $cepa = Cepa::where("codigo", $bacteria->cepa->codigo)->first();
+        $hongo = factory(HongoFilamentoso::class)->create();
+        $cepa = Cepa::where("codigo", $hongo->cepa->codigo)->first();
         $cepa->codigo = "0000";
-        // $cepa->save();
+        $cepa->save();
 
         $user = User::find(1);
         $user->session_id = null;

@@ -2,6 +2,7 @@
 
 namespace Tests\Browser;
 
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use ImgLoginSeeder;
