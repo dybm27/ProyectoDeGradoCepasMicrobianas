@@ -291,7 +291,7 @@
                   </div>
                 </div>
                 <div class="position-relative form-group">
-                  <label for="otros_azucares" class>Otros Azúcares</label>
+                  <label for="otros_azucares" class>Otros azúcares</label>
                   <textarea
                     name="otros_azucares"
                     id="otros_azucares"
@@ -433,7 +433,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="position-relative form-group">
-                      <label for="caldo_urea" class>Caldo Úrea</label>
+                      <label for="caldo_urea" class>Caldo urea</label>
                       <input
                         dusk="caldo_urea"
                         name="caldo_urea"
@@ -569,7 +569,7 @@
                   </div>
                 </div>
                 <div class="position-relative form-group">
-                  <label for="otras_enzimas" class>Otras Enzimas</label>
+                  <label for="otras_enzimas" class>Otras enzimas</label>
                   <textarea
                     name="otras_enzimas"
                     id="otras_enzimas"
@@ -585,7 +585,7 @@
                   <div class="col-md-6">
                     <div class="position-relative form-group">
                       <label for="hidro_caseina" class
-                        >Hidrolisís de la Caseína</label
+                        >Hidrolisis de la caseína</label
                       >
                       <input
                         dusk="hidro_caseina"
@@ -614,7 +614,7 @@
                   <div class="col-md-6">
                     <div class="position-relative form-group">
                       <label for="hidro_gelatina" class
-                        >Hidrolisís de la Gelatina</label
+                        >Hidrolisis de la gelatina</label
                       >
                       <input
                         dusk="hidro_gelatina"
@@ -645,7 +645,7 @@
                   <div class="col-md-6">
                     <div class="position-relative form-group">
                       <label for="hidro_urea" class
-                        >Hidrolisís de la Úrea</label
+                        >Hidrolisis de la urea</label
                       >
                       <input
                         dusk="hidro_urea"
@@ -674,7 +674,7 @@
                   <div class="col-md-6">
                     <div class="position-relative form-group">
                       <label for="creci_dif_temp" class
-                        >Crecimiento en Diferentes Temperaturas</label
+                        >Crecimiento en diferentes temperaturas</label
                       >
                       <input
                         dusk="creci_dif_temp"
@@ -704,7 +704,7 @@
                 <div class="form-row">
                   <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="creci_nacl" class>Crecimiento en Nacl</label>
+                      <label for="creci_nacl" class>Crecimiento en nacl</label>
                       <input
                         dusk="creci_nacl"
                         name="creci_nacl"
@@ -771,7 +771,7 @@
                   </template>
                   <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="otras_caract">Otras Características</label>
+                      <label for="otras_caract">Otras características</label>
                       <textarea
                         dusk="otras_caract"
                         name="otras_caract"

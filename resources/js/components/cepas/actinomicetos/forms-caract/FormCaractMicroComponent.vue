@@ -104,7 +104,7 @@
                 </div>
                 <div class="form-row">
                   <div class="col-md-6">
-                    <label for="micelio" class>Micelío</label>
+                    <label for="micelio" class>Micelio</label>
                     <div class="input-group mb-3">
                       <select
                         name="select"

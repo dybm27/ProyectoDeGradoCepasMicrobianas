@@ -155,7 +155,7 @@
                   <div class="col-md-4">
                     <div class="position-relative form-group">
                       <label for="hidro_urea" class
-                        >Hidrolisís de la Úrea</label
+                        >Hidrolisis de la urea</label
                       >
                       <input
                         dusk="hidro_urea"
@@ -186,7 +186,7 @@
                   <div :class="classRow">
                     <div class="position-relative form-group">
                       <label for="hidro_gelatina" class
-                        >Hidrolisís de la Gelatina</label
+                        >Hidrolisis de la gelatina</label
                       >
                       <input
                         dusk="hidro_gelatina"

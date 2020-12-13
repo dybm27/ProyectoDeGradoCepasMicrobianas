@@ -14,7 +14,7 @@
                 </div>
               </template>
               <div class="position-relative form-group">
-                <label for="acido_indolacetico" class>Acido Indolacético</label>
+                <label for="acido_indolacetico" class>Acido indolacético</label>
                 <input
                   dusk="acido_indolacetico"
                   name="acido_indolacetico"

@@ -17,7 +17,7 @@
                 <div class="col-md-6">
                   <div class="position-relative form-group">
                     <label for="fijacion_nitrogeno" class
-                      >Fijación Nitrogeno</label
+                      >Fijación nitrógeno</label
                     >
                     <input
                       dusk="fijacion_nitrogeno"

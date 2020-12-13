@@ -89,7 +89,7 @@
                 >
               </div>
               <div class="position-relative form-group">
-                <label for="termontolerancia" class>Termotolerancia</label>
+                <label for="termontolerancia" class>Termo tolerancia</label>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">37°C</span>
@@ -137,7 +137,7 @@
                 >
               </div>
               <div class="position-relative form-group">
-                <label>Crecimineto</label>
+                <label>Crecimiento</label>
                 <div>
                   <div
                     class="custom-radio custom-control custom-control-inline"
