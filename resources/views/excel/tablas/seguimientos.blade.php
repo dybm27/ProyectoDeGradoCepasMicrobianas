@@ -16,7 +16,7 @@
         <tr>
             <td>{{ $dato['nombre_responsable'] }}</td>
             <td>{{ $dato['email_responsable'] }}</td>
-            <td>{{ $dato['tipo_user'] }}</td>
+            <td>{{ $dato['rol'] }}</td>
             <td>{{ $dato['accion'] }}</td>
             <td>
                 @php

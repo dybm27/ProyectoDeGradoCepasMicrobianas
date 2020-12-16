@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\RolesExport;
 use App\Exports\SeguimientosExport;
+use App\Exports\TablaRolesExport;
 use App\Exports\TablaSeguimientosExport;
 use App\Exports\TablaUsuariosExport;
 use App\Exports\UsuariosExport;
@@ -29,5 +31,15 @@ class ExportarExcelUsuariosController extends Controller
     public function seguimientosTabla(Request $request)
     {
         return Excel::download(new TablaSeguimientosExport($request->datos), 'tabla-seguimientos.xlsx');
+    }
+
+    public function roles()
+    {
+        return Excel::download(new RolesExport, 'roles.xlsx');
+    }
+
+    public function rolesTabla(Request $request)
+    {
+        return Excel::download(new TablaRolesExport($request->datos), 'tabla-roles.xlsx');
     }
 }

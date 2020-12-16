@@ -64,9 +64,9 @@ class TablaUsuariosExport implements FromView, WithEvents
 
             BeforeSheet::class => function (BeforeSheet $event) use ($styleArray1, $styleArray2) {
                 $event->sheet->setTitle('Hoja 1')
-                    ->getStyle('A1:D2')
+                    ->getStyle('A1:C2')
                     ->applyFromArray($styleArray1);
-                $event->sheet->getStyle('A3:D' . $this->cantidad)
+                $event->sheet->getStyle('A3:C' . $this->cantidad)
                     ->applyFromArray($styleArray2);
             }
         ];

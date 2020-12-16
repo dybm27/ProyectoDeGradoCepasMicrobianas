@@ -233,6 +233,9 @@ Route::group(['middleware' => ['auth', 'control_sesion', 'verified']], function 
     //seguimientos
     Route::get('/exportar/seguimientos', 'ExportarExcelUsuariosController@seguimientos');
     Route::post('/exportar/tabla/seguimientos', 'ExportarExcelUsuariosController@seguimientosTabla');
+    //seguimientos
+    Route::get('/exportar/roles', 'ExportarExcelUsuariosController@roles');
+    Route::post('/exportar/tabla/roles', 'ExportarExcelUsuariosController@rolesTabla');
 
     Route::group(['middleware' => ['control_permisos:agregar-otra,editar-otra,eliminar-otra']], function () {
 

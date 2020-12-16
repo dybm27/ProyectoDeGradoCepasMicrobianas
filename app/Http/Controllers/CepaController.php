@@ -261,7 +261,7 @@ class CepaController extends Controller
     public function imprimirPDF(Request $request, $id)
     {
         $imprimir = $request->imprimir;
-        $fecha = Carbon::now()->format('Y-m-d');
+        $fecha = Carbon::now()->format('d-m-Y');
         $cepa = Cepa::find($id);
         switch ($cepa->grupo_microbiano_id) {
             case 1:

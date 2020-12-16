@@ -1,13 +1,12 @@
 <table>
     <thead>
         <tr>
-            <th colspan="4"><b>USUARIOS</b></th>
+            <th colspan="3"><b>USUARIOS</b></th>
         </tr>
         <tr>
             <th><b>Nombre</b></th>
             <th><b>Email</b></th>
-            <th><b>Tipo de Usuario</b></th>
-            <th><b>Imagen</b></th>
+            <th><b>Tipo de Usuario</b></th> 
         </tr>
     </thead>
     <tbody>
@@ -15,7 +14,7 @@
         <tr>
             <td>{{ $dato['name'] }}</td>
             <td>{{ $dato['email'] }}</td>
-            <td>{{ $dato['tipo_user'] }}</td>
+            <td>{{ $dato['rol'] }}</td>
         </tr>
     @endforeach
     </tbody>

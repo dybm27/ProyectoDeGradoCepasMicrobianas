@@ -65,11 +65,11 @@ class UsuariosExport implements FromView, WithEvents
 
             BeforeSheet::class => function (BeforeSheet $event) use ($styleArray1, $cantidad, $styleArray2, $styleArray3) {
                 $event->sheet->setTitle('Hoja 1')
-                    ->getStyle('A1:D2')
+                    ->getStyle('A1:C2')
                     ->applyFromArray($styleArray1);
-                $event->sheet->getStyle('A3:D' . $cantidad)
+                $event->sheet->getStyle('A3:C' . $cantidad)
                     ->applyFromArray($styleArray2);
-                $event->sheet->getStyle('D3:D' . $cantidad)
+                $event->sheet->getStyle('C3:C' . $cantidad)
                     ->applyFromArray($styleArray3);
             }
         ];

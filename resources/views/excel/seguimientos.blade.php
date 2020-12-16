@@ -16,7 +16,7 @@
         <tr>
             <td>{{ $seguimiento->nombre_responsable }}</td>
             <td>{{ $seguimiento->email_responsable }}</td>
-            <td>{{ $seguimiento->tipo_user }}</td>
+            <td>{{ $seguimiento->rol }}</td>
             <td>{{ $seguimiento->accion }}</td>
             <td>
                 @php
