@@ -76,6 +76,9 @@ mix.webpackConfig({
             },
         ],
     },
+    output: {
+        chunkFilename: "js/chunks/[id].chunk.[chunkhash].js"
+    }
 });
 
 mix.js("resources/js/app.js", "public/js").sass(

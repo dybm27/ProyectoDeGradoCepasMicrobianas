@@ -17,11 +17,11 @@
                     </a>
                   </li>
                   <li class="breadcrumb-item">
-                    <a>{{tipo}}</a>
+                    <a>{{ tipo }}</a>
                   </li>
                   <template v-if="tipo2">
                     <li class="breadcrumb-item">
-                      <a>{{tipo2}}</a>
+                      <a>{{ tipo2 }}</a>
                     </li>
                   </template>
                 </ol>
@@ -32,7 +32,7 @@
         <div class="page-title-actions"></div>
       </div>
     </div>
-    <template v-if="numPestaña==1">
+    <template v-if="numPestaña == 1">
       <Nav @rutaHijo="ruta" @cambiarTipo="cambiarTipo"></Nav>
     </template>
     <template v-else>
@@ -41,10 +41,9 @@
           <div class="card-body">
             <div class="row justify-content-center">
               <div class="col-md-8">
-                <div
-                  class="alert alert-danger mt-4 text-center"
-                  role="alert"
-                >Ya has ingresado desde otra pestaña del navegador!!</div>
+                <div class="alert alert-danger mt-4 text-center" role="alert">
+                  Ya has ingresado desde otra pestaña del navegador!!
+                </div>
               </div>
             </div>
           </div>
@@ -88,26 +87,7 @@ export default {
       } else {
         this.tipo2 = "";
       }
-    } /*
-    eliminarImagenesStorage() {
-      axios
-        .get("/editor/upload")
-        .then((res) => {
-          console.log(res.data);
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          }
-        })
-        .catch((error) => {
-          if (error.response.status === 403) {
-            this.$router.push("/sin-acceso");
-          }
-        });
-    },*/,
+    },
   },
   computed: {
     ...vuex.mapState(["auth"]),
@@ -139,7 +119,6 @@ export default {
       this.$events.fire("actualizartablaNoticia");
     });
     this.obtenerPublicidad();
-    //this.eliminarImagenesStorage();
   },
 };
 </script>
