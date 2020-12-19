@@ -5,10 +5,12 @@
         <div class="main-card mb-3 card">
           <form @submit.prevent="evento">
             <div class="card-body">
-              <h5 class="card-title">{{titulo}}</h5>
-              <template v-if="errors!=''">
+              <h5 class="card-title">{{ titulo }}</h5>
+              <template v-if="errors != ''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">
+                    {{ item[0] }}
+                  </p>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -18,17 +20,27 @@
                   id="titulo"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', $v.parametros.titulo.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control',
+                    $v.parametros.titulo.$error ? 'error-input-select' : '',
+                  ]"
                   v-model.trim="$v.parametros.titulo.$model"
                 />
                 <em
-                  v-if="$v.parametros.titulo.$error&&!$v.parametros.titulo.required"
+                  v-if="
+                    $v.parametros.titulo.$error &&
+                    !$v.parametros.titulo.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
                 <em
-                  v-if="$v.parametros.titulo.$error&&!$v.parametros.titulo.unique"
+                  v-if="
+                    $v.parametros.titulo.$error && !$v.parametros.titulo.unique
+                  "
                   class="text-error-input"
-                >{{mensajes.unique}}</em>
+                  >{{ mensajes.unique }}</em
+                >
               </div>
               <div class="position-relative form-group" v-if="validarTipoForm">
                 <label for="select" class>Contenido de la Actividad:</label>
@@ -51,17 +63,24 @@
                     id="link"
                     placeholder="..."
                     type="text"
-                    :class="['form-control', $v.parametros.link.$error? 'error-input-select':'']"
+                    :class="[
+                      'form-control',
+                      $v.parametros.link.$error ? 'error-input-select' : '',
+                    ]"
                     v-model.trim="$v.parametros.link.$model"
                   />
                   <em
-                    v-if="$v.parametros.link.$error&&!$v.parametros.link.required"
+                    v-if="
+                      $v.parametros.link.$error && !$v.parametros.link.required
+                    "
                     class="text-error-input"
-                  >{{mensajes.required}}</em>
+                    >{{ mensajes.required }}</em
+                  >
                   <em
-                    v-if="$v.parametros.link.$error&&!$v.parametros.link.url"
+                    v-if="$v.parametros.link.$error && !$v.parametros.link.url"
                     class="text-error-input"
-                  >{{mensajes.url}}</em>
+                    >{{ mensajes.url }}</em
+                  >
                 </div>
               </template>
               <div class="form-row">
@@ -77,12 +96,18 @@
                         type="datetime"
                         value-type="format"
                         placeholder="..."
-                        :class="$v.parametros.fecha.$error? 'error-input-select':''"
+                        :class="
+                          $v.parametros.fecha.$error ? 'error-input-select' : ''
+                        "
                       ></date-picker>
                       <em
-                        v-if="$v.parametros.fecha.$error&&!$v.parametros.fecha.required"
+                        v-if="
+                          $v.parametros.fecha.$error &&
+                          !$v.parametros.fecha.required
+                        "
                         class="text-error-input"
-                      >{{mensajes.required}}</em>
+                        >{{ mensajes.required }}</em
+                      >
                     </div>
                   </div>
                 </div>
@@ -94,13 +119,20 @@
                       id="lugar"
                       placeholder="..."
                       type="text"
-                      :class="['form-control', $v.parametros.lugar.$error? 'error-input-select':'']"
+                      :class="[
+                        'form-control',
+                        $v.parametros.lugar.$error ? 'error-input-select' : '',
+                      ]"
                       v-model.trim="$v.parametros.lugar.$model"
                     />
                     <em
-                      v-if="$v.parametros.lugar.$error&&!$v.parametros.lugar.required"
+                      v-if="
+                        $v.parametros.lugar.$error &&
+                        !$v.parametros.lugar.required
+                      "
                       class="text-error-input"
-                    >{{mensajes.required}}</em>
+                      >{{ mensajes.required }}</em
+                    >
                   </div>
                 </div>
               </div>
@@ -112,33 +144,53 @@
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
+                  :class="[
+                    'form-control-file',
+                    $v.parametros.imagen.$error ? 'error-input-select' : '',
+                  ]"
                   ref="inputImagen"
                 />
-                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{
+                  imagenError
+                }}</em>
                 <em
-                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  v-if="
+                    $v.parametros.imagen.$error &&
+                    !$v.parametros.imagen.required
+                  "
                   class="text-error-input"
-                >{{mensajes.required}}</em>
+                  >{{ mensajes.required }}</em
+                >
               </div>
               <div class="custom-checkbox custom-control mb-2">
                 <input
                   type="checkbox"
                   id="publicar"
-                  :class="['custom-control-input',$v.parametros.publicar.$error? 'is-invalid':'']"
+                  :class="[
+                    'custom-control-input',
+                    $v.parametros.publicar.$error ? 'is-invalid' : '',
+                  ]"
                   v-model.trim="$v.parametros.publicar.$model"
                 />
-                <label class="custom-control-label" for="publicar">Desea publicar la Actividad?</label>
+                <label class="custom-control-label" for="publicar"
+                  >Desea publicar la Actividad?</label
+                >
               </div>
               <em
-                v-if="$v.parametros.publicar.$error&&!$v.parametros.publicar.validarPublicar"
+                v-if="
+                  $v.parametros.publicar.$error &&
+                  !$v.parametros.publicar.validarPublicar
+                "
                 class="text-error-select"
-              >{{mensajes.validarPublicar}}</em>
+                >{{ mensajes.validarPublicar }}</em
+              >
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
                 :disabled="bloquearBtn"
-              >{{nomBtnComputed}}</button>
+              >
+                {{ nomBtnComputed }}
+              </button>
             </div>
           </form>
         </div>
@@ -148,7 +200,7 @@
           <div class="card-body">
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
-              <template v-if="mostraImagen===info.imagenPublica">
+              <template v-if="mostraImagen === info.imagenPublica">
                 <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
@@ -192,13 +244,25 @@
       <div class="row justify-content-md-center">
         <div class="col-md-12">
           <div class="main-card mb-3 card">
-            <div :class="['card-body',$v.parametros.cuerpo.$error?'error-text-editor':'']">
+            <div
+              :class="[
+                'card-body',
+                $v.parametros.cuerpo.$error ? 'error-text-editor' : '',
+              ]"
+            >
               <h5 class="card-title">Elaborar Actividad</h5>
-              <Editor @contenido="aceptarContenido" @modificar="modificarContenido" :info="info" />
+              <Editor
+                @contenido="aceptarContenido"
+                @modificar="modificarContenido"
+                :info="info"
+              />
               <em
-                v-if="$v.parametros.cuerpo.$error&&!$v.parametros.cuerpo.required"
+                v-if="
+                  $v.parametros.cuerpo.$error && !$v.parametros.cuerpo.required
+                "
                 class="text-error-input"
-              >{{mensajes.required}}</em>
+                >{{ mensajes.required }}</em
+              >
             </div>
           </div>
         </div>
@@ -311,7 +375,7 @@ export default {
       if (!this.$v.$invalid) {
         if (this.tituloForm === "Agregar Actividad") {
           axios
-            .post("/publicidad", this.parametros)
+            .post("/difusion", this.parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
                 localStorage.setItem(
@@ -338,7 +402,7 @@ export default {
             });
         } else {
           axios
-            .put(`/publicidad/${this.idActividad}`, this.parametros)
+            .put(`/difusion/${this.idActividad}`, this.parametros)
             .then((res) => {
               this.bloquearBtn = false;
               this.toastr(

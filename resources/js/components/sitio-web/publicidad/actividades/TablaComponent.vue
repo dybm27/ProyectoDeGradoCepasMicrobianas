@@ -32,8 +32,14 @@
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Actividad</h5>
-            <button type="button" class="close" @click="$modal.hide('modal_eliminar_actividad')">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Eliminar Actividad
+            </h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_eliminar_actividad')"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -45,13 +51,17 @@
               type="button"
               class="btn btn-secondary"
               @click="$modal.hide('modal_eliminar_actividad')"
-            >Cancelar</button>
+            >
+              Cancelar
+            </button>
             <button
               type="button"
               class="btn btn-success"
               :disabled="bloquearBtnModal"
               @click="eliminarActividad"
-            >Eliminar</button>
+            >
+              Eliminar
+            </button>
           </div>
         </div>
       </modal>
@@ -98,7 +108,7 @@ export default {
     eliminarActividad() {
       this.bloquearBtnModal = true;
       axios
-        .delete(`/publicidad/${this.id}`, {
+        .delete(`/difusion/${this.id}`, {
           data: { tipo: "actividad" },
         })
         .then((res) => {

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="custom-checkbox custom-control" v-if="getPermisoByNombre('editar-noticia')">
+    <div
+      class="custom-checkbox custom-control"
+      v-if="getPermisoByNombre('editar-noticia')"
+    >
       <input
         type="checkbox"
         :id="rowData.id"
@@ -51,7 +54,7 @@ export default {
     publicar(data) {
       this.disabled = true;
       axios
-        .put(`/publicidad/publicar/${data.id}`, {
+        .put(`/difusion/publicar/${data.id}`, {
           publicar: !this.checkPublicar,
           tipo: "noticia",
         })

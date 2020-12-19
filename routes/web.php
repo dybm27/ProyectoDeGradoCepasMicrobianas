@@ -405,11 +405,11 @@ Route::group(['middleware' => ['auth', 'control_sesion', 'verified']], function 
         Route::put('/equipamientos/publicar/{id}', 'EquipamientoController@publicar');
     });
     //publicidad
-    Route::post('/publicidad', 'PublicidadController@store')->middleware('control_permisos:agregar-noticia,agregar-novedad,agregar-actividad');
-    Route::delete('/publicidad/{id}', 'PublicidadController@destroy')->middleware('control_permisos:eliminar-noticia,eliminar-novedad,eliminar-actividad');
+    Route::post('/difusion', 'PublicidadController@store')->middleware('control_permisos:agregar-noticia,agregar-novedad,agregar-actividad');
+    Route::delete('/difusion/{id}', 'PublicidadController@destroy')->middleware('control_permisos:eliminar-noticia,eliminar-novedad,eliminar-actividad');
     Route::group(['middleware' => ['control_permisos:editar-noticia,editar-novedad,editar-actividad']], function () {
-        Route::put('/publicidad/{id}', 'PublicidadController@update');
-        Route::put('/publicidad/publicar/{id}', 'PublicidadController@publicar');
+        Route::put('/difusion/{id}', 'PublicidadController@update');
+        Route::put('/difusion/publicar/{id}', 'PublicidadController@publicar');
     });
 
     //editor
@@ -531,10 +531,10 @@ Route::group(['middleware' => ['auth', 'control_sesion', 'verified']], function 
             Route::get('noticias-tabla', 'InfoPanelSitioWebController@noticiasTabla');
             Route::get('actividades-tabla', 'InfoPanelSitioWebController@actividadesTabla');
             Route::get('novedades-tabla', 'InfoPanelSitioWebController@novedadesTabla');
-            Route::get('publicidad', 'InfoPanelSitioWebController@publicidad');
+            Route::get('difusion', 'InfoPanelSitioWebController@publicidad');
         });
     });
 
     // ruta vuejs
-    Route::get('{vue_capture?}', 'SpaController@index')->where('vue_capture', '[\/\w\.-]*');
+    Route::get('/{vue_capture?}', 'SpaController@index')->where('vue_capture', '[\/\w\.-]*');
 });

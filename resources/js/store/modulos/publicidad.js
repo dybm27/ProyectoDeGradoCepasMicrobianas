@@ -136,7 +136,7 @@ export default {
     actions: {
         obtenerPublicidad({ commit }) {
             axios
-                .get("/info-panel/publicidad")
+                .get("/info-panel/difusion")
                 .then(res => {
                     if (res.request.responseURL === process.env.MIX_LOGIN) {
                         localStorage.setItem(
