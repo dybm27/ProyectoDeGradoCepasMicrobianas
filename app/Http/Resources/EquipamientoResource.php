@@ -19,9 +19,9 @@ class EquipamientoResource extends JsonResource
             'type' => 'equipamiento',
             'id' => $this->resource->id,
             'attributes' => [
-                'nombre' => $this->resource->nombres,
-                'funcion' => $this->resource->apellidos,
-                'caracteristicas' => $this->resource->email,
+                'nombre' => $this->resource->nombre,
+                'funcion' => $this->resource->funcion,
+                'caracteristicas' => $this->resource->caracteristicas,
                 'imagen' =>  url($this->resource->imagenPublica)
             ]
         ];
