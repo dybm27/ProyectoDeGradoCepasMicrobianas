@@ -350,7 +350,7 @@
                         <b>Imagen PCR</b>
                         <div>
                             <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->identMolecular->img_pcrPublica)}}" 
-                            style="padding-top: 30px"/>
+                            style="padding-top: 10px; padding-bottom: 10px"/>
                         </div>
                     </td>
                     <td colspan="3" style="text-align: center">
@@ -359,7 +359,7 @@
                         </div>
                         <div>
                             <img id="redondear" width="250px" height="150px" src="{{public_path($cepa->bacteria->identMolecular->img_secuenPublica)}}" 
-                            style="padding-top: 30px"/>
+                            style="padding-top: 10px; padding-bottom: 10px"/>
                         </div>
                     </td>
                 </tr>
@@ -382,7 +382,7 @@
                         <td rowspan="3" style="text-align: center">
                             <div>
                                 <img id="redondear" width="150px" height="150px" src="{{public_path($metodo->imagenPublica)}}" 
-                                style="padding-top: 30px"/>
+                                style="padding-top: 20px"/>
                             </div>
                         </td>        
                         <td><b>Tipo de Método</b></td>

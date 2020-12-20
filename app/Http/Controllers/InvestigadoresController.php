@@ -72,7 +72,7 @@ class InvestigadoresController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
+        $image_name = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.jpg';
         Storage::disk('local')->put('/public/investigadores/' . $image_name, $data);
         $ruta = '/public/investigadores/' . $image_name;
         $rutaPublica = '/storage/investigadores/' . $image_name;

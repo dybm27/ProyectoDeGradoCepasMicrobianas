@@ -35,8 +35,8 @@ Route::get('proyectos', 'Api\SitioWebController@getProyectos')->name('obtener.pr
 Route::get('publicaciones', 'Api\SitioWebController@getPublicaciones')->name('obtener.publicaciones');
 
 Route::get('actividades', 'Api\SitioWebController@getActividades')->name('obtener.actividades');
-Route::get('actividad', 'Api\SitioWebController@getActividad')->name('obtener.actividad');
+//Route::get('actividad', 'Api\SitioWebController@getActividad')->name('obtener.actividad');
 Route::get('noticias', 'Api\SitioWebController@getNoticias')->name('obtener.noticias');
-Route::get('noticia', 'Api\SitioWebController@getNoticia')->name('obtener.noticia');
+//Route::get('noticia', 'Api\SitioWebController@getNoticia')->name('obtener.noticia');
 Route::get('novedades', 'Api\SitioWebController@getNovedades')->name('obtener.novedades');
-Route::get('novedad', 'Api\SitioWebController@getNovedad')->name('obtener.novedad');
+//Route::get('novedad', 'Api\SitioWebController@getNovedad')->name('obtener.novedad');

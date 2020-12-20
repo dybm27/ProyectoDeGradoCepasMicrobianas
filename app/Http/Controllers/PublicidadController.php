@@ -182,15 +182,15 @@ class PublicidadController extends Controller
     {
         if ($tipo == 'noticia') {
             $nombre = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '-' . $imagen->getClientOriginalName();
-            Storage::disk('local')->put('/public/publicidad/' . $tipo . '/' . $nombre, file_get_contents($imagen));
+            Storage::disk('local')->put('/public/difusion/' . $tipo . '/' . $nombre, file_get_contents($imagen));
         } else {
             $imagen_array = explode(",", $imagen);
             $data = base64_decode($imagen_array[1]);
-            $nombre = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
-            Storage::disk('local')->put('/public/publicidad/' . $tipo . '/' . $nombre, $data);
+            $nombre = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.jpg';
+            Storage::disk('local')->put('/public/difusion/' . $tipo . '/' . $nombre, $data);
         }
-        $ruta = '/public/publicidad/' . $tipo . '/' . $nombre;
-        $rutaPublica = '/storage/publicidad/' . $tipo . '/' . $nombre;
+        $ruta = '/public/difusion/' . $tipo . '/' . $nombre;
+        $rutaPublica = '/storage/difusion/' . $tipo . '/' . $nombre;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

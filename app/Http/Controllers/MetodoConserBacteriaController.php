@@ -21,7 +21,7 @@ class MetodoConserBacteriaController extends Controller
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
         $imagen = $this->guardarImagen($request->imagen, $bacteria->id);
-        
+
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $metodoConserBacteria = new MetodoConserBacteria();
@@ -96,7 +96,7 @@ class MetodoConserBacteriaController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
+        $image_name = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.jpg';
         Storage::disk('local')->put('/public/bacterias/metodo_conser_img/' . $id . '/' . $image_name, $data);
         $ruta = '/public/bacterias/metodo_conser_img/' . $id . '/' . $image_name;
         $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $id . '/' . $image_name;

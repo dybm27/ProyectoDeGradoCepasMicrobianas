@@ -86,7 +86,7 @@ class CaractMacroLevaduraController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
+        $image_name = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.jpg';
         Storage::disk('local')->put('/public/levaduras/caract_macro_img/' . $id . '/' . $image_name, $data);
         $ruta = '/public/levaduras/caract_macro_img/' . $id . '/' . $image_name;
         $rutaPublica = '/storage/levaduras/caract_macro_img/' . $id . '/' . $image_name;

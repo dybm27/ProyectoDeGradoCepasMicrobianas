@@ -3,11 +3,17 @@
     <div :id="id"></div>
     <template v-if="mostrarBtnCroppie">
       <template v-if="btnAprobar">
-        <button class="btn btn-success" @click="resultado"  dusk="btn-croppie">Aprobar Imagen</button>
-        <em class="text-danger small" v-if="mostrarMensaje">Debe Aprobar la imagen</em>
+        <button class="btn btn-success" @click="resultado" dusk="btn-croppie">
+          Aprobar Imagen
+        </button>
+        <em class="text-danger small" v-if="mostrarMensaje"
+          >Debe Aprobar la imagen</em
+        >
       </template>
       <template v-else>
-        <button class="btn btn-danger float-right" @click="cancelar">Cancelar</button>
+        <button class="btn btn-danger float-right" @click="cancelar">
+          Cancelar
+        </button>
       </template>
     </template>
   </div>
@@ -24,12 +30,12 @@ export default {
     "editar",
     "enableZoom",
     "boundaryHeigth",
-    "viewportWidth"
+    "viewportWidth",
   ],
   data() {
     return {
       croppie: null,
-      btnAprobar: true
+      btnAprobar: true,
     };
   },
   mounted() {
@@ -41,28 +47,30 @@ export default {
       this.croppie = new Croppie(el, {
         viewport: {
           width: this.viewportWidth,
-          height: 200
+          height: 200,
         },
         boundary: {
-          height: this.boundaryHeigth
+          height: this.boundaryHeigth,
         },
-        enableZoom: this.enableZoom
+        enableZoom: this.enableZoom,
       });
       this.croppie.bind({
         url: this.imagen,
-        zoom: this.zoom
+        zoom: this.zoom,
       });
     },
     resultado() {
-      this.croppie.result().then(res => {
-        this.btnAprobar = false;
-        this.$emit("cambiarValorImagen", res);
-      });
+      this.croppie
+        .result({ type: "base64", size: "viewport", format: "jpeg" })
+        .then((res) => {
+          this.btnAprobar = false;
+          this.$emit("cambiarValorImagen", res);
+        });
     },
     cancelar() {
       this.btnAprobar = true;
       this.$emit("cambiarValorImagen", "");
-    }
+    },
   },
   watch: {
     imagen() {
@@ -71,7 +79,7 @@ export default {
         this.croppie.destroy();
         this.crearCroppie();
       }
-    }
+    },
   },
   computed: {
     mostrarMensaje() {
@@ -79,7 +87,7 @@ export default {
         return true;
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

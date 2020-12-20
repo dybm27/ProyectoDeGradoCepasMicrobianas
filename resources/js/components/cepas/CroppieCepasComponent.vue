@@ -244,22 +244,28 @@ export default {
     resultado(num) {
       switch (num) {
         case 1:
-          this.croppie1.result().then((res) => {
-            this.btnAprobar1 = false;
-            this.$emit("cambiarValorImagen", { data: res, num: num });
-          });
+          this.croppie1
+            .result({ type: "base64", size: "viewport", format: "jpeg" })
+            .then((res) => {
+              this.btnAprobar1 = false;
+              this.$emit("cambiarValorImagen", { data: res, num: num });
+            });
           break;
         case 2:
-          this.croppie2.result().then((res) => {
-            this.btnAprobar2 = false;
-            this.$emit("cambiarValorImagen", { data: res, num: num });
-          });
+          this.croppie2
+            .result({ type: "base64", size: "viewport", format: "jpeg" })
+            .then((res) => {
+              this.btnAprobar2 = false;
+              this.$emit("cambiarValorImagen", { data: res, num: num });
+            });
           break;
         case 3:
-          this.croppie3.result().then((res) => {
-            this.btnAprobar3 = false;
-            this.$emit("cambiarValorImagen", { data: res, num: num });
-          });
+          this.croppie3
+            .result({ type: "base64", size: "viewport", format: "jpeg" })
+            .then((res) => {
+              this.btnAprobar3 = false;
+              this.$emit("cambiarValorImagen", { data: res, num: num });
+            });
           break;
       }
     },

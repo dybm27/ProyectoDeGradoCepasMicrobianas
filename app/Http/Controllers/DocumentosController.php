@@ -34,7 +34,7 @@ class DocumentosController extends Controller
         }
 
         $imagen = $this->guardarImagen($documento->tipo_documento_id, $request->imagen);
-        $archivo = $this->guardarArchivo($documento->tipo_documento_id, $request->file('archivo'), $request->nombre_documento . '.pdf');
+        $archivo = $this->guardarArchivo($documento->tipo_documento_id, $request->file('archivo'), $request->nombre_documento);
 
         $documento->nombre_documento = $request->nombre_documento;
         $documento->nombre_autor = $request->nombre_autor;
@@ -69,9 +69,13 @@ class DocumentosController extends Controller
         $this->validate($request, $rules, $messages);
 
         if ($documento->nombre_documento != $request->nombre_documento) {
-            $archivo = $this->moverArchivo($documento->tipo_documento_id, $documento->nombre_documento, $request->nombre_documento);
-            $documento->ruta = $archivo['ruta'];
-            $documento->rutaPublica = $archivo['rutaPublica'];
+            $nombre = preg_replace('([^A-Za-z0-9])', '', $documento->nombre_documento);
+            $nombreNuevo = preg_replace('([^A-Za-z0-9])', '', $request->nombre_documento);
+            if ($nombre !=  $nombreNuevo) {
+                $archivo = $this->moverArchivo($documento->tipo_documento_id, $nombre,  $nombreNuevo);
+                $documento->ruta = $archivo['ruta'];
+                $documento->rutaPublica = $archivo['rutaPublica'];
+            }
             $documento->nombre_documento = $request->nombre_documento;
         }
 
@@ -118,7 +122,7 @@ class DocumentosController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name =  Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
+        $image_name =  Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.jpg';
         Storage::put('/public/documentos/' . $tipo . '/imagenes/' . $image_name, $data);
         $ruta = '/public/documentos/' . $tipo . '/imagenes/' . $image_name;
         $rutaPublica = '/storage/documentos/' . $tipo . '/imagenes/' . $image_name;
@@ -127,17 +131,18 @@ class DocumentosController extends Controller
 
     public function guardarArchivo($tipo, $file, $nombre_documento)
     {
-        Storage::disk('local')->put('/public/documentos/' . $tipo . '/archivos/' . $nombre_documento, file_get_contents($file));
-        $ruta = '/public/documentos/' . $tipo . '/archivos/' . $nombre_documento;
-        $rutaPublica = '/storage/documentos/' . $tipo . '/archivos/' . $nombre_documento;
+        $nombre = preg_replace('([^A-Za-z0-9])', '', $nombre_documento);
+        Storage::disk('local')->put('/public/documentos/' . $tipo . '/archivos/' . $nombre . '.pdf', file_get_contents($file));
+        $ruta = '/public/documentos/' . $tipo . '/archivos/' . $nombre . '.pdf';
+        $rutaPublica = '/storage/documentos/' . $tipo . '/archivos/' . $nombre . '.pdf';
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 
-    public function moverArchivo($tipo, $nombre_documento, $nombre_documentoNuevo)
+    public function moverArchivo($tipo, $nombre, $nombreNuevo)
     {
-        Storage::move('/public/documentos/' . $tipo . '/archivos/' . $nombre_documento . '.pdf', '/public/documentos/' . $tipo . '/archivos/' . $nombre_documentoNuevo . '.pdf');
-        $ruta = '/public/documentos/' . $tipo . '/archivos/' . $nombre_documentoNuevo . '.pdf';
-        $rutaPublica = '/storage/documentos/' . $tipo . '/archivos/' . $nombre_documentoNuevo . '.pdf';
+        Storage::move('/public/documentos/' . $tipo . '/archivos/' . $nombre . '.pdf', '/public/documentos/' . $tipo . '/archivos/' . $nombreNuevo . '.pdf');
+        $ruta = '/public/documentos/' . $tipo . '/archivos/' . $nombreNuevo . '.pdf';
+        $rutaPublica = '/storage/documentos/' . $tipo . '/archivos/' . $nombreNuevo . '.pdf';
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

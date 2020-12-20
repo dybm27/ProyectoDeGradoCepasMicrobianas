@@ -205,7 +205,7 @@ class SitioWebController extends Controller
         }
         $sort = $this->validarSort($request->sort);
         return PublicacionCollection::make(
-            Documento::where('tipo_documento_id', 1)->where('publicar', 1)->orderBy($sort[0], $sort[1])->get()
+            Documento::where('tipo_documento_id', 2)->where('publicar', 1)->orderBy($sort[0], $sort[1])->get()
         );
     }
 
