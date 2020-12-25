@@ -2,7 +2,9 @@
   <div>
     <div class="main-card mb-3 card">
       <div class="card-header-tab card-header">
-        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+        <div
+          class="card-header-title font-size-lg text-capitalize font-weight-normal"
+        >
           <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
           Tabla Dinámica Superficies
         </div>
@@ -18,7 +20,7 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            apiUrl="'/info-panel/superficies-actinomiceto'"
+            :apiUrl="'/info-panel/superficies-actinomiceto'"
             :fields="fields"
             :sortOrder="sortOrder"
             :detailRowComponent="''"

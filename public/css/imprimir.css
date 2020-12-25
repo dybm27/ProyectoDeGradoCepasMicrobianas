@@ -5,7 +5,7 @@
 /* emcabezado */
 header {
     position: fixed;
-    padding-top: -150px;
+    margin-top: -150px;
     height: 119px;
 }
 

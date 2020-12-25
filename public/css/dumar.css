@@ -182,12 +182,7 @@
 }
 
 .bg-warm-flame {
-    background-image: linear-gradient(
-        45deg,
-        #3f6ad8 20%,
-        #3f6ad830 70%,
-        #3f6ad8 100%
-    ) !important;
+    background-image: linear-gradient(45deg, #3f6ad8 20%, #3f6ad830 70%, #3f6ad8 100%) !important;
 }
 
 .dropdown-menu-header .menu-header-image {
@@ -242,103 +237,115 @@
     margin-right: 0;
 }
 
-.fixed-sidebar.closed-sidebar:not(.fixed-header)
-    .app-sidebar
-    .app-header__logo
-    .logo-majumba-inicio {
+.fixed-sidebar.closed-sidebar:not(.fixed-header) .app-sidebar .app-header__logo .logo-majumba-inicio {
     display: none;
 }
 
-.closed-sidebar:not(.closed-sidebar-mobile)
-    .app-header
-    .app-header__logo
-    .logo-majumba-inicio {
+.closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo .logo-majumba-inicio {
     display: none;
 }
 
 .logo-majumba > img {
     width: 560px;
-    height: 200px;
 }
+.logo-majumba-reset > img {
+    width: 500px;
+}
+.logos > img {
+    width: 200px;
+}
+@media (max-width: 1668px) {
+    .logos > img {
+        width: 180px;
+    }
+}
+
+@media (max-width: 1520px) {
+    .logos > img {
+        width: 150px;
+    }
+}
+
+@media (max-width: 1267px) {
+    .logos > img {
+        width: 120px;
+    }
+}
+
 @media (max-width: 1178px) {
     .logo-majumba > img {
         width: 520px;
+    }
+    .logo-majumba-reset > img {
+        width: 600px;
     }
 }
 @media (max-width: 1087px) {
     .logo-majumba > img {
         width: 500px;
     }
-}
-@media (max-width: 772px) {
-    .logo-majumba > img {
-        width: 480px;
-        height: 200px;
-    }
-}
-@media (max-width: 590px) {
-    .logo-majumba > img {
-        width: 450px;
-        height: 200px;
-    }
-}
-@media (max-width: 503px) {
-    .logo-majumba > img {
-        width: 400px;
-    }
-}
-@media (max-width: 429px) {
-    .logo-majumba > img {
-        width: 330px;
-    }
-}
-@media (max-width: 370px) {
-    .logo-majumba > img {
-        width: 270px;
-        height: 150px;
-    }
-}
-
-.logo-majumba-reset > img {
-    width: 500px;
-    height: 250px;
-}
-@media (max-width: 1178px) {
-    .logo-majumba-reset > img {
-        width: 600px;
-    }
-}
-@media (max-width: 1087px) {
     .logo-majumba-reset > img {
         width: 550px;
     }
+    .logos > img {
+        width: 100px;
+    }
+}
+@media (max-width: 993px) {
+    .logos > img {
+        width: 150px;
+    }
 }
 @media (max-width: 772px) {
+    .logo-majumba > img {
+        width: 480px;
+    }
     .logo-majumba-reset > img {
         width: 480px;
-        height: 200px;
+    }
+    .logos > img {
+        width: 120px;
     }
 }
 @media (max-width: 590px) {
+    .logo-majumba > img {
+        width: 450px;
+    }
     .logo-majumba-reset > img {
         width: 450px;
-        height: 200px;
     }
 }
 @media (max-width: 503px) {
+    .logo-majumba > img {
+        width: 400px;
+    }
     .logo-majumba-reset > img {
         width: 400px;
     }
+    .logos > img {
+        width: 100px;
+    }
 }
 @media (max-width: 429px) {
+    .logo-majumba > img {
+        width: 330px;
+    }
     .logo-majumba-reset > img {
         width: 330px;
     }
+    .logos > img {
+        width: 80px;
+    }
 }
 @media (max-width: 370px) {
+    .logo-majumba > img {
+        width: 270px;
+    }
     .logo-majumba-reset > img {
         width: 270px;
-        height: 150px;
+    }
+    .logos > img {
+        width: 60px;
     }
 }
 .dropdown-menu {
@@ -460,11 +467,7 @@
 
 /*login*/
 .bg-premium-dark {
-    background-image: linear-gradient(
-        to right,
-        #434343 0%,
-        black 100%
-    ) !important;
+    background-image: linear-gradient(to right, #434343 0%, black 100%) !important;
 }
 @media (min-width: 10px) {
     .card-columns {
@@ -502,17 +505,11 @@
     margin-right: 0;
 }
 
-.fixed-sidebar.closed-sidebar:not(.fixed-header)
-    .app-sidebar
-    .app-header__logo
-    .logo-majumba-inicio {
+.fixed-sidebar.closed-sidebar:not(.fixed-header) .app-sidebar .app-header__logo .logo-majumba-inicio {
     display: none;
 }
 
-.closed-sidebar:not(.closed-sidebar-mobile)
-    .app-header
-    .app-header__logo
-    .logo-majumba-inicio {
+.closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo .logo-majumba-inicio {
     display: none;
 }
 
@@ -626,10 +623,8 @@ span.buttonText {
 .app-theme-white .app-page-title {
     /*rgba(255, 255, 255, 0.45);*/
     background: #06f37940;
-    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
-        0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
-        0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
-        0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+        0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
 }
 
 .card-header.card-header-tab .card-header-title {

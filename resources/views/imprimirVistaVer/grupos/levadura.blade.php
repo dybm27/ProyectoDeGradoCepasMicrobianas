@@ -201,19 +201,21 @@
                             <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_otra}}</td>
                         @endif
                     </tr>
-                    @if($cepa->levadura->caractBioquimica->termotolerancia_42&&$cepa->levadura->caractBioquimica->termotolerancia_37)
+                    @if($cepa->levadura->caractBioquimica->termotolerancia_42&&$cepa->levadura->caractBioquimica->termotolerancia_37&&$rowTermo > 1 )
                         <tr>
                             <td><b>42°C</b></td>
                             <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_42}}</td>
                         </tr>
                     @endif
-                    @if($cepa->levadura->caractBioquimica->termotolerancia_45&&$cepa->levadura->caractBioquimica->termotolerancia_37)
+                    @if($cepa->levadura->caractBioquimica->termotolerancia_45&&$rowTermo > 1 &&
+                    ($cepa->levadura->caractBioquimica->termotolerancia_42 ||
+                      $cepa->levadura->caractBioquimica->termotolerancia_37))
                         <tr>
                             <td><b>45°C</b></td>
                             <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_45}}</td>
                         </tr>
                     @endif
-                    @if($cepa->levadura->caractBioquimica->termotolerancia_otra&&$cepa->levadura->caractBioquimica->termotolerancia_37)
+                    @if($cepa->levadura->caractBioquimica->termotolerancia_otra&&$rowTermo>1)
                         <tr>
                             <td><b>otra°</b></td>
                             <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_otra}}</td>

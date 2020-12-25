@@ -49,10 +49,32 @@
                             <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
                                 <div class="container mt-5 mb-2">
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="logo-majumba">
-                                                <img src="{{asset('imagenes/logo_majumba-g.png')}}" alt="">
-                                            </div>
+                                        <div class="col-3">
+                                          <div class="logos">
+                                            <img src="{{asset('imagenes/Logo-vertical.jpg')}}" alt="universidad francisco de paula santander">
+                                          </div>
+                                        </div>
+                                        <div class="col-3">
+                                          <div class="logos">
+                                            <img src="{{asset('imagenes/logo_majumba-g.png')}}" alt="majumba">
+                                          </div>
+                                        </div>
+                                        <div class="col-3">
+                                          <div class="logos">
+                                            <img src="{{asset('imagenes/logo-gidis-sin-fondo.png')}}" alt="gidis">
+                                          </div>
+                                        </div>
+                                        <div class="col-3">
+                                          <div class="logos">
+                                            <img src="{{asset('imagenes/logo-sistemas-letra-negra.png')}}" alt="ingenieria de sistemas ufps">
+                                          </div>
+                                        </div>
+                                       </div>
+                                       <div class="row">
+                                         <div class="col-md-12">
+                                          <div class="logo-majumba">
+                                            <img src="{{asset('imagenes/lab-icon-recortado.png')}}" alt="laboratorio de microbiología avanzada ufps">
+                                          </div>
                                             <h4>
                                                 <span>Ingresa tu Correo electrónico para restablecer la contraseña.</span>
                                             </h4>
