@@ -57,7 +57,7 @@
         "@fullcalendar/vue": "^4.4.0",
         "croppie": "^2.6.4",
         "laravel-echo": "^1.8.0",
-        "moment": "^2.24.0",
+        "moment": "^2.29.2",
         "postcss-loader": "^3.0.0",
         "pusher-js": "^5.1.1",
         "raw-loader": "^3.1.0",
